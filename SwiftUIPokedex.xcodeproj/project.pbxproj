@@ -12,6 +12,17 @@
 		9F0265292B84DF60001F1AD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F0265282B84DF60001F1AD3 /* Assets.xcassets */; };
 		9F02652C2B84DF60001F1AD3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F02652B2B84DF60001F1AD3 /* Preview Assets.xcassets */; };
 		9F0265332B84E0FF001F1AD3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9F0265322B84E0FF001F1AD3 /* README.md */; };
+		9FBE4FB32B874D6C00EA8ED7 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE4FA12B874D6B00EA8ED7 /* Poppins-Light.ttf */; };
+		9FBE4FB42B874D6C00EA8ED7 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE4FA22B874D6B00EA8ED7 /* Poppins-Thin.ttf */; };
+		9FBE4FB82B874D6C00EA8ED7 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE4FA62B874D6B00EA8ED7 /* Poppins-SemiBold.ttf */; };
+		9FBE4FBA2B874D6C00EA8ED7 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE4FA82B874D6B00EA8ED7 /* Poppins-Black.ttf */; };
+		9FBE4FBB2B874D6C00EA8ED7 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE4FA92B874D6B00EA8ED7 /* Poppins-ExtraBold.ttf */; };
+		9FBE4FBC2B874D6C00EA8ED7 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE4FAA2B874D6B00EA8ED7 /* Poppins-Medium.ttf */; };
+		9FBE4FC02B874D6C00EA8ED7 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE4FAE2B874D6B00EA8ED7 /* Poppins-Bold.ttf */; };
+		9FBE4FC32B874D6C00EA8ED7 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE4FB12B874D6C00EA8ED7 /* Poppins-Regular.ttf */; };
+		9FBE4FC42B874D6C00EA8ED7 /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE4FB22B874D6C00EA8ED7 /* Poppins-ExtraLight.ttf */; };
+		9FBE4FC92B874F1000EA8ED7 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE4FC82B874F1000EA8ED7 /* NavigationButton.swift */; };
+		9FBE4FCC2B875AA900EA8ED7 /* ColorExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE4FCB2B875AA900EA8ED7 /* ColorExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +32,18 @@
 		9F0265282B84DF60001F1AD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F02652B2B84DF60001F1AD3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9F0265322B84E0FF001F1AD3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9FBE4FA12B874D6B00EA8ED7 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		9FBE4FA22B874D6B00EA8ED7 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
+		9FBE4FA62B874D6B00EA8ED7 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		9FBE4FA82B874D6B00EA8ED7 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
+		9FBE4FA92B874D6B00EA8ED7 /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		9FBE4FAA2B874D6B00EA8ED7 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		9FBE4FAE2B874D6B00EA8ED7 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		9FBE4FB12B874D6C00EA8ED7 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		9FBE4FB22B874D6C00EA8ED7 /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
+		9FBE4FC62B874E0500EA8ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9FBE4FC82B874F1000EA8ED7 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
+		9FBE4FCB2B875AA900EA8ED7 /* ColorExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +77,10 @@
 		9F0265232B84DF5F001F1AD3 /* SwiftUIPokedex */ = {
 			isa = PBXGroup;
 			children = (
+				9FBE4FCA2B875A9800EA8ED7 /* Util */,
+				9FBE4FC72B874EF100EA8ED7 /* Components */,
+				9FBE4FC62B874E0500EA8ED7 /* Info.plist */,
+				9FBE4FC52B874D7F00EA8ED7 /* Fonts */,
 				9F0265242B84DF5F001F1AD3 /* SwiftUIPokedexApp.swift */,
 				9F0265262B84DF5F001F1AD3 /* ContentView.swift */,
 				9F0265282B84DF60001F1AD3 /* Assets.xcassets */,
@@ -68,6 +95,38 @@
 				9F02652B2B84DF60001F1AD3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9FBE4FC52B874D7F00EA8ED7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE4FA82B874D6B00EA8ED7 /* Poppins-Black.ttf */,
+				9FBE4FAE2B874D6B00EA8ED7 /* Poppins-Bold.ttf */,
+				9FBE4FA92B874D6B00EA8ED7 /* Poppins-ExtraBold.ttf */,
+				9FBE4FB22B874D6C00EA8ED7 /* Poppins-ExtraLight.ttf */,
+				9FBE4FA12B874D6B00EA8ED7 /* Poppins-Light.ttf */,
+				9FBE4FAA2B874D6B00EA8ED7 /* Poppins-Medium.ttf */,
+				9FBE4FB12B874D6C00EA8ED7 /* Poppins-Regular.ttf */,
+				9FBE4FA62B874D6B00EA8ED7 /* Poppins-SemiBold.ttf */,
+				9FBE4FA22B874D6B00EA8ED7 /* Poppins-Thin.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9FBE4FC72B874EF100EA8ED7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE4FC82B874F1000EA8ED7 /* NavigationButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9FBE4FCA2B875A9800EA8ED7 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE4FCB2B875AA900EA8ED7 /* ColorExt.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,8 +188,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F0265332B84E0FF001F1AD3 /* README.md in Resources */,
+				9FBE4FC42B874D6C00EA8ED7 /* Poppins-ExtraLight.ttf in Resources */,
+				9FBE4FBC2B874D6C00EA8ED7 /* Poppins-Medium.ttf in Resources */,
 				9F02652C2B84DF60001F1AD3 /* Preview Assets.xcassets in Resources */,
+				9FBE4FBB2B874D6C00EA8ED7 /* Poppins-ExtraBold.ttf in Resources */,
 				9F0265292B84DF60001F1AD3 /* Assets.xcassets in Resources */,
+				9FBE4FB82B874D6C00EA8ED7 /* Poppins-SemiBold.ttf in Resources */,
+				9FBE4FC02B874D6C00EA8ED7 /* Poppins-Bold.ttf in Resources */,
+				9FBE4FB32B874D6C00EA8ED7 /* Poppins-Light.ttf in Resources */,
+				9FBE4FBA2B874D6C00EA8ED7 /* Poppins-Black.ttf in Resources */,
+				9FBE4FB42B874D6C00EA8ED7 /* Poppins-Thin.ttf in Resources */,
+				9FBE4FC32B874D6C00EA8ED7 /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +210,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F0265272B84DF5F001F1AD3 /* ContentView.swift in Sources */,
+				9FBE4FCC2B875AA900EA8ED7 /* ColorExt.swift in Sources */,
 				9F0265252B84DF5F001F1AD3 /* SwiftUIPokedexApp.swift in Sources */,
+				9FBE4FC92B874F1000EA8ED7 /* NavigationButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +349,7 @@
 				DEVELOPMENT_TEAM = 2R5M774GJ7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftUIPokedex/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -308,6 +379,7 @@
 				DEVELOPMENT_TEAM = 2R5M774GJ7;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwiftUIPokedex/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

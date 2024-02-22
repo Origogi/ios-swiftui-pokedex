@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "RegionOff.png",
+      "filename" : "PokePin.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "RegionOff 1.png",
+      "filename" : "PokePin 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "RegionOff 2.png",
+      "filename" : "PokePin 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
