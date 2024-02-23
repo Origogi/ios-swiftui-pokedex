@@ -27,6 +27,8 @@
 		9FBE4FD32B883E4100EA8ED7 /* RegionPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE4FD22B883E4100EA8ED7 /* RegionPageView.swift */; };
 		9FBE4FD52B883E6300EA8ED7 /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE4FD42B883E6300EA8ED7 /* ProfilePageView.swift */; };
 		9FBE4FD92B883E8B00EA8ED7 /* FavoritePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE4FD82B883E8B00EA8ED7 /* FavoritePageView.swift */; };
+		9FBE4FDC2B88D13400EA8ED7 /* ElementTypeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE4FDB2B88D13400EA8ED7 /* ElementTypeInfo.swift */; };
+		9FBE4FDE2B88D70B00EA8ED7 /* ElementTypeChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE4FDD2B88D70B00EA8ED7 /* ElementTypeChip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		9FBE4FD22B883E4100EA8ED7 /* RegionPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionPageView.swift; sourceTree = "<group>"; };
 		9FBE4FD42B883E6300EA8ED7 /* ProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
 		9FBE4FD82B883E8B00EA8ED7 /* FavoritePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePageView.swift; sourceTree = "<group>"; };
+		9FBE4FDB2B88D13400EA8ED7 /* ElementTypeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTypeInfo.swift; sourceTree = "<group>"; };
+		9FBE4FDD2B88D70B00EA8ED7 /* ElementTypeChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTypeChip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,7 @@
 		9F0265232B84DF5F001F1AD3 /* SwiftUIPokedex */ = {
 			isa = PBXGroup;
 			children = (
+				9FBE4FDA2B88D11000EA8ED7 /* Data */,
 				9FBE4FCD2B883DAF00EA8ED7 /* Page */,
 				9F0265242B84DF5F001F1AD3 /* SwiftUIPokedexApp.swift */,
 				9F0265262B84DF5F001F1AD3 /* ContentView.swift */,
@@ -126,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				9FBE4FC82B874F1000EA8ED7 /* NavigationButton.swift */,
+				9FBE4FDD2B88D70B00EA8ED7 /* ElementTypeChip.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -147,6 +153,14 @@
 				9FBE4FD82B883E8B00EA8ED7 /* FavoritePageView.swift */,
 			);
 			path = Page;
+			sourceTree = "<group>";
+		};
+		9FBE4FDA2B88D11000EA8ED7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE4FDB2B88D13400EA8ED7 /* ElementTypeInfo.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,10 +243,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FBE4FDE2B88D70B00EA8ED7 /* ElementTypeChip.swift in Sources */,
 				9F0265272B84DF5F001F1AD3 /* ContentView.swift in Sources */,
 				9FBE4FD92B883E8B00EA8ED7 /* FavoritePageView.swift in Sources */,
 				9FBE4FCC2B875AA900EA8ED7 /* ColorExt.swift in Sources */,
 				9F0265252B84DF5F001F1AD3 /* SwiftUIPokedexApp.swift in Sources */,
+				9FBE4FDC2B88D13400EA8ED7 /* ElementTypeInfo.swift in Sources */,
 				9FBE4FD12B883E1A00EA8ED7 /* PokedexPageView.swift in Sources */,
 				9FBE4FC92B874F1000EA8ED7 /* NavigationButton.swift in Sources */,
 				9FBE4FD32B883E4100EA8ED7 /* RegionPageView.swift in Sources */,
