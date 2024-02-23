@@ -7,26 +7,25 @@
 
 import SwiftUI
 
-
-
 struct NavigationButton: View {
   let foregroundColor: Color
   let onImagePath : String
   let offImagePath : String
   let title : String
-  
-  @State var isActivated: Bool = true
+  let isActivated: Bool
   
   init(
     foregroundColor: Color,
     onImagePath: String,
     offImagePath: String,
+    isActivated: Bool,
     title: String
   ) {
     self.foregroundColor = foregroundColor
     self.onImagePath = onImagePath
     self.offImagePath = offImagePath
     self.title = title
+    self.isActivated = isActivated
   }
   
   var body: some View {
@@ -43,10 +42,6 @@ struct NavigationButton: View {
         .foregroundColor(Color(hex: "173EA5"))
         .offset(y : 31)
         .opacity(isActivated ? 1 : 0)
-    }.onTapGesture {
-      withAnimation {
-        isActivated.toggle()
-      }
     }
   }
 }
@@ -54,12 +49,12 @@ struct NavigationButton: View {
 #Preview {
   NavigationButton(
   
-    foregroundColor: Color.white, onImagePath: "PokedexOn", offImagePath: "PokedexOff", title: "Pokedex"
+    foregroundColor: Color.white, onImagePath: "PokedexOn", offImagePath: "PokedexOff", isActivated: true, title: "Pokedex"
   )
 }
 
 #Preview {
   NavigationButton(
-    foregroundColor: Color.white, onImagePath: "RegionOn", offImagePath: "RegionOff", title: "Region"
+    foregroundColor: Color.white, onImagePath: "RegionOn", offImagePath: "RegionOff", isActivated: false, title: "Region"
   )
 }
