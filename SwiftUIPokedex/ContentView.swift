@@ -56,6 +56,7 @@ struct ContentView: View {
   var body: some View {
     VStack {
       selectedTab.view
+      Divider()
       HStack {
         Spacer()
         ForEach(Tab.allCases, id: \.self) { tab in
@@ -77,8 +78,8 @@ struct ContentView: View {
           Spacer()
         }
         
-      }
-      .frame(maxWidth: .infinity)
+      }      
+      .frame(maxWidth: .infinity, maxHeight: 50)
     }
   }
 }
