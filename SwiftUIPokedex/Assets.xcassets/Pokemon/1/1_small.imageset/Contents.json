@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "grass.png",
+      "filename" : "1_small.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "grass 1.png",
+      "filename" : "1_small 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "grass 2.png",
+      "filename" : "1_small 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
