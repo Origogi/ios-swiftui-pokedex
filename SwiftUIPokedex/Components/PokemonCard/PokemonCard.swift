@@ -37,6 +37,7 @@ struct PokemonCard: View {
           Image(pokemonInfo.mediumImagePath)
             .resizable()
             .scaledToFit()
+            .padding(4)
           
           HStack {
             Spacer()
