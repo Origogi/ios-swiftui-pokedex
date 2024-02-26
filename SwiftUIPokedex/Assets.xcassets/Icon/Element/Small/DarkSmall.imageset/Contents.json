@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Vector-4.png",
+      "filename" : "Elemento Outline-11.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Elemento Outline-11 1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Elemento Outline-11 2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }
@@ -17,5 +19,8 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
   }
 }

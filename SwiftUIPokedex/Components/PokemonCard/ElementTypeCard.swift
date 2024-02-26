@@ -40,7 +40,9 @@ struct ElementTypeCard: View {
 }
 
 #Preview {
-  ElementTypeCard(
-    type: .fire
-  )
+  List {
+    ForEach(ElementTypeInfo.allCases, id: \.self) { type in
+      ElementTypeCard(type: type)
+    }
+  }
 }

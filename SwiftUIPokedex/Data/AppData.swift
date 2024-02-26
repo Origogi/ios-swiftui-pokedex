@@ -5,10 +5,10 @@
 //  Created by 김정태 on 2/25/24.
 //
 
-import Foundation
+import SwiftUI
+import Observation
 
-
-class AppData {
+@Observable class AppData {
   
   let pokemons : [PokemonInfo]
   

@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct PokedexPageView: View {
-    var body: some View {
-      VStack {
-        Text("Pokedex")
-
-      }
-      .frame(maxWidth: .infinity, maxHeight: .infinity)
+  
+  @Environment(AppData.self) private var appData
+  var body: some View {
+    List(appData.pokemons) { pokemon in
+      PokemonCard(pokemonInfo: pokemon)
+        .listRowSeparator(.hidden)
     }
+    .listStyle(.plain)
+    
+  }
 }
 
 #Preview {
-    PokedexPageView()
+  PokedexPageView()
+    .environment(AppData())
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PokemonInfo : Hashable {
+struct PokemonInfo : Hashable, Identifiable {
   let id : Int
   let name : String
   let smallImagePath : String

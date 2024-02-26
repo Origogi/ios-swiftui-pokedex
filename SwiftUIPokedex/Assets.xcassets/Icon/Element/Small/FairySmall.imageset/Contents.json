@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "FairySmall.png",
+      "filename" : "Elemento Outline-3.svg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "FairySmall 1.png",
+      "filename" : "Elemento Outline-3 1.svg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "FairySmall 2.png",
+      "filename" : "Elemento Outline-3 2.svg",
       "idiom" : "universal",
       "scale" : "3x"
     }
@@ -19,5 +19,8 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "preserves-vector-representation" : true
   }
 }
