@@ -13,9 +13,11 @@ struct PokedexPageView: View {
   var body: some View {
     List(appData.pokemons) { pokemon in
       PokemonCard(pokemonInfo: pokemon)
+        .listRowInsets(.init(top: 6, leading: 0, bottom: 6, trailing: 0))
         .listRowSeparator(.hidden)
     }
     .listStyle(.plain)
+    .padding(.horizontal, 16)
     
   }
 }

@@ -32,13 +32,21 @@ struct PokemonCard: View {
         .padding(.leading, 16)
         .padding(.vertical, 12)
         Spacer()
-        ZStack {
+        ZStack { // ZStack의 정렬을 우측 상단으로 설정
           ElementTypeCard(type: pokemonInfo.mainType)
           Image(pokemonInfo.mediumImagePath)
             .resizable()
             .scaledToFit()
           
-        }
+          HStack {
+            Spacer()
+            VStack {
+              FabButton(isFav: .constant(false))
+                .padding(6)
+              Spacer()
+            }
+          }
+        }.frame(maxWidth: 126, maxHeight: 100)
       }
     }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: 100)
       .background(pokemonInfo.mainType.secondaryColor)
@@ -53,9 +61,9 @@ struct PokemonCard: View {
 
 #Preview {
   
-  VStack {
+  List {
     ForEach(AppData().pokemons, id: \.self) { info in
       PokemonCard(pokemonInfo: info)
     }
-  }.padding()
+  }
 }

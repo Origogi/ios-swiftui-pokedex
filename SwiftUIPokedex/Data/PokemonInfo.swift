@@ -10,14 +10,23 @@ import Foundation
 struct PokemonInfo : Hashable, Identifiable {
   let id : Int
   let name : String
-  let smallImagePath : String
-  let mediumImagePath : String
-  let bigImagePath : String
+
   let types : [ElementTypeInfo]
   
   var mainType : ElementTypeInfo {
     return types.first!
   }
   
+  var smallImagePath : String {
+    return "\(id)_small"
+  }
+  
+  var mediumImagePath : String {
+    return "\(id)_medium"
+  }
+  
+  var bigImagePath : String {
+    return "\(id)_big"
+  }
   
 }

@@ -12,6 +12,7 @@
 		9F0265292B84DF60001F1AD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F0265282B84DF60001F1AD3 /* Assets.xcassets */; };
 		9F02652C2B84DF60001F1AD3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F02652B2B84DF60001F1AD3 /* Preview Assets.xcassets */; };
 		9F0265332B84E0FF001F1AD3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9F0265322B84E0FF001F1AD3 /* README.md */; };
+		9F07B85A2B8C4C0D00BE905F /* FabButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F07B8592B8C4C0D00BE905F /* FabButton.swift */; };
 		9FBE4FB32B874D6C00EA8ED7 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE4FA12B874D6B00EA8ED7 /* Poppins-Light.ttf */; };
 		9FBE4FB42B874D6C00EA8ED7 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE4FA22B874D6B00EA8ED7 /* Poppins-Thin.ttf */; };
 		9FBE4FB82B874D6C00EA8ED7 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE4FA62B874D6B00EA8ED7 /* Poppins-SemiBold.ttf */; };
@@ -42,6 +43,7 @@
 		9F0265282B84DF60001F1AD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F02652B2B84DF60001F1AD3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9F0265322B84E0FF001F1AD3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		9F07B8592B8C4C0D00BE905F /* FabButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FabButton.swift; sourceTree = "<group>"; };
 		9FBE4FA12B874D6B00EA8ED7 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
 		9FBE4FA22B874D6B00EA8ED7 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
 		9FBE4FA62B874D6B00EA8ED7 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -119,6 +121,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		9F07B8582B8C4BF400BE905F /* Compoents */ = {
+			isa = PBXGroup;
+			children = (
+				9FBE4FDD2B88D70B00EA8ED7 /* ElementTypeChip.swift */,
+				9FD705402B8AC08400CBFA42 /* ElementTypeCard.swift */,
+				9F07B8592B8C4C0D00BE905F /* FabButton.swift */,
+			);
+			path = Compoents;
+			sourceTree = "<group>";
+		};
 		9FBE4FC52B874D7F00EA8ED7 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,8 +188,7 @@
 		9FD7053F2B8AC04100CBFA42 /* PokemonCard */ = {
 			isa = PBXGroup;
 			children = (
-				9FBE4FDD2B88D70B00EA8ED7 /* ElementTypeChip.swift */,
-				9FD705402B8AC08400CBFA42 /* ElementTypeCard.swift */,
+				9F07B8582B8C4BF400BE905F /* Compoents */,
 				9FD705462B8ACCC700CBFA42 /* PokemonCard.swift */,
 			);
 			path = PokemonCard;
@@ -264,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FD705452B8AC47700CBFA42 /* AppData.swift in Sources */,
+				9F07B85A2B8C4C0D00BE905F /* FabButton.swift in Sources */,
 				9FBE4FDE2B88D70B00EA8ED7 /* ElementTypeChip.swift in Sources */,
 				9F0265272B84DF5F001F1AD3 /* ContentView.swift in Sources */,
 				9FBE4FD92B883E8B00EA8ED7 /* FavoritePageView.swift in Sources */,

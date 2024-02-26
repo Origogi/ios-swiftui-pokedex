@@ -11,15 +11,15 @@ import Observation
 @Observable class AppData {
   
   let pokemons : [PokemonInfo]
+  var myFavorites : Set<Int>
   
   init() {
+    self.myFavorites = []
+    
     self.pokemons = [
       PokemonInfo(
         id: 1,
         name: "Bulbasaur",
-        smallImagePath: "1_small",
-        mediumImagePath: "1_medium",
-        bigImagePath: "1_big",
         types: [
           .grass,
           .poison,
@@ -28,9 +28,14 @@ import Observation
       PokemonInfo(
         id: 2,
         name: "Ivysaur",
-        smallImagePath: "2_small",
-        mediumImagePath: "2_medium",
-        bigImagePath: "2_big",
+        types: [
+          .grass,
+          .poison,
+        ]
+      ),
+      PokemonInfo(
+        id: 3,
+        name: "Venusaur",
         types: [
           .grass,
           .poison,
@@ -39,13 +44,171 @@ import Observation
       PokemonInfo(
         id: 4,
         name: "Charmander",
-        smallImagePath: "4_small",
-        mediumImagePath: "4_medium",
-        bigImagePath: "4_big",
         types: [
           .fire
         ]
-      )
+      ),
+      PokemonInfo(
+        id: 5,
+        name: "Charmeleon",
+        types: [
+          .fire
+        ]
+      ),
+      PokemonInfo(
+        id: 6,
+        name: "Charizard",
+        types: [
+          .fire,
+          .flying
+        ]
+      ),
+      PokemonInfo(
+        id: 7,
+        name: "Squirtle",
+        types: [
+          .water
+        ]
+      ),
+      PokemonInfo(
+        id: 8,
+        name: "Wartortle",
+        types: [
+          .water
+        ]
+      ),
+      PokemonInfo(
+        id: 9,
+        name: "Blastoise",
+        types: [
+          .water
+        ]
+      ),
+      PokemonInfo(
+        id: 15,
+        name: "Beedrill",
+        types: [
+          .bug,
+          .poison
+        ]
+      ),
+      PokemonInfo(
+        id: 25,
+        name: "Pikachu",
+        types: [
+          .electric
+        ]
+      ),
+      PokemonInfo(
+        id: 35,
+        name: "Clefairy",
+        types: [
+          .fairy
+        ]
+      ),
+      PokemonInfo(
+        id: 51,
+        name: "Dugtrio",
+        types: [
+          .ground
+        ]
+      ),
+      PokemonInfo(
+        id: 95,
+        name: "Onix",
+        types: [
+          .rock,
+          .ground
+        ]
+      ),
+      PokemonInfo(
+        id: 108,
+        name: "Lickitung",
+        types: [
+          .normal
+        ]
+      ),
+      PokemonInfo(
+        id: 109,
+        name: "Koffing",
+        types: [
+          .poison
+        ]
+      ),
+      PokemonInfo(
+        id: 151,
+        name: "Mew",
+        types: [
+          .psychic
+        ]
+      ),
+      PokemonInfo(
+        id: 245,
+        name: "Suicune",
+        types: [
+          .water
+        ]
+      ),
+      PokemonInfo(
+        id: 306,
+        name: "Aggron",
+        types: [
+          .steel,
+          .ground
+        ]
+      ),
+      PokemonInfo(
+        id: 384,
+        name: "Rayquaza",
+        types: [
+          .dragon,
+        ]
+      ),
+      PokemonInfo(
+        id: 448,
+        name: "Lucario",
+        types: [
+          .fighting,
+          .steel
+        ]
+      ),
+      PokemonInfo(
+        id: 497,
+        name: "Serperior",
+        types: [
+          .grass
+        ]
+      ),
+      PokemonInfo(
+        id: 571,
+        name: "Zoroark",
+        types: [
+          .dark
+        ]
+      ),
+      PokemonInfo(
+        id: 609,
+        name: "Chandelure",
+        types: [
+          .ghost,
+          .fire
+        ]
+      ),
+      PokemonInfo(
+        id: 613,
+        name: "Cubchoo",
+        types: [
+          .ice
+        ]
+      ),
+      PokemonInfo(
+        id: 733,
+        name: "Toucannon",
+        types: [
+          .flying,
+          .normal
+        ]
+      ),
     ]
   }
 }
