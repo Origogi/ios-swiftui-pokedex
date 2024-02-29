@@ -55,7 +55,15 @@ struct ContentView: View {
   
   var body: some View {
     VStack(spacing: 0) {
-      selectedTab.view
+      TabView(selection: $selectedTab) {
+        ForEach(Tab.allCases, id: \.self) { tab in
+          tab.view
+            .tag(tab)
+        }
+      }
+      .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+      
+
       Divider()
       HStack {
         Spacer()
@@ -77,7 +85,8 @@ struct ContentView: View {
         
       }      
       .frame(maxWidth: .infinity, maxHeight: 60)
-    }.safeAreaInset(edge: .top, alignment: .center, spacing: 0) {
+    }
+    .safeAreaInset(edge: .top, alignment: .center, spacing: 0) {
       Color.clear
         .frame(height: 10)
         .background(Material.bar)
