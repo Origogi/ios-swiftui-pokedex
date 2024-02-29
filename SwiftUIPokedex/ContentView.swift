@@ -54,32 +54,29 @@ struct ContentView: View {
   @State private var selectedTab: Tab = .pokedex
   
   var body: some View {
-    VStack {
+    VStack(spacing: 0) {
       selectedTab.view
       Divider()
       HStack {
         Spacer()
         ForEach(Tab.allCases, id: \.self) { tab in
-          Button(action: {
-            if (self.selectedTab != tab) {
-              withAnimation {
-                self.selectedTab = tab
-              }
+          
+          NavigationButton(
+            foregroundColor: Color.white,
+            onImagePath: tab.onImagePath,
+            offImagePath: tab.offImagePath,
+            isActivated: selectedTab == tab,
+            title: tab.title
+          ).onTapGesture {
+            withAnimation {
+              selectedTab = tab
             }
-          }) {
-            NavigationButton(
-              foregroundColor: .white,
-              onImagePath: tab.onImagePath,
-              offImagePath: tab.offImagePath,
-              isActivated: selectedTab == tab,
-              title: tab.title
-            )
           }
           Spacer()
         }
         
       }      
-      .frame(maxWidth: .infinity, maxHeight: 50)
+      .frame(maxWidth: .infinity, maxHeight: 60)
     }
   }
 }
