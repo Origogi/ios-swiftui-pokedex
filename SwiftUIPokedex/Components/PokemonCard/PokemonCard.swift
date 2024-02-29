@@ -20,14 +20,18 @@ struct PokemonCard: View {
               Color(hex : "#333333")
             )
           Text(pokemonInfo.name)
-            .font(.custom("Poppins-SemiBold", size: 21))
+            .font(.custom("Poppins-SemiBold", size: 21)
+            )
+            .foregroundColor(
+              Color(hex : "#000000")
+            )
           Spacer()
           HStack {
             ForEach(pokemonInfo.types, id: \.self) { type in
               ElementTypeChip(type: type)
             }
           }
-         
+          
         }
         .padding(.leading, 16)
         .padding(.vertical, 12)

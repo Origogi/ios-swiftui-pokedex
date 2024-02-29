@@ -42,8 +42,8 @@ enum Tab : CaseIterable {
   @ViewBuilder
   var view: some View {
     switch self {
-    case .pokedex: PokedexPageView()
-    case .region: RegionPageView()
+    case .pokedex: PokedexTabView()
+    case .region: RegionTabView()
     case .favorite: FavoritePageView()
     case .profile: ProfilePageView()
     }
@@ -54,42 +54,44 @@ struct ContentView: View {
   @State private var selectedTab: Tab = .pokedex
   
   var body: some View {
-    VStack(spacing: 0) {
-      TabView(selection: $selectedTab) {
-        ForEach(Tab.allCases, id: \.self) { tab in
-          tab.view
-            .tag(tab)
-        }
-      }
-      .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-      
-
-      Divider()
-      HStack {
-        Spacer()
-        ForEach(Tab.allCases, id: \.self) { tab in
-          
-          NavigationButton(
-            foregroundColor: Color.white,
-            onImagePath: tab.onImagePath,
-            offImagePath: tab.offImagePath,
-            isActivated: selectedTab == tab,
-            title: tab.title
-          ).onTapGesture {
-            withAnimation {
-              selectedTab = tab
-            }
+    NavigationView {
+      VStack(spacing: 0) {
+        TabView(selection: $selectedTab) {
+          ForEach(Tab.allCases, id: \.self) { tab in
+            tab.view
+              .tag(tab)
           }
-          Spacer()
         }
+        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         
-      }      
-      .frame(maxWidth: .infinity, maxHeight: 60)
+
+        Divider()
+        HStack {
+          Spacer()
+          ForEach(Tab.allCases, id: \.self) { tab in
+            
+            TabViewBottomButton(
+              foregroundColor: Color.white,
+              onImagePath: tab.onImagePath,
+              offImagePath: tab.offImagePath,
+              isActivated: selectedTab == tab,
+              title: tab.title
+            ).onTapGesture {
+              withAnimation {
+                selectedTab = tab
+              }
+            }
+            Spacer()
+          }
+          
+        }      
+        .frame(maxWidth: .infinity, maxHeight: 60)
+      }
+      .safeAreaInset(edge: .top, alignment: .center, spacing: 0) {
+        Color.clear
+          .frame(height: 10)
+          .background(Material.bar)
     }
-    .safeAreaInset(edge: .top, alignment: .center, spacing: 0) {
-      Color.clear
-        .frame(height: 10)
-        .background(Material.bar)
     }
   }
 }

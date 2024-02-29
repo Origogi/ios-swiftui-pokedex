@@ -7,14 +7,16 @@
 
 import SwiftUI
 
-struct PokedexPageView: View {
+struct PokedexTabView: View {
   
   @Environment(AppData.self) private var appData
   var body: some View {
     ScrollView {
       LazyVStack(spacing : 12) {
         ForEach(appData.pokemons) { pokemon in
-          PokemonCard(pokemonInfo: pokemon)
+          NavigationLink(destination: PokemonDetailScreen(pokemon: pokemon)) {
+            PokemonCard(pokemonInfo: pokemon)
+          }
         }
       }.padding(.horizontal, 16)
     }
@@ -23,6 +25,8 @@ struct PokedexPageView: View {
 }
 
 #Preview {
-  PokedexPageView()
-    .environment(AppData())
+  NavigationView {
+    PokedexTabView()
+      .environment(AppData())
+  }
 }

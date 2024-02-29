@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NavigationButton: View {
+struct TabViewBottomButton: View {
   let foregroundColor: Color
   let onImagePath : String
   let offImagePath : String
@@ -47,14 +47,14 @@ struct NavigationButton: View {
 }
 
 #Preview {
-  NavigationButton(
+  TabViewBottomButton(
   
     foregroundColor: Color.white, onImagePath: "PokedexOn", offImagePath: "PokedexOff", isActivated: true, title: "Pokedex"
   )
 }
 
 #Preview {
-  NavigationButton(
+  TabViewBottomButton(
     foregroundColor: Color.white, onImagePath: "RegionOn", offImagePath: "RegionOff", isActivated: false, title: "Region"
   )
 }

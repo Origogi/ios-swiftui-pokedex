@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct RegionPageView: View {
+struct RegionTabView: View {
     var body: some View {
       VStack {
         Text("Region Page")
@@ -18,5 +18,5 @@ struct RegionPageView: View {
 }
 
 #Preview {
-    RegionPageView()
+    RegionTabView()
 }
