@@ -10,6 +10,11 @@ import Foundation
 struct PokemonInfo : Hashable, Identifiable {
   let id : Int
   let name : String
+  let weight: Double
+  let height: Double
+  let category: String
+  let abilities: String
+  let description : String
 
   let types : [ElementTypeInfo]
   

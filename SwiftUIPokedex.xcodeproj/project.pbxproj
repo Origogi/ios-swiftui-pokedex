@@ -32,6 +32,7 @@
 		9FBE4FDC2B88D13400EA8ED7 /* ElementTypeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE4FDB2B88D13400EA8ED7 /* ElementTypeInfo.swift */; };
 		9FBE4FDE2B88D70B00EA8ED7 /* ElementTypeChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE4FDD2B88D70B00EA8ED7 /* ElementTypeChip.swift */; };
 		9FD18FFE2B93FC0800196B2C /* IntExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD18FFD2B93FC0800196B2C /* IntExt.swift */; };
+		9FD190002B940EC900196B2C /* StatusChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD18FFF2B940EC900196B2C /* StatusChip.swift */; };
 		9FD705412B8AC08400CBFA42 /* ElementTypeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD705402B8AC08400CBFA42 /* ElementTypeCard.swift */; };
 		9FD705432B8AC3FC00CBFA42 /* PokemonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD705422B8AC3FC00CBFA42 /* PokemonInfo.swift */; };
 		9FD705452B8AC47700CBFA42 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD705442B8AC47700CBFA42 /* AppData.swift */; };
@@ -66,6 +67,7 @@
 		9FBE4FDB2B88D13400EA8ED7 /* ElementTypeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTypeInfo.swift; sourceTree = "<group>"; };
 		9FBE4FDD2B88D70B00EA8ED7 /* ElementTypeChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTypeChip.swift; sourceTree = "<group>"; };
 		9FD18FFD2B93FC0800196B2C /* IntExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExt.swift; sourceTree = "<group>"; };
+		9FD18FFF2B940EC900196B2C /* StatusChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusChip.swift; sourceTree = "<group>"; };
 		9FD705402B8AC08400CBFA42 /* ElementTypeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTypeCard.swift; sourceTree = "<group>"; };
 		9FD705422B8AC3FC00CBFA42 /* PokemonInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonInfo.swift; sourceTree = "<group>"; };
 		9FD705442B8AC47700CBFA42 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
@@ -127,16 +129,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		9F07B8582B8C4BF400BE905F /* Compoents */ = {
-			isa = PBXGroup;
-			children = (
-				9FBE4FDD2B88D70B00EA8ED7 /* ElementTypeChip.swift */,
-				9FD705402B8AC08400CBFA42 /* ElementTypeCard.swift */,
-				9F07B8592B8C4C0D00BE905F /* FabButton.swift */,
-			);
-			path = Compoents;
-			sourceTree = "<group>";
-		};
 		9F44882D2B90A852005F0F96 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,8 +156,12 @@
 		9FBE4FC72B874EF100EA8ED7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				9FD7053F2B8AC04100CBFA42 /* PokemonCard */,
+				9FBE4FDD2B88D70B00EA8ED7 /* ElementTypeChip.swift */,
+				9FD705402B8AC08400CBFA42 /* ElementTypeCard.swift */,
+				9F07B8592B8C4C0D00BE905F /* FabButton.swift */,
+				9FD705462B8ACCC700CBFA42 /* PokemonCard.swift */,
 				9FBE4FC82B874F1000EA8ED7 /* TabViewBottomButton.swift */,
+				9FD18FFF2B940EC900196B2C /* StatusChip.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -205,15 +201,6 @@
 			children = (
 			);
 			path = "New Group";
-			sourceTree = "<group>";
-		};
-		9FD7053F2B8AC04100CBFA42 /* PokemonCard */ = {
-			isa = PBXGroup;
-			children = (
-				9F07B8582B8C4BF400BE905F /* Compoents */,
-				9FD705462B8ACCC700CBFA42 /* PokemonCard.swift */,
-			);
-			path = PokemonCard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,6 +290,7 @@
 				9FD18FFE2B93FC0800196B2C /* IntExt.swift in Sources */,
 				9F0265272B84DF5F001F1AD3 /* ContentView.swift in Sources */,
 				9FBE4FD92B883E8B00EA8ED7 /* FavoritePageView.swift in Sources */,
+				9FD190002B940EC900196B2C /* StatusChip.swift in Sources */,
 				9FBE4FCC2B875AA900EA8ED7 /* ColorExt.swift in Sources */,
 				9F0265252B84DF5F001F1AD3 /* SwiftUIPokedexApp.swift in Sources */,
 				9FD705432B8AC3FC00CBFA42 /* PokemonInfo.swift in Sources */,

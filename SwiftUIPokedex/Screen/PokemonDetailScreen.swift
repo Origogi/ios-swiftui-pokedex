@@ -47,17 +47,44 @@ struct PokemonDetailScreen: View {
             endPoint: .bottomTrailing
           )
         )
-        VStack {
+        VStack(alignment: .leading) {
           Text(pokemon.name)
             .font(.custom("Poppins-Medium", size: 32))
+          Text(pokemon.id.pokemonNum())
+            .font(.custom("Poppins-Medium", size: 16))
+            .foregroundColor(Color(hex: "#333333"))
+          HStack {
+            ForEach(pokemon.types, id: \.self) { type in
+              ElementTypeChip(type: type)
+            }
+          }
+          Spacer()
+            .frame(height: 24)
+          Text(pokemon.description)
+            .font(.custom("Poppins-Regular", size: 14))
+            .foregroundColor(Color(hex: "#333333").opacity(0.7))
+          Divider()
+            .padding(.vertical, 16)
+          
         }
         .padding(.horizontal, 16)
         .padding(.top, 30)
+        
         Spacer()
-
-   
       }
     }
+  }
+}
+
+struct PokemonStausInfosView: View {
+  let pokemon: PokemonInfo
+  
+  init(pokemon: PokemonInfo) {
+    self.pokemon = pokemon
+  }
+  
+  var body: some View {
+    Text("Hello, World!")
   }
 }
 
