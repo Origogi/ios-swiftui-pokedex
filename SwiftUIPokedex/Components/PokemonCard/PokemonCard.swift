@@ -14,7 +14,7 @@ struct PokemonCard: View {
     ZStack {
       HStack {
         VStack(alignment: .leading, spacing: 0) {
-          Text(formatNumber(pokemonInfo.id))
+          Text(pokemonInfo.id.pokemonNum())
             .font(.custom("Poppins-SemiBold", size: 12))
             .foregroundColor(
               Color(hex : "#333333")
@@ -57,10 +57,6 @@ struct PokemonCard: View {
       .background(pokemonInfo.mainType.secondaryColor)
       .cornerRadius(15)
     
-  }
-  
-  func formatNumber(_ number: Int) -> String {
-    return String(format: "Nº%03d", number)
   }
 }
 
