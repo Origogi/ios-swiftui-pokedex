@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct StatusChip: View {
+struct StatusView: View {
   let statusName: String
   let value : String
   let iconPath: String
@@ -21,21 +21,30 @@ struct StatusChip: View {
         Text(statusName)
           .font(.custom("Poppins-Medium", size: 12))
           .foregroundColor(Color(hex: "#333333").opacity(0.7))
-          
+        
       }
-      Text(value)
-        .font(.custom("Poppins-Medium", size: 18))
-        .foregroundColor(Color.black).opacity(0.9)
-        .padding(.vertical, 8 )
-        .frame(width: .infinity)
+      HStack {
+        Spacer()
+        Text(value)
+          .font(.custom("Poppins-Medium", size: 18))
+        
+          .foregroundColor(Color.black).opacity(0.9)
+          .padding(.vertical, 8 )
+        
+        Spacer()
+        
+      }.overlay(
+        RoundedRectangle(cornerRadius: 15)
+          .stroke(Color.black.opacity(0.1), lineWidth: 1)
+      )
     }
   }
 }
 
 #Preview {
-  StatusChip(
+  StatusView(
     statusName: "Weight",
     value: "5.2 kg",
     iconPath: "Weight"
-  )
+  ).frame(width: 150, height: 100)
 }

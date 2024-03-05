@@ -65,6 +65,7 @@ struct PokemonDetailScreen: View {
             .foregroundColor(Color(hex: "#333333").opacity(0.7))
           Divider()
             .padding(.vertical, 16)
+          StatusGroupView(pokemon: pokemon)
           
         }
         .padding(.horizontal, 16)
