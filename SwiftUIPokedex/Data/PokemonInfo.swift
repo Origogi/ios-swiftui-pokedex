@@ -8,6 +8,7 @@
 import Foundation
 
 struct PokemonInfo : Hashable, Identifiable {
+  
   let id : Int
   let name : String
   let weight: Double
@@ -15,6 +16,7 @@ struct PokemonInfo : Hashable, Identifiable {
   let category: String
   let abilities: String
   let description : String
+  let detailImageInfo : PokemonDetailImageInfo
 
   let types : [ElementTypeInfo]
   
@@ -29,9 +31,6 @@ struct PokemonInfo : Hashable, Identifiable {
   var mediumImagePath : String {
     return "\(id)_medium"
   }
-  
-  var bigImagePath : String {
-    return "\(id)_big"
-  }
+
   
 }

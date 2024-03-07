@@ -9,11 +9,12 @@ import SwiftUI
 
 struct PokedexTabView: View {
   
-  @Environment(AppData.self) private var appData
+  let pokemons : [PokemonInfo]
+  
   var body: some View {
     ScrollView {
       LazyVStack(spacing : 12) {
-        ForEach(appData.pokemons) { pokemon in
+        ForEach(pokemons) { pokemon in
           NavigationLink(destination: PokemonDetailScreen(pokemon: pokemon)) {
             PokemonCard(pokemonInfo: pokemon)
           }
@@ -26,7 +27,6 @@ struct PokedexTabView: View {
 
 #Preview {
   NavigationView {
-    PokedexTabView()
-      .environment(AppData())
+    PokedexTabView(pokemons : AppData().pokemons)
   }
 }

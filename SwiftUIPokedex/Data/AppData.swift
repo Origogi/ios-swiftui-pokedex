@@ -8,13 +8,11 @@
 import SwiftUI
 import Observation
 
-@Observable class AppData {
+class AppData {
   
   let pokemons : [PokemonInfo]
-  var myFavorites : Set<Int>
   
   init() {
-    self.myFavorites = []
     
     self.pokemons = [
       PokemonInfo(
@@ -24,7 +22,13 @@ import Observation
         height: 0.7,
         category: "Seed",
         abilities: "Overgrow",
-        description: "There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.", types: [
+        description: "There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.", 
+        detailImageInfo: PokemonDetailImageInfo(
+          id: 1,
+          width : 150,
+          height: 150
+        ),
+        types: [
           .grass,
           .poison,
         ]
@@ -36,7 +40,13 @@ import Observation
         height: 0.7,
         category: "Seed",
         abilities: "Overgrow",
-        description: "When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.", types: [
+        description: "When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.",
+        detailImageInfo: PokemonDetailImageInfo(
+          id: 1,
+          width : 150,
+          height: 150
+        ),
+        types: [
           .grass,
           .poison,
         ]
@@ -48,7 +58,13 @@ import Observation
         height: 0.7,
         category: "Seed",
         abilities: "Overgrow",
-        description: "Its plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.", types: [
+        description: "Its plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.",
+        detailImageInfo: PokemonDetailImageInfo(
+          id : 1,
+          width : 150,
+          height: 150
+        ),
+        types: [
           .grass,
           .poison,
         ]
@@ -60,7 +76,13 @@ import Observation
         height: 0.7,
         category: "Seed",
         abilities: "Overgrow",
-        description: "The flame at the tip of its tail makes a sound as it burns. You can only hear it in quiet places.", types: [
+        description: "The flame at the tip of its tail makes a sound as it burns. You can only hear it in quiet places.",
+        detailImageInfo: PokemonDetailImageInfo(
+          id : 1,
+          width : 150,
+          height: 150
+        ),
+        types: [
           .fire
         ]
       ),
@@ -71,7 +93,13 @@ import Observation
         height: 0.7,
         category: "Seed",
         abilities: "Overgrow",
-        description: "It has a barbaric nature. In battle, it whips its fiery tail around and slashes away with sharp claws.", types: [
+        description: "It has a barbaric nature. In battle, it whips its fiery tail around and slashes away with sharp claws.",
+        detailImageInfo: PokemonDetailImageInfo(
+          id : 1,
+          width : 150,
+          height: 150
+        ),
+        types: [
           .fire
         ]
       ),
@@ -82,7 +110,13 @@ import Observation
         height: 0.7,
         category: "Seed",
         abilities: "Overgrow",
-        description: "It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.", types: [
+        description: "It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.", 
+        detailImageInfo: PokemonDetailImageInfo(
+          id : 1,
+          width : 150,
+          height: 150
+        ),
+        types: [
           .fire,
           .flying
         ]
@@ -94,7 +128,13 @@ import Observation
         height: 0.7,
         category: "Seed",
         abilities: "Overgrow",
-        description: "When it retracts its long neck into its shell, it squirts out water with vigorous force.", types: [
+        description: "When it retracts its long neck into its shell, it squirts out water with vigorous force.",
+        detailImageInfo: PokemonDetailImageInfo(
+          id : 1,
+          width : 150,
+          height: 150
+        ),
+        types: [
           .water
         ]
       ),
@@ -105,7 +145,13 @@ import Observation
         height: 0.7,
         category: "Seed",
         abilities: "Overgrow",
-        description: "It is recognized as a symbol of longevity. If its shell has algae on it, that Wartortle is very old.", types: [
+        description: "It is recognized as a symbol of longevity. If its shell has algae on it, that Wartortle is very old.",
+        detailImageInfo: PokemonDetailImageInfo(
+          id : 1,
+          width : 150,
+          height: 150
+        ),
+        types: [
           .water
         ]
       ),
@@ -116,7 +162,13 @@ import Observation
         height: 0.7,
         category: "Seed",
         abilities: "Overgrow",
-        description: "The rocket cannons on its shell fire jets of water capable of punching holes through thick steel.", types: [
+        description: "The rocket cannons on its shell fire jets of water capable of punching holes through thick steel.",
+        detailImageInfo: PokemonDetailImageInfo(
+          id : 1,
+          width : 150,
+          height: 150
+        ),
+        types: [
           .water
         ]
       ),
@@ -127,7 +179,13 @@ import Observation
         height: 0.7,
         category: "Seed",
         abilities: "Overgrow",
-        description: "It has three poisonous stingers on its forelegs and its tail. They are used to jab its enemy repeatedly.", types: [
+        description: "It has three poisonous stingers on its forelegs and its tail. They are used to jab its enemy repeatedly.",
+        detailImageInfo: PokemonDetailImageInfo(
+          id : 1,
+          width : 150,
+          height: 150
+        ),
+        types: [
           .bug,
           .poison
         ]
@@ -139,7 +197,13 @@ import Observation
         height: 0.7,
         category: "Seed",
         abilities: "Overgrow",
-        description: "It raises its tail to check its surroundings. The tail is sometimes struck by lightning in this pose.", types: [
+        description: "It raises its tail to check its surroundings. The tail is sometimes struck by lightning in this pose.", 
+        detailImageInfo: PokemonDetailImageInfo(
+          id: 1,
+          width : 150,
+          height: 150
+        ),
+        types: [
           .electric
         ]
       ),
@@ -151,6 +215,11 @@ import Observation
         category: "Seed",
         abilities: "Overgrow",
         description: "On every night of a full moon, groups of this Pokémon come out to play. When dawn arrives, the tired Clefairy return to their quiet mountain retreats and go to sleep nestled up against each other.",
+        detailImageInfo: PokemonDetailImageInfo(
+          id: 1,
+          width : 150,
+          height: 150
+        ),
         types: [
           .fairy
         ]
@@ -162,7 +231,12 @@ import Observation
         height: 0.7,
         category: "Seed",
         abilities: "Overgrow",
-        description: "A team of Diglett triplets. It triggers huge earthquakes by burrowing 60 miles underground.",
+        description: "As it digs through the ground, it absorbs many hard objects. This is what makes its body so solid.",
+        detailImageInfo: PokemonDetailImageInfo(
+          id: 1,
+          width : 150,
+          height: 150
+        ),
         types: [
           .ground
         ]
@@ -175,6 +249,11 @@ import Observation
         category: "Seed",
         abilities: "Overgrow",
         description: "As it digs through the ground, it absorbs many hard objects. This is what makes its body so solid.",
+        detailImageInfo: PokemonDetailImageInfo(
+          id: 1,
+          width : 150,
+          height: 150
+        ),
         types: [
           .rock,
           .ground
@@ -187,7 +266,12 @@ import Observation
         height: 0.7,
         category: "Seed",
         abilities: "Overgrow",
-        description: "Whenever Lickitung comes across something new, it will unfailingly give it a lick. It does so because it memorizes things by texture and by taste. It is somewhat put off by sour things.",
+        description: "Whenever Lickitung comes across something new, it will unfailingly give it a lick. It does so because it memorizes things by texture and by taste. It is somewhat put off by sour things.", 
+        detailImageInfo: PokemonDetailImageInfo(
+          id: 1,
+          width : 150,
+          height: 150
+        ),
         types: [
           .normal
         ]
@@ -199,7 +283,13 @@ import Observation
         height: 0.7,
         category: "Seed",
         abilities: "Overgrow",
+        
         description: "If Koffing becomes agitated, it raises the toxicity of its internal gases and jets them out from all over its body. This Pokémon may also overinflate its round body, then explode.",
+        detailImageInfo: PokemonDetailImageInfo(
+          id: 1,
+          width : 150,
+          height: 150
+        ),
         types: [
           .poison
         ]
@@ -212,6 +302,11 @@ import Observation
         category: "Seed",
         abilities: "Overgrow",
         description: "Because it can learn any move, some people began research to see if it is the ancestor of all Pokémon.",
+        detailImageInfo: PokemonDetailImageInfo(
+          id: 1,
+          width : 150,
+          height: 150
+        ),
         types: [
           .psychic
         ]
@@ -224,6 +319,11 @@ import Observation
         category: "Seed",
         abilities: "Overgrow",
         description: "Said to be the reincarnation of north winds, it can instantly purify filthy, murky water.",
+        detailImageInfo: PokemonDetailImageInfo(
+          id: 1,
+          width : 150,
+          height: 150
+        ),
         types: [
           .water
         ]
@@ -236,6 +336,11 @@ import Observation
         category: "Seed",
         abilities: "Overgrow",
         description: "Aggron claims an entire mountain as its own territory. It mercilessly beats up anything that violates its environment. This Pokémon vigilantly patrols its territory at all times.",
+        detailImageInfo: PokemonDetailImageInfo(
+          id: 1,
+          width : 150,
+          height: 150
+        ),
         types: [
           .steel,
           .ground
@@ -249,6 +354,11 @@ import Observation
         category: "Seed",
         abilities: "Overgrow",
         description: "Rayquaza is said to have lived for hundreds of millions of years. Legends remain of how it put to rest the clash between Kyogre and Groudon.",
+        detailImageInfo: PokemonDetailImageInfo(
+          id: 1,
+          width : 150,
+          height: 150
+        ),
         types: [
           .dragon,
         ]
@@ -261,6 +371,11 @@ import Observation
         category: "Seed",
         abilities: "Overgrow",
         description: "By catching the aura emanating from others, it can read their thoughts and movements.",
+        detailImageInfo: PokemonDetailImageInfo(
+          id: 1,
+          width : 150,
+          height: 150
+        ),
         types: [
           .fighting,
           .steel
@@ -274,6 +389,11 @@ import Observation
         category: "Seed",
         abilities: "Overgrow",
         description: "It can stop its opponents' movements with just a glare. It takes in solar energy and boosts it internally.",
+        detailImageInfo: PokemonDetailImageInfo(
+          id: 1,
+          width : 150,
+          height: 150
+        ),
         types: [
           .grass
         ]
@@ -286,6 +406,11 @@ import Observation
         category: "Seed",
         abilities: "Overgrow",
         description: "It changes so it looks just like its foe, tricks it, and then uses that opportunity to flee.",
+        detailImageInfo: PokemonDetailImageInfo(
+          id: 1,
+          width : 150,
+          height: 150
+        ),
         types: [
           .dark
         ]
@@ -298,6 +423,11 @@ import Observation
         category: "Seed",
         abilities: "Overgrow",
         description: "The spirits burned up in its ominous flame lose their way and wander this world forever.",
+        detailImageInfo: PokemonDetailImageInfo(
+          id: 1,
+          width : 150,
+          height: 150
+        ),
         types: [
           .ghost,
           .fire
@@ -311,6 +441,11 @@ import Observation
         category: "Seed",
         abilities: "Overgrow",
         description: "When this Pokémon is in good health, its snot becomes thicker and stickier. It will smear its snot on anyone it doesn't like.",
+        detailImageInfo: PokemonDetailImageInfo(
+          id: 1,
+          width : 150,
+          height: 150
+        ),
         types: [
           .ice
         ]
@@ -323,6 +458,11 @@ import Observation
         category: "Seed",
         abilities: "Overgrow",
         description: "When it battles, its beak heats up. The temperature can easily exceed 212 degrees Fahrenheit, causing severe burns when it hits.",
+        detailImageInfo: PokemonDetailImageInfo(
+          id: 1,
+          width : 150,
+          height: 150
+        ),
         types: [
           .flying,
           .normal

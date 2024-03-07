@@ -42,7 +42,7 @@ enum Tab : CaseIterable {
   @ViewBuilder
   var view: some View {
     switch self {
-    case .pokedex: PokedexTabView()
+    case .pokedex: PokedexTabView(pokemons: AppData().pokemons)
     case .region: RegionTabView()
     case .favorite: FavoritePageView()
     case .profile: ProfilePageView()
@@ -52,6 +52,7 @@ enum Tab : CaseIterable {
 
 struct ContentView: View {
   @State private var selectedTab: Tab = .pokedex
+  
   
   var body: some View {
     NavigationView {
@@ -98,5 +99,4 @@ struct ContentView: View {
 
 #Preview {
   ContentView()
-    .environment(AppData())
 }

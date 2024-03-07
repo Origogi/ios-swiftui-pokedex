@@ -38,6 +38,11 @@ struct PokemonDetailScreen: View {
             .offset(y: -15)
             .scaledToFit()
             .frame(width: 220, height: 220)
+          PokemonDetailImageView(
+            detailImageInfo: pokemon.detailImageInfo
+          )
+          .offset(y: 60)
+
         }
         .frame(width: geometry.size.width, height: 250)
         .foregroundStyle(
