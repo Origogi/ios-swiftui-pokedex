@@ -42,9 +42,9 @@ class AppData {
         abilities: "Overgrow",
         description: "When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.",
         detailImageInfo: PokemonDetailImageInfo(
-          id: 1,
-          width : 150,
-          height: 150
+          id: 2,
+          width : 250,
+          height: 200
         ),
         types: [
           .grass,
@@ -60,9 +60,9 @@ class AppData {
         abilities: "Overgrow",
         description: "Its plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.",
         detailImageInfo: PokemonDetailImageInfo(
-          id : 1,
-          width : 150,
-          height: 150
+          id : 3,
+          width : 270,
+          height: 200
         ),
         types: [
           .grass,
@@ -78,9 +78,9 @@ class AppData {
         abilities: "Overgrow",
         description: "The flame at the tip of its tail makes a sound as it burns. You can only hear it in quiet places.",
         detailImageInfo: PokemonDetailImageInfo(
-          id : 1,
-          width : 150,
-          height: 150
+          id : 4,
+          width : 130,
+          height: 155
         ),
         types: [
           .fire
@@ -95,9 +95,9 @@ class AppData {
         abilities: "Overgrow",
         description: "It has a barbaric nature. In battle, it whips its fiery tail around and slashes away with sharp claws.",
         detailImageInfo: PokemonDetailImageInfo(
-          id : 1,
-          width : 150,
-          height: 150
+          id : 5,
+          width : 170,
+          height: 200
         ),
         types: [
           .fire
@@ -112,9 +112,9 @@ class AppData {
         abilities: "Overgrow",
         description: "It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.", 
         detailImageInfo: PokemonDetailImageInfo(
-          id : 1,
-          width : 150,
-          height: 150
+          id : 6,
+          width : 280,
+          height: 300
         ),
         types: [
           .fire,

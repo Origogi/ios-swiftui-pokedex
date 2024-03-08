@@ -39,8 +39,13 @@
 		9FD705432B8AC3FC00CBFA42 /* PokemonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD705422B8AC3FC00CBFA42 /* PokemonInfo.swift */; };
 		9FD705452B8AC47700CBFA42 /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD705442B8AC47700CBFA42 /* AppData.swift */; };
 		9FD705472B8ACCC700CBFA42 /* PokemonCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD705462B8ACCC700CBFA42 /* PokemonCard.swift */; };
-		9FE4B3AE2B99FC5800A2BDD8 /* 1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9FE4B3AD2B99FC5800A2BDD8 /* 1.gif */; };
 		9FE4B3B02B99FF6800A2BDD8 /* PokemonDetailImageInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FE4B3AF2B99FF6800A2BDD8 /* PokemonDetailImageInfo.swift */; };
+		9FF67E142B9B56CE00C3D11D /* 1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9FF67E132B9B56CE00C3D11D /* 1.gif */; };
+		9FF67E172B9B577E00C3D11D /* 3.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9FF67E152B9B577E00C3D11D /* 3.gif */; };
+		9FF67E182B9B577E00C3D11D /* 2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9FF67E162B9B577E00C3D11D /* 2.gif */; };
+		9FF67E1D2B9B585C00C3D11D /* 4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9FF67E1A2B9B585C00C3D11D /* 4.gif */; };
+		9FF67E1E2B9B585C00C3D11D /* 5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9FF67E1B2B9B585C00C3D11D /* 5.gif */; };
+		9FF67E222B9B59A600C3D11D /* 6.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9FF67E212B9B59A600C3D11D /* 6.gif */; };
 		F0192B1063AB62DDDABBD6B0 /* Pods_SwiftUIPokedex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB3235B80A272FC51FB95E9E /* Pods_SwiftUIPokedex.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,8 +86,13 @@
 		9FD705422B8AC3FC00CBFA42 /* PokemonInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonInfo.swift; sourceTree = "<group>"; };
 		9FD705442B8AC47700CBFA42 /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		9FD705462B8ACCC700CBFA42 /* PokemonCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCard.swift; sourceTree = "<group>"; };
-		9FE4B3AD2B99FC5800A2BDD8 /* 1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = 1.gif; path = SwiftUIPokedex/Assets.xcassets/Pokemon/1/1_big.dataset/1.gif; sourceTree = SOURCE_ROOT; };
 		9FE4B3AF2B99FF6800A2BDD8 /* PokemonDetailImageInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailImageInfo.swift; sourceTree = "<group>"; };
+		9FF67E132B9B56CE00C3D11D /* 1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 1.gif; sourceTree = "<group>"; };
+		9FF67E152B9B577E00C3D11D /* 3.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 3.gif; sourceTree = "<group>"; };
+		9FF67E162B9B577E00C3D11D /* 2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 2.gif; sourceTree = "<group>"; };
+		9FF67E1A2B9B585C00C3D11D /* 4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 4.gif; sourceTree = "<group>"; };
+		9FF67E1B2B9B585C00C3D11D /* 5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 5.gif; sourceTree = "<group>"; };
+		9FF67E212B9B59A600C3D11D /* 6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 6.gif; sourceTree = "<group>"; };
 		BB3235B80A272FC51FB95E9E /* Pods_SwiftUIPokedex.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUIPokedex.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -226,7 +236,12 @@
 		9FD18FFC2B93FB4100196B2C /* gif */ = {
 			isa = PBXGroup;
 			children = (
-				9FE4B3AD2B99FC5800A2BDD8 /* 1.gif */,
+				9FF67E132B9B56CE00C3D11D /* 1.gif */,
+				9FF67E162B9B577E00C3D11D /* 2.gif */,
+				9FF67E152B9B577E00C3D11D /* 3.gif */,
+				9FF67E1A2B9B585C00C3D11D /* 4.gif */,
+				9FF67E1B2B9B585C00C3D11D /* 5.gif */,
+				9FF67E212B9B59A600C3D11D /* 6.gif */,
 			);
 			path = gif;
 			sourceTree = "<group>";
@@ -299,16 +314,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FF67E1D2B9B585C00C3D11D /* 4.gif in Resources */,
 				9F0265332B84E0FF001F1AD3 /* README.md in Resources */,
 				9FBE4FC42B874D6C00EA8ED7 /* Poppins-ExtraLight.ttf in Resources */,
 				9FBE4FBC2B874D6C00EA8ED7 /* Poppins-Medium.ttf in Resources */,
 				9F02652C2B84DF60001F1AD3 /* Preview Assets.xcassets in Resources */,
-				9FE4B3AE2B99FC5800A2BDD8 /* 1.gif in Resources */,
+				9FF67E142B9B56CE00C3D11D /* 1.gif in Resources */,
 				9FBE4FBB2B874D6C00EA8ED7 /* Poppins-ExtraBold.ttf in Resources */,
+				9FF67E182B9B577E00C3D11D /* 2.gif in Resources */,
 				9F0265292B84DF60001F1AD3 /* Assets.xcassets in Resources */,
+				9FF67E222B9B59A600C3D11D /* 6.gif in Resources */,
 				9FBE4FB82B874D6C00EA8ED7 /* Poppins-SemiBold.ttf in Resources */,
 				9FBE4FC02B874D6C00EA8ED7 /* Poppins-Bold.ttf in Resources */,
 				9FBE4FB32B874D6C00EA8ED7 /* Poppins-Light.ttf in Resources */,
+				9FF67E1E2B9B585C00C3D11D /* 5.gif in Resources */,
+				9FF67E172B9B577E00C3D11D /* 3.gif in Resources */,
 				9FBE4FBA2B874D6C00EA8ED7 /* Poppins-Black.ttf in Resources */,
 				9FBE4FB42B874D6C00EA8ED7 /* Poppins-Thin.ttf in Resources */,
 				9FBE4FC32B874D6C00EA8ED7 /* Poppins-Regular.ttf in Resources */,

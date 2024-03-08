@@ -38,10 +38,12 @@ struct PokemonDetailScreen: View {
             .offset(y: -15)
             .scaledToFit()
             .frame(width: 220, height: 220)
-          PokemonDetailImageView(
-            detailImageInfo: pokemon.detailImageInfo
-          )
-          .offset(y: 60)
+          VStack {
+            Spacer()
+            PokemonDetailImageView(
+              detailImageInfo: pokemon.detailImageInfo
+            )
+          }
 
         }
         .frame(width: geometry.size.width, height: 250)
@@ -96,6 +98,6 @@ struct PokemonStausInfosView: View {
 
 #Preview {
   PokemonDetailScreen(
-    pokemon: AppData().pokemons[0]
+    pokemon: AppData().pokemons[5]
   )
 }
