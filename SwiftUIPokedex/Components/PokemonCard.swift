@@ -46,7 +46,7 @@ struct PokemonCard: View {
           HStack {
             Spacer()
             VStack {
-              FabButton(isFav: .constant(false))
+              SmallFavButton(isFav: .constant(false))
                 .padding(6)
               Spacer()
             }

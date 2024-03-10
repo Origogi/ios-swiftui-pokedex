@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FabButton: View {
+struct SmallFavButton: View {
   
   @Binding var isFav : Bool
   
@@ -28,7 +28,7 @@ struct FabButton: View {
 }
 
 #Preview {
-  FabButton(
+  SmallFavButton(
     isFav: .constant(true)
   )
 }

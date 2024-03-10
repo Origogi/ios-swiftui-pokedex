@@ -40,7 +40,12 @@ struct PokemonDetailScreen: View {
               .offset(y: -15)
               .scaledToFit()
               .frame(width: 220, height: 220)
-            VStack {
+            VStack(alignment: .center) {
+              HStack {
+                BackButton()
+                  .padding(.leading , 16)
+                Spacer()
+              }.frame(width: geometry.size.width)
               Spacer()
               PokemonDetailImageView(
                 detailImageInfo: pokemon.detailImageInfo
