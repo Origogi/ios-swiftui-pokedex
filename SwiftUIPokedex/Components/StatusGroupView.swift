@@ -27,7 +27,7 @@ struct StatusGroupView: View {
         )
       }
       
-      HStack(spacing : 20) {
+      HStack(alignment: .top, spacing : 20) {
         StatusView(
           statusName: "Category",
           value: pokemon.category,
@@ -36,7 +36,7 @@ struct StatusGroupView: View {
         
         StatusView(
           statusName: "Abilities",
-          value: pokemon.abilities,
+          value: pokemon.abilities.joined(separator: " "),
           iconPath: "Abilities"
         )
       }
@@ -46,6 +46,5 @@ struct StatusGroupView: View {
 
 #Preview {
   StatusGroupView(
-    pokemon: AppData().pokemons.first!
-  ).padding()
+    pokemon: AppData().pokemons[11])
 }

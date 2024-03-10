@@ -14,7 +14,7 @@ struct PokemonInfo : Hashable, Identifiable {
   let weight: Double
   let height: Double
   let category: String
-  let abilities: String
+  let abilities: [String]
   let description : String
   let detailImageInfo : PokemonDetailImageInfo
 

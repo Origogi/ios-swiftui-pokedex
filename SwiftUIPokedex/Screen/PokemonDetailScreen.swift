@@ -10,6 +10,9 @@ import SwiftUI
 struct PokemonDetailScreen: View {
   let pokemon: PokemonInfo
   
+  @State var isNavigationBarHidden: Bool = true
+  
+  
   init(pokemon: PokemonInfo) {
     self.pokemon = pokemon
   }
@@ -17,69 +20,74 @@ struct PokemonDetailScreen: View {
   var body: some View {
     
     GeometryReader { geometry in
-      VStack(alignment: .leading) {
-        ZStack {
-          Circle()
-            .frame(width: 500, height: 500) // 원의 크기를 설정합니다.
-            .offset(y: -270) // 원을 상단으로 이동시켜 반원 효과를 생성합니다.
-            .padding(.bottom, -270) // 패딩을 음수로 설정하여 원의 하단 부분을 숨깁니다.
-          
-          // 다른 컨텐츠를 여기에 배치할 수 있습니다.
-          Image(pokemon.mainType.smallImagePath)
-            .resizable()
-            .renderingMode(.template)
-            .foregroundStyle(
-              LinearGradient(
-                gradient: Gradient(colors: [.white, .white.opacity(0)]),
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
+      ScrollView {
+        LazyVStack(alignment: .leading) {
+          ZStack {
+            Circle()
+              .frame(width: 500, height: 500) // 원의 크기를 설정합니다.
+              .offset(y: -260) // 원을 상단으로 이동시켜 반원 효과를 생성합니다.
+              .padding(.bottom, -230) //
+            Image(pokemon.mainType.smallImagePath)
+              .resizable()
+              .renderingMode(.template)
+              .foregroundStyle(
+                LinearGradient(
+                  gradient: Gradient(colors: [.white, .white.opacity(0)]),
+                  startPoint: .topLeading,
+                  endPoint: .bottomTrailing
+                )
               )
-            )
-            .offset(y: -15)
-            .scaledToFit()
-            .frame(width: 220, height: 220)
-          VStack {
-            Spacer()
-            PokemonDetailImageView(
-              detailImageInfo: pokemon.detailImageInfo
-            )
-          }
-
-        }
-        .frame(width: geometry.size.width, height: 250)
-        .foregroundStyle(
-          LinearGradient(
-            gradient: Gradient(colors: [pokemon.mainType.primaryColor, pokemon.mainType.primaryColor.opacity(0.5)]),
-            startPoint: .topLeading,
-            endPoint: .bottomTrailing
-          )
-        )
-        VStack(alignment: .leading) {
-          Text(pokemon.name)
-            .font(.custom("Poppins-Medium", size: 32))
-          Text(pokemon.id.pokemonNum())
-            .font(.custom("Poppins-Medium", size: 16))
-            .foregroundColor(Color(hex: "#333333"))
-          HStack {
-            ForEach(pokemon.types, id: \.self) { type in
-              ElementTypeChip(type: type)
+              .offset(y: -15)
+              .scaledToFit()
+              .frame(width: 220, height: 220)
+            VStack {
+              Spacer()
+              PokemonDetailImageView(
+                detailImageInfo: pokemon.detailImageInfo
+              )
             }
+            
           }
-          Spacer()
-            .frame(height: 24)
-          Text(pokemon.description)
-            .font(.custom("Poppins-Regular", size: 14))
-            .foregroundColor(Color(hex: "#333333").opacity(0.7))
-          Divider()
-            .padding(.vertical, 16)
-          StatusGroupView(pokemon: pokemon)
+          .frame(width: geometry.size.width, height: 280)
+          .foregroundStyle(
+            LinearGradient(
+              gradient: Gradient(colors: [pokemon.mainType.primaryColor, pokemon.mainType.primaryColor.opacity(0.5)]),
+              startPoint: .topLeading,
+              endPoint: .bottomTrailing
+            )
+          )
+          VStack(alignment: .leading) {
+            Text(pokemon.name)
+              .font(.custom("Poppins-Medium", size: 32))
+            Text(pokemon.id.pokemonNum())
+              .font(.custom("Poppins-Medium", size: 16))
+              .foregroundColor(Color(hex: "#333333"))
+            HStack {
+              ForEach(pokemon.types, id: \.self) { type in
+                ElementTypeChip(type: type)
+              }
+            }
+            Spacer()
+              .frame(height: 24)
+            Text(pokemon.description)
+              .font(.custom("Poppins-Regular", size: 14))
+              .foregroundColor(Color(hex: "#333333").opacity(0.7))
+            Divider()
+              .padding(.vertical, 16)
+            StatusGroupView(pokemon: pokemon)
+            Divider()
+              .padding(.vertical, 16)
+          }
+          .padding(.horizontal, 16)
+          .padding(.top, 30)
           
+          
+          Spacer()
         }
-        .padding(.horizontal, 16)
-        .padding(.top, 30)
-        
-        Spacer()
-      }
+      }.navigationBarHidden(self.isNavigationBarHidden)
+        .onAppear {
+          self.isNavigationBarHidden = true
+        }
     }
   }
 }
@@ -98,6 +106,6 @@ struct PokemonStausInfosView: View {
 
 #Preview {
   PokemonDetailScreen(
-    pokemon: AppData().pokemons[5]
+    pokemon: AppData().pokemons[11]
   )
 }
