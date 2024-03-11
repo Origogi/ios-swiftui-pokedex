@@ -43,9 +43,15 @@ struct PokemonDetailScreen: View {
             VStack(alignment: .center) {
               HStack {
                 BackButton()
-                  .padding(.leading , 16)
                 Spacer()
-              }.frame(width: geometry.size.width)
+                BigFavButton(
+                  isFav: .constant(false)
+                )
+              }
+              .padding(.horizontal, 16)
+              
+              .frame(width: geometry.size.width)
+                
               Spacer()
               PokemonDetailImageView(
                 detailImageInfo: pokemon.detailImageInfo

@@ -34,6 +34,7 @@
 		9F0D5AF62B9D3754001D7009 /* 571.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9F0D5AEF2B9D3754001D7009 /* 571.gif */; };
 		9F0D5AF72B9D3754001D7009 /* 613.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9F0D5AF02B9D3754001D7009 /* 613.gif */; };
 		9F0D5AFD2B9D436F001D7009 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0D5AFC2B9D436F001D7009 /* BackButton.swift */; };
+		9F0D5AFF2B9D49CE001D7009 /* BigFavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0D5AFE2B9D49CE001D7009 /* BigFavButton.swift */; };
 		9F44882F2B90B28F005F0F96 /* PokemonDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F44882E2B90B28F005F0F96 /* PokemonDetailScreen.swift */; };
 		9F7161792B96E0A8007A66F5 /* StatusGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7161782B96E0A8007A66F5 /* StatusGroupView.swift */; };
 		9FABA33F2B99E2EB0053517D /* PokomonDetailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FABA33E2B99E2EB0053517D /* PokomonDetailImageView.swift */; };
@@ -101,6 +102,7 @@
 		9F0D5AEF2B9D3754001D7009 /* 571.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 571.gif; sourceTree = "<group>"; };
 		9F0D5AF02B9D3754001D7009 /* 613.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 613.gif; sourceTree = "<group>"; };
 		9F0D5AFC2B9D436F001D7009 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		9F0D5AFE2B9D49CE001D7009 /* BigFavButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigFavButton.swift; sourceTree = "<group>"; };
 		9F44882E2B90B28F005F0F96 /* PokemonDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailScreen.swift; sourceTree = "<group>"; };
 		9F7161782B96E0A8007A66F5 /* StatusGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusGroupView.swift; sourceTree = "<group>"; };
 		9FABA33E2B99E2EB0053517D /* PokomonDetailImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokomonDetailImageView.swift; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 				9F7161782B96E0A8007A66F5 /* StatusGroupView.swift */,
 				9FABA33E2B99E2EB0053517D /* PokomonDetailImageView.swift */,
 				9F0D5AFC2B9D436F001D7009 /* BackButton.swift */,
+				9F0D5AFE2B9D49CE001D7009 /* BigFavButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				9F7161792B96E0A8007A66F5 /* StatusGroupView.swift in Sources */,
 				9F07B85A2B8C4C0D00BE905F /* SmallFavButton.swift in Sources */,
 				9FBE4FDE2B88D70B00EA8ED7 /* ElementTypeChip.swift in Sources */,
+				9F0D5AFF2B9D49CE001D7009 /* BigFavButton.swift in Sources */,
 				9FD18FFE2B93FC0800196B2C /* IntExt.swift in Sources */,
 				9F0265272B84DF5F001F1AD3 /* ContentView.swift in Sources */,
 				9FBE4FD92B883E8B00EA8ED7 /* FavoritePageView.swift in Sources */,
