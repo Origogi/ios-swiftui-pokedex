@@ -65,13 +65,7 @@ struct PokemonDetailScreen: View {
           }
           .frame(width: geometry.size.width, height: 280)
           .foregroundColor(pokemon.mainType.primaryColor)
-//          .foregroundStyle(
-//            LinearGradient(
-//              gradient: Gradient(colors: [pokemon.mainType.primaryColor, pokemon.mainType.primaryColor.opacity(0.5)]),
-//              startPoint: .topLeading,
-//              endPoint: .bottomTrailing
-//            )
-//          )
+
           VStack(alignment: .leading) {
             Text(pokemon.name)
               .font(.custom("Poppins-Medium", size: 32))
@@ -95,7 +89,7 @@ struct PokemonDetailScreen: View {
               .padding(.vertical, 16)
           }
           .padding(.horizontal, 16)
-          .padding(.top, 30)
+          .padding(.top, 10)
           
           
           Spacer()
