@@ -20,13 +20,17 @@ struct PokemonDetailScreen: View {
   var body: some View {
     
     GeometryReader { geometry in
+      // MARK : -
       ScrollView {
         LazyVStack(alignment: .leading) {
           ZStack {
             Circle()
               .frame(width: 500, height: 500) // 원의 크기를 설정합니다.
               .offset(y: -260) // 원을 상단으로 이동시켜 반원 효과를 생성합니다.
-              .padding(.bottom, -230) //
+              .padding(.bottom, -230)
+            Rectangle()
+              .offset(y: -300)
+              
             Image(pokemon.mainType.smallImagePath)
               .resizable()
               .renderingMode(.template)
@@ -51,7 +55,7 @@ struct PokemonDetailScreen: View {
               .padding(.horizontal, 16)
               
               .frame(width: geometry.size.width)
-                
+              
               Spacer()
               PokemonDetailImageView(
                 detailImageInfo: pokemon.detailImageInfo
@@ -60,13 +64,14 @@ struct PokemonDetailScreen: View {
             
           }
           .frame(width: geometry.size.width, height: 280)
-          .foregroundStyle(
-            LinearGradient(
-              gradient: Gradient(colors: [pokemon.mainType.primaryColor, pokemon.mainType.primaryColor.opacity(0.5)]),
-              startPoint: .topLeading,
-              endPoint: .bottomTrailing
-            )
-          )
+          .foregroundColor(pokemon.mainType.primaryColor)
+//          .foregroundStyle(
+//            LinearGradient(
+//              gradient: Gradient(colors: [pokemon.mainType.primaryColor, pokemon.mainType.primaryColor.opacity(0.5)]),
+//              startPoint: .topLeading,
+//              endPoint: .bottomTrailing
+//            )
+//          )
           VStack(alignment: .leading) {
             Text(pokemon.name)
               .font(.custom("Poppins-Medium", size: 32))
@@ -95,13 +100,16 @@ struct PokemonDetailScreen: View {
           
           Spacer()
         }
-      }.navigationBarHidden(self.isNavigationBarHidden)
-        .onAppear {
-          self.isNavigationBarHidden = true
-        }
+      }
+      
+    }      
+    .navigationBarHidden(self.isNavigationBarHidden)
+    .onAppear {
+      self.isNavigationBarHidden = true
     }
   }
 }
+
 
 struct PokemonStausInfosView: View {
   let pokemon: PokemonInfo
