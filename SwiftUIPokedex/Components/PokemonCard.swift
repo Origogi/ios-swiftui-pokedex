@@ -26,9 +26,9 @@ struct PokemonCard: View {
               Color(hex : "#000000")
             )
           Spacer()
-          HStack {
+          HStack(spacing : 4) {
             ForEach(pokemonInfo.types, id: \.self) { type in
-              ElementTypeChip(type: type)
+              ElementTypeChip(type: type, horizontalPadding: 6, verticalPadding: 3, fontSize: 11, iconSize: 20)
             }
           }
           

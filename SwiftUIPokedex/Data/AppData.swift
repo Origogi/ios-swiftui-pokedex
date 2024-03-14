@@ -222,7 +222,8 @@ class AppData {
         ),
         types: [
           .fairy
-        ]
+        ],
+        genderRatio: 0.25
       ),
       PokemonInfo(
         id: 51,

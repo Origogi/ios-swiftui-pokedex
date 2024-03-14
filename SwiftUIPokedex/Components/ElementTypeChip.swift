@@ -9,40 +9,45 @@ import SwiftUI
 
 struct ElementTypeChip: View {
   let type : ElementTypeInfo
+  let horizontalPadding : CGFloat
+  let verticalPadding : CGFloat
+  let fontSize : CGFloat
+  let iconSize : CGFloat
   
-  init(type: ElementTypeInfo) {
-    self.type = type
-  }
-  
+
   var body: some View {
-    HStack(spacing: 6) {
+    HStack {
+      Spacer()
+        .frame(width: horizontalPadding)
       ZStack {
         Circle()
-          .frame(width: 20, height: 20)
           .foregroundColor(Color.white)
         Image(type.smallImagePath)
           .resizable()
           .renderingMode(.template)
           .scaledToFit()
-          .frame(width: 12, height: 12)
+          .padding(4)
           .foregroundColor(type.primaryColor)
-      }
+      }.frame(width: iconSize, height: iconSize)
+
       Text(type.name)
-        .font(.custom("Poppins-Medium", size: 11))
+        .font(.custom("Poppins-Medium", size: fontSize))
         .foregroundColor(type.textColorOnPrimaryColorBg)
+      Spacer()
+        .frame(width: horizontalPadding)
+
     }
-    .padding(.leading, 6)
-    .padding(.trailing, 8)
-    .padding(.vertical, 3)
+    .padding(.vertical, verticalPadding)
     .background(type.primaryColor)
     .cornerRadius(48)
   }
 }
 
+
 #Preview {
   VStack {
     ForEach(ElementTypeInfo.allCases, id: \.self) { type in
-      ElementTypeChip(type: type)
+      ElementTypeChip(type: type, horizontalPadding: .infinity, verticalPadding: 3, fontSize: 12, iconSize: 20)
     }
   }
 

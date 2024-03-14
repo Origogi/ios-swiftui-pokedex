@@ -27,7 +27,6 @@ struct StatusView: View {
         Spacer()
         Text(value)
           .font(.custom("Poppins-Medium", size: 18))
-        
           .foregroundColor(Color.black).opacity(0.9)
           .padding(.vertical, 8 )
         

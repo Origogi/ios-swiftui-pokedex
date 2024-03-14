@@ -30,7 +30,7 @@ struct PokemonDetailScreen: View {
               .padding(.bottom, -230)
             Rectangle()
               .offset(y: -300)
-              
+            
             Image(pokemon.mainType.smallImagePath)
               .resizable()
               .renderingMode(.template)
@@ -65,16 +65,16 @@ struct PokemonDetailScreen: View {
           }
           .frame(width: geometry.size.width, height: 280)
           .foregroundColor(pokemon.mainType.primaryColor)
-
+          
           VStack(alignment: .leading) {
             Text(pokemon.name)
               .font(.custom("Poppins-Medium", size: 32))
             Text(pokemon.id.pokemonNum())
               .font(.custom("Poppins-Medium", size: 16))
               .foregroundColor(Color(hex: "#333333"))
-            HStack {
+            HStack(spacing : 7) {
               ForEach(pokemon.types, id: \.self) { type in
-                ElementTypeChip(type: type)
+                ElementTypeChip(type: type, horizontalPadding: 14, verticalPadding: 4, fontSize: 14, iconSize : 28)
               }
             }
             Spacer()
@@ -85,8 +85,9 @@ struct PokemonDetailScreen: View {
             Divider()
               .padding(.vertical, 16)
             StatusGroupView(pokemon: pokemon)
-            Divider()
-              .padding(.vertical, 16)
+              .padding(.bottom, 19)
+            GenderRatioView(ratio: pokemon.genderRatio)
+              .padding(.bottom , 40)
           }
           .padding(.horizontal, 16)
           .padding(.top, 10)
@@ -96,7 +97,7 @@ struct PokemonDetailScreen: View {
         }
       }
       
-    }      
+    }
     .navigationBarHidden(self.isNavigationBarHidden)
     .onAppear {
       self.isNavigationBarHidden = true
@@ -119,6 +120,6 @@ struct PokemonStausInfosView: View {
 
 #Preview {
   PokemonDetailScreen(
-    pokemon: AppData().pokemons[11]
+    pokemon: AppData().pokemons[0]
   )
 }
