@@ -31,7 +31,8 @@ class AppData {
         types: [
           .grass,
           .poison,
-        ]
+        ],
+        genderRatio: 0.87
       ),
       PokemonInfo(
         id: 2,
@@ -49,7 +50,8 @@ class AppData {
         types: [
           .grass,
           .poison,
-        ]
+        ],
+        genderRatio: 0.85
       ),
       PokemonInfo(
         id: 3,
@@ -67,7 +69,8 @@ class AppData {
         types: [
           .grass,
           .poison,
-        ]
+        ],
+        genderRatio: 0.87
       ),
       PokemonInfo(
         id: 4,
@@ -84,7 +87,8 @@ class AppData {
         ),
         types: [
           .fire
-        ]
+        ],
+        genderRatio: 0.87
       ),
       PokemonInfo(
         id: 5,
@@ -101,7 +105,8 @@ class AppData {
         ),
         types: [
           .fire
-        ]
+        ],
+        genderRatio: 0.87
       ),
       PokemonInfo(
         id: 6,
@@ -119,7 +124,8 @@ class AppData {
         types: [
           .fire,
           .flying
-        ]
+        ],
+        genderRatio: 0.87
       ),
       PokemonInfo(
         id: 7,
@@ -136,7 +142,8 @@ class AppData {
         ),
         types: [
           .water
-        ]
+        ],
+        genderRatio: 0.87
       ),
       PokemonInfo(
         id: 8,
@@ -153,7 +160,8 @@ class AppData {
         ),
         types: [
           .water
-        ]
+        ],
+        genderRatio: 0.87
       ),
       PokemonInfo(
         id: 9,
@@ -170,7 +178,8 @@ class AppData {
         ),
         types: [
           .water
-        ]
+        ],
+        genderRatio: 0.87
       ),
       PokemonInfo(
         id: 15,
@@ -188,7 +197,8 @@ class AppData {
         types: [
           .bug,
           .poison
-        ]
+        ],
+        genderRatio: 0.5
       ),
       PokemonInfo(
         id: 25,
@@ -205,7 +215,8 @@ class AppData {
         ),
         types: [
           .electric
-        ]
+        ],
+        genderRatio: 0.5
       ),
       PokemonInfo(
         id: 35,
@@ -240,7 +251,8 @@ class AppData {
         ),
         types: [
           .ground
-        ]
+        ],
+        genderRatio: 0.5
       ),
       PokemonInfo(
         id: 95,
@@ -258,7 +270,8 @@ class AppData {
         types: [
           .rock,
           .ground
-        ]
+        ],
+        genderRatio: 0.5
       ),
       PokemonInfo(
         id: 108,
@@ -275,7 +288,8 @@ class AppData {
         ),
         types: [
           .normal
-        ]
+        ],
+        genderRatio: 0.5
       ),
       PokemonInfo(
         id: 109,
@@ -292,7 +306,8 @@ class AppData {
         ),
         types: [
           .poison
-        ]
+        ],
+        genderRatio: 0.5
       ),
       PokemonInfo(
         id: 151,
@@ -344,7 +359,8 @@ class AppData {
         types: [
           .steel,
           .ground
-        ]
+        ],
+        genderRatio: 0.5
       ),
       PokemonInfo(
         id: 384,
@@ -379,7 +395,8 @@ class AppData {
         types: [
           .fighting,
           .steel
-        ]
+        ],
+        genderRatio: 0.87
       ),
       PokemonInfo(
         id: 497,
@@ -396,7 +413,8 @@ class AppData {
         ),
         types: [
           .grass
-        ]
+        ],
+        genderRatio: 0.87
       ),
       PokemonInfo(
         id: 571,
@@ -413,7 +431,8 @@ class AppData {
         ),
         types: [
           .dark
-        ]
+        ],
+        genderRatio: 0.87
       ),
       PokemonInfo(
         id: 609,
@@ -431,7 +450,8 @@ class AppData {
         types: [
           .ghost,
           .fire
-        ]
+        ],
+        genderRatio: 0.5
       ),
       PokemonInfo(
         id: 613,
@@ -448,7 +468,8 @@ class AppData {
         ),
         types: [
           .ice
-        ]
+        ],
+        genderRatio: 0.5
       ),
       PokemonInfo(
         id: 733,
@@ -466,7 +487,8 @@ class AppData {
         types: [
           .flying,
           .normal
-        ]
+        ],
+        genderRatio: 0.5
       ),
     ]
   }
