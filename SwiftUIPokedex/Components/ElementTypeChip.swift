@@ -7,36 +7,6 @@
 
 import SwiftUI
 
-struct MatchParrentElementTypeChip: View {
-  let type : ElementTypeInfo
-  let fontSize : CGFloat
-  let iconSize : CGFloat
-  
-  
-  var body: some View {
-      HStack(spacing : 0) {
-        ZStack {
-          Circle()
-            .foregroundColor(Color.white)
-          Image(type.smallImagePath)
-            .resizable()
-            .renderingMode(.template)
-            .scaledToFit()
-            .padding(4)
-            .foregroundColor(type.primaryColor)
-        }.frame(width: iconSize, height: iconSize)
-        
-        Text(type.name)
-          .lineLimit(1)
-          .font(.custom("Poppins-Medium", size: fontSize))
-          .foregroundColor(type.textColorOnPrimaryColorBg)
-      }.frame(maxWidth: nil)
-        .background(type.primaryColor)
-        .cornerRadius(48)
-    }
-  
-}
-
 struct ElementTypeChip: View {
   let type : ElementTypeInfo
   let fontSize : CGFloat
