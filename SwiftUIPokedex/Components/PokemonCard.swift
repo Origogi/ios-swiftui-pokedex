@@ -28,7 +28,7 @@ struct PokemonCard: View {
           Spacer()
           HStack(spacing : 4) {
             ForEach(pokemonInfo.types, id: \.self) { type in
-              ElementTypeChip(type: type, fontSize: 6, iconSize: 3, innerHPadding: 11, innerVPadding: 20)
+              ElementTypeChip(type: type, fontSize: 11, iconSize: 20, innerHPadding: 7, innerVPadding: 3)
             }
           }
           
@@ -37,7 +37,7 @@ struct PokemonCard: View {
         .padding(.vertical, 12)
         Spacer()
         ZStack { // ZStack의 정렬을 우측 상단으로 설정
-          ElementTypeCard(type: pokemonInfo.mainType)
+          ElementTypeCardView(type: pokemonInfo.mainType, size: .medium)
           Image(pokemonInfo.mediumImagePath)
             .resizable()
             .scaledToFit()
