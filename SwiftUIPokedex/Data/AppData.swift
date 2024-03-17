@@ -32,7 +32,13 @@ class AppData {
           .grass,
           .poison,
         ],
-        genderRatio: 0.87
+        genderRatio: 0.87,
+        weaknesses: [
+          .fire,
+          .ice,
+          .flying,
+          .psychic
+        ]
       ),
       PokemonInfo(
         id: 2,
@@ -51,7 +57,13 @@ class AppData {
           .grass,
           .poison,
         ],
-        genderRatio: 0.85
+        genderRatio: 0.85,
+        weaknesses: [
+          .fire,
+          .ice,
+          .flying,
+          .psychic
+        ]
       ),
       PokemonInfo(
         id: 3,
@@ -70,7 +82,13 @@ class AppData {
           .grass,
           .poison,
         ],
-        genderRatio: 0.87
+        genderRatio: 0.87,
+        weaknesses: [
+          .fire,
+          .ice,
+          .flying,
+          .psychic
+        ]
       ),
       PokemonInfo(
         id: 4,

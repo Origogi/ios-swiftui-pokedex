@@ -74,7 +74,7 @@ struct PokemonDetailScreen: View {
               .foregroundColor(Color(hex: "#333333"))
             HStack(spacing : 7) {
               ForEach(pokemon.types, id: \.self) { type in
-                ElementTypeChip(type: type, horizontalPadding: 14, verticalPadding: 4, fontSize: 14, iconSize : 28)
+                ElementTypeChip(type: type, fontSize: 14, iconSize: 28, innerHPadding: 14, innerVPadding : 4)
               }
             }
             Spacer()
@@ -88,6 +88,8 @@ struct PokemonDetailScreen: View {
               .padding(.bottom, 19)
             GenderRatioView(ratio: pokemon.genderRatio)
               .padding(.bottom , 40)
+            WeaknessesView(types: pokemon.weaknesses)
+              .padding(.bottom, 40)
           }
           .padding(.horizontal, 16)
           .padding(.top, 10)

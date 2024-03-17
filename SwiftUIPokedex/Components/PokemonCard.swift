@@ -28,7 +28,7 @@ struct PokemonCard: View {
           Spacer()
           HStack(spacing : 4) {
             ForEach(pokemonInfo.types, id: \.self) { type in
-              ElementTypeChip(type: type, horizontalPadding: 6, verticalPadding: 3, fontSize: 11, iconSize: 20)
+              ElementTypeChip(type: type, fontSize: 6, iconSize: 3, innerHPadding: 11, innerVPadding: 20)
             }
           }
           

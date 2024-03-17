@@ -19,8 +19,9 @@ struct PokemonInfo : Hashable, Identifiable {
   let detailImageInfo : PokemonDetailImageInfo
   let types : [ElementTypeInfo]
   let genderRatio : Double?
+  let weaknesses : [ElementTypeInfo]
   
-  init(id: Int, name: String, weight: Double, height: Double, category: String, abilities: [String], description: String, detailImageInfo: PokemonDetailImageInfo, types: [ElementTypeInfo], genderRatio: Double? = nil) {
+  init(id: Int, name: String, weight: Double, height: Double, category: String, abilities: [String], description: String, detailImageInfo: PokemonDetailImageInfo, types: [ElementTypeInfo], genderRatio: Double? = nil ,weaknesses: [ElementTypeInfo] = []) {
     self.id = id
     self.name = name
     self.weight = weight
@@ -31,6 +32,7 @@ struct PokemonInfo : Hashable, Identifiable {
     self.detailImageInfo = detailImageInfo
     self.types = types
     self.genderRatio = genderRatio
+    self.weaknesses = weaknesses
   }
   
   
