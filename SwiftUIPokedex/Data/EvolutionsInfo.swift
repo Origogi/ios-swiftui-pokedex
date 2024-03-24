@@ -9,11 +9,17 @@ import Foundation
 
 
 struct EvolutionsInfo {
-  let origin : PokemonInfo
-  let evolutionChain : [EvolutionChain]
+  let chains : [EvolutionChain]
 }
 
-struct EvolutionChain {
-  let condition : String
-  let evelution : PokemonInfo
+struct EvolutionChain : Identifiable, Hashable {
+  var id: UUID = UUID()
+  
+  let condition : String?
+  let next : PokemonInfo
+  
+  init(condition: String? = nil, next: PokemonInfo) {
+    self.condition = condition
+    self.next = next
+  }
 }

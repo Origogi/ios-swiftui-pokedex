@@ -37,7 +37,10 @@ struct PokemonCard: View {
         .padding(.vertical, 12)
         Spacer()
         ZStack { // ZStack의 정렬을 우측 상단으로 설정
-          ElementTypeCardView(type: pokemonInfo.mainType, size: .medium)
+          ElementTypeCard(type: pokemonInfo.mainType)
+            .frame(width: 126, height: 100)
+            .background(pokemonInfo.mainType.primaryColor)
+            .cornerRadius(15)
           Image(pokemonInfo.mediumImagePath)
             .resizable()
             .scaledToFit()
@@ -60,11 +63,48 @@ struct PokemonCard: View {
   }
 }
 
+
+struct PokemonSamllCard : View {
+  let pokemon : PokemonInfo
+  var body: some View {
+    HStack {
+      ZStack {
+        ElementTypeCard(type: pokemon.mainType)
+          .frame(width: 94, height: 74)
+          .background(pokemon.mainType.primaryColor)
+          .cornerRadius(71)
+      }
+      VStack(alignment: .leading, spacing: 4) {
+        Text(pokemon.name)
+          .font(.custom("Poppins-Medium", size: 16))
+          .foregroundColor(Color(hex: "#1A1A1A"))
+        Text(pokemon.id.pokemonNum())
+          .font(.custom("Poppins-SemiBold", size: 12))
+          .foregroundColor(
+            Color(hex : "#4D4D4D")
+          )
+        HStack(spacing : 4) {
+          ForEach(pokemon.types, id: \.self) { type in
+            ElementTypeSmallChip(type: type)
+              .frame(width: 68, height: 14)
+          }
+        }
+      }
+      Spacer()
+    }
+    
+    .overlay(
+      RoundedRectangle(cornerRadius: 90) // Rounded rectangle shape
+        .stroke(Color(hex: "#E6E6E6"), lineWidth: 1) // Border with blue color and 2 points width
+    )
+  }
+}
+
 #Preview {
   
   List {
     ForEach(AppData().pokemons, id: \.self) { info in
-      PokemonCard(pokemonInfo: info)
+      PokemonSamllCard(pokemon: info)
     }
   }
 }

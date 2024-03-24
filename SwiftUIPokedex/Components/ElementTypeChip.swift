@@ -7,6 +7,24 @@
 
 import SwiftUI
 
+struct ElementTypeSmallChip : View {
+  let type : ElementTypeInfo
+  
+  var body: some View {
+    HStack {
+      Image(type.smallImagePath)
+        .resizable()
+        .renderingMode(.template)
+        .scaledToFit()
+        .padding(2)
+        .foregroundColor(.white)
+    }
+    .frame(maxWidth: .infinity)
+    .background(type.primaryColor)
+    .cornerRadius(48)
+  }
+}
+
 struct ElementTypeChip: View {
   let type : ElementTypeInfo
   let fontSize : CGFloat
@@ -22,9 +40,6 @@ struct ElementTypeChip: View {
     self.innerVPadding = innerVPadding
   }
   
-  
-  
-
   var body: some View {
     HStack(spacing : 8) {
       ZStack {
@@ -37,7 +52,7 @@ struct ElementTypeChip: View {
           .padding(4)
           .foregroundColor(type.primaryColor)
       }.frame(width: iconSize, height: iconSize)
-
+      
       Text(type.name)
         .lineLimit(1)
         .font(.custom("Poppins-Medium", size: fontSize))
@@ -55,8 +70,9 @@ struct ElementTypeChip: View {
 #Preview {
   VStack {
     ForEach(ElementTypeInfo.allCases, id: \.self) { type in
-      ElementTypeChip(type: type, fontSize: 12, iconSize: 20, innerHPadding: 6, innerVPadding: 4)
+      ElementTypeSmallChip(type: type)
+        .frame(width: 68, height: 14)
     }
   }
-
+  
 }

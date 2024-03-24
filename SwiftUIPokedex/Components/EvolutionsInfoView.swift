@@ -12,23 +12,34 @@ struct EvolutionsInfoView: View {
   let evolutionsInfo : EvolutionsInfo
   
   var body: some View {
-    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    VStack(alignment: .leading, spacing: 8) {
+      Text("Evolutions")
+        .font(.custom("Poppins-Medium", size: 18))
+      VStack {
+        ForEach(evolutionsInfo.chains, id: \.self) { chain in
+          PokemonSamllCard(pokemon: chain.next)
+        }
+      }
+    }
   }
 }
+
 
 
 #Preview {
   EvolutionsInfoView(
     evolutionsInfo: EvolutionsInfo(
-      origin: AppData().pokemons.first!,
-      evolutionChain: [
+      chains: [
+        EvolutionChain(
+          next: AppData().pokemons[0]
+        ),
         EvolutionChain(
           condition: "Level 16",
-          evelution: AppData().pokemons[1]
+          next: AppData().pokemons[1]
         ),
         EvolutionChain(
           condition: "Level 32",
-          evelution: AppData().pokemons[2]
+          next: AppData().pokemons[2]
         ),
       ]
     )
