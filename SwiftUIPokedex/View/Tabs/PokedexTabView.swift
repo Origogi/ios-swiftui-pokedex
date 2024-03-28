@@ -27,6 +27,6 @@ struct PokedexTabView: View {
 
 #Preview {
   NavigationView {
-    PokedexTabView(pokemons : AppData().pokemons)
+    PokedexTabView(pokemons : PokemonInfoRepository().getAll())
   }
 }

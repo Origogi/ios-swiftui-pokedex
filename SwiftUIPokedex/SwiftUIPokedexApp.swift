@@ -10,11 +10,14 @@ import SwiftUI
 @main
 struct SwiftUIPokedexApp: App {
   
-  @State private var appData = AppData()
+  @StateObject var pokedexViewModel = PokedexViewModel(pokemonInfoRepository: PokemonInfoRepository())
+  
   
   var body: some Scene {
     WindowGroup {
-      ContentView()
+      ContentView(
+        pokedexViewModel: pokedexViewModel
+      )
     }
   }
 }

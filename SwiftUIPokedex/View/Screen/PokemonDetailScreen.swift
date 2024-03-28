@@ -122,6 +122,6 @@ struct PokemonStausInfosView: View {
 
 #Preview {
   PokemonDetailScreen(
-    pokemon: AppData().pokemons[0]
+    pokemon: PokemonInfoRepository().getAll()[0]
   )
 }

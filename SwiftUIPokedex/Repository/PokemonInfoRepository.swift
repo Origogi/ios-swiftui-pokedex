@@ -8,13 +8,12 @@
 import SwiftUI
 import Observation
 
-class AppData {
+class PokemonInfoRepository {
   
-  let pokemons : [PokemonInfo]
+  private let data : [PokemonInfo]
   
   init() {
-    
-    self.pokemons = [
+    self.data = [
       PokemonInfo(
         id: 1,
         name: "Bulbasaur",
@@ -509,5 +508,9 @@ class AppData {
         genderRatio: 0.5
       ),
     ]
+  }
+  
+  func getAll() -> [PokemonInfo] {
+    return data
   }
 }

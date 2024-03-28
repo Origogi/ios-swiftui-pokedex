@@ -103,7 +103,7 @@ struct PokemonSamllCard : View {
 #Preview {
   
   List {
-    ForEach(AppData().pokemons, id: \.self) { info in
+    ForEach(PokemonInfoRepository().getAll(), id: \.self) { info in
       PokemonSamllCard(pokemon: info)
     }
   }

@@ -39,33 +39,32 @@ enum Tab : CaseIterable {
     }
   }
   
-  @ViewBuilder
-  var view: some View {
-    switch self {
-    case .pokedex: PokedexTabView(pokemons: AppData().pokemons)
-    case .region: RegionTabView()
-    case .favorite: FavoritePageView()
-    case .profile: ProfilePageView()
-    }
-  }
 }
 
 struct ContentView: View {
   @State private var selectedTab: Tab = .pokedex
+  @ObservedObject private var pokedexViewModel : PokedexViewModel
   
+  init(pokedexViewModel: PokedexViewModel) {
+    self.pokedexViewModel = pokedexViewModel
+  }
   
   var body: some View {
     NavigationView {
       VStack(spacing: 0) {
         TabView(selection: $selectedTab) {
-          ForEach(Tab.allCases, id: \.self) { tab in
-            tab.view
-              .tag(tab)
-          }
+          PokedexTabView(pokemons: pokedexViewModel.filteredPokemons)
+            .tag(Tab.pokedex)
+          RegionTabView()
+            .tag(Tab.region)
+          FavoritePageView()
+            .tag(Tab.favorite)
+          ProfilePageView()
+            .tag(Tab.profile)
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         
-
+        
         Divider()
         HStack {
           Spacer()
@@ -85,18 +84,22 @@ struct ContentView: View {
             Spacer()
           }
           
-        }      
+        }
         .frame(maxWidth: .infinity, maxHeight: 60)
       }
       .safeAreaInset(edge: .top, alignment: .center, spacing: 0) {
         Color.clear
           .frame(height: 10)
           .background(Material.bar)
-    }
+      }
     }
   }
 }
 
 #Preview {
-  ContentView()
+  ContentView(
+    pokedexViewModel: PokedexViewModel(
+      pokemonInfoRepository : PokemonInfoRepository()
+    )
+  )
 }

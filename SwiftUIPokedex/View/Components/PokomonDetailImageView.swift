@@ -28,6 +28,6 @@ struct PokemonDetailImageView: View {
 }
 
 #Preview {
-  PokemonDetailImageView(detailImageInfo: AppData().pokemons.first!.detailImageInfo
+  PokemonDetailImageView(detailImageInfo: PokemonInfoRepository().getAll().first!.detailImageInfo
   )
 }

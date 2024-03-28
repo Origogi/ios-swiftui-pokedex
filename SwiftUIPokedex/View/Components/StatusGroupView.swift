@@ -46,5 +46,5 @@ struct StatusGroupView: View {
 
 #Preview {
   StatusGroupView(
-    pokemon: AppData().pokemons[11])
+    pokemon: PokemonInfoRepository().getAll()[11])
 }
