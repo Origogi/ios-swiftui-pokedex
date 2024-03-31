@@ -96,6 +96,9 @@ struct PokemonDetailScreen: View {
                   .padding(.bottom , 40)
                 WeaknessesView(types: poekmonInfo.weaknesses)
                   .padding(.bottom, 40)
+                EvolutionsInfoView(
+                  evolutionsInfo: poekmonInfo.evolutionsData
+                )
               }
               .padding(.horizontal, 16)
               .padding(.top, 10)
