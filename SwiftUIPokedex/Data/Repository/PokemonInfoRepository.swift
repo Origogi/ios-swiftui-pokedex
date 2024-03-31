@@ -513,4 +513,8 @@ class PokemonInfoRepository {
   func getAll() -> [PokemonInfo] {
     return data
   }
+  
+  func getById(_ id: Int) -> PokemonInfo {
+    return data.first { $0.id == id }!
+  }
 }
