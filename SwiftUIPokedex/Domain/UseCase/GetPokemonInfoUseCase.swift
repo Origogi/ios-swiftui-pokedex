@@ -15,7 +15,7 @@ class GetPokemonInfoUseCase {
     self.pokemonInfoRepository = pokemonInfoRepository
   }
   
-  func execute(id: Int) -> PokemonInfo {
+  func execute(id: Int) -> PokemonData {
     return pokemonInfoRepository.getById(id)
   }
 }

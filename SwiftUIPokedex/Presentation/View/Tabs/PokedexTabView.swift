@@ -9,13 +9,26 @@ import SwiftUI
 
 struct PokedexTabView: View {
   
-  let pokemons : [PokemonInfo]
+  let pokemons : [PokemonData]
   
   var body: some View {
     ScrollView {
       LazyVStack(spacing : 12) {
         ForEach(pokemons) { pokemon in
-          NavigationLink(destination: PokemonDetailScreen(pokemon: pokemon)) {
+          NavigationLink(
+            destination: PokemonDetailScreen(
+              viewModel: PokemonDetailViewModel(
+                getPokemonInfoUseCase: GetPokemonInfoUseCase(
+                  pokemonInfoRepository: PokemonInfoRepository()
+                ),
+                getEvolutionsInfoUseCase: GetEvolutionsInfoUseCase(
+                  pokemonEvolutionsDataRepository: PokemonEvolutiosDataRepository(),
+                  pokemonInfoRepository: PokemonInfoRepository()
+                ),
+                pokemonId: pokemon.id
+              )
+            )
+          ) {
             PokemonCard(pokemonInfo: pokemon)
           }
         }

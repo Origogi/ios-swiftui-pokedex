@@ -8,21 +8,23 @@
 import SwiftUI
 
 struct StatusGroupView: View {
-  let pokemon : PokemonInfo
-  
+  let weight: Double
+  let height: Double
+  let category: String
+  let abilities: [String]
   
   var body: some View {
     VStack(spacing: 20) {
       HStack(spacing : 20) {
         StatusView(
           statusName: "Weight", 
-          value: "\(pokemon.weight) kg",
+          value: "\(weight) kg",
           iconPath: "Weight"
         )
         
         StatusView(
           statusName: "Height",
-          value: "\(pokemon.weight) m",
+          value: "\(height) m",
           iconPath: "Height"
         )
       }
@@ -30,13 +32,13 @@ struct StatusGroupView: View {
       HStack(alignment: .top, spacing : 20) {
         StatusView(
           statusName: "Category",
-          value: pokemon.category,
+          value: category,
           iconPath: "Category"
         )
         
         StatusView(
           statusName: "Abilities",
-          value: pokemon.abilities.joined(separator: " "),
+          value: abilities.joined(separator: " "),
           iconPath: "Abilities"
         )
       }
@@ -46,5 +48,9 @@ struct StatusGroupView: View {
 
 #Preview {
   StatusGroupView(
-    pokemon: PokemonInfoRepository().getAll()[11])
+    weight: 12.5,
+    height: 0.6,
+    category: "Seed",
+    abilities: ["Overgrow", "Chlorophyll"]
+  )
 }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PokemonCard: View {
-  let pokemonInfo : PokemonInfo
+  let pokemonInfo : PokemonData
   
   var body: some View {
     ZStack {
@@ -65,7 +65,7 @@ struct PokemonCard: View {
 
 
 struct PokemonSamllCard : View {
-  let pokemon : PokemonInfo
+  let pokemon : PokemonData
   var body: some View {
     HStack {
       ZStack {

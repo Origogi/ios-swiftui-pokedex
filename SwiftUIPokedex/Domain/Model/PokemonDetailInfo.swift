@@ -20,4 +20,16 @@ struct PokemonDetailInfo {
   let genderRatio : Double?
   let weaknesses : [ElementTypeInfo]
   let evolutionsData : EvolutionsInfo
+  
+  var mainType : ElementTypeInfo {
+    return types.first!
+  }
+  
+  var smallImagePath : String {
+    return "\(id)_small"
+  }
+  
+  var mediumImagePath : String {
+    return "\(id)_medium"
+  }
 }

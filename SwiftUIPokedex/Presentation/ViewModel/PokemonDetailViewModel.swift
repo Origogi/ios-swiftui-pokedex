@@ -7,38 +7,42 @@
 
 import Foundation
 
-class PokemonDetailViewModel {
+class PokemonDetailViewModel : ObservableObject {
   
-  @Published var pokemonDetailInfo : PokemonDetailInfo
+  @Published var pokemonDetailInfo : PokemonDetailInfo?
   
-  private let pokemonInfoRepository : PokemonInfoRepository
+  private let getPokemonInfoUseCase : GetPokemonInfoUseCase
   private let getEvolutionsInfoUseCase : GetEvolutionsInfoUseCase
+  private let pokemonId : Int
   
   init(
-    pokemonInfoRepository: PokemonInfoRepository,
+    getPokemonInfoUseCase: GetPokemonInfoUseCase,
     getEvolutionsInfoUseCase: GetEvolutionsInfoUseCase,
-    pokemonInfo: PokemonInfo, pokemonId : Int) {
+    pokemonId : Int) {
       
-      self.pokemonInfoRepository = pokemonInfoRepository
+      self.getPokemonInfoUseCase = getPokemonInfoUseCase
       self.getEvolutionsInfoUseCase = getEvolutionsInfoUseCase
-      
-      let pokemonInfo = pokemonInfoRepository.getById(pokemonId)
-      let evolutionsInfo = getEvolutionsInfoUseCase.execute(pokemonId: pokemonId)
-      
-      
-      pokemonDetailInfo = PokemonDetailInfo(
-        id: pokemonInfo.id,
-        name: pokemonInfo.name,
-        weight: pokemonInfo.weight,
-        height: pokemonInfo.height,
-        category: pokemonInfo.category,
-        abilities: pokemonInfo.abilities,
-        description: pokemonInfo.description,
-        detailImageInfo: pokemonInfo.detailImageInfo,
-        types: pokemonInfo.types,
-        genderRatio: pokemonInfo.genderRatio,
-        weaknesses: pokemonInfo.weaknesses,
-        evolutionsData: evolutionsInfo)
+      self.pokemonId = pokemonId
     }
+  
+  func load() {
+    let pokemonInfo = getPokemonInfoUseCase.execute(id: pokemonId)
+    let evolutionsInfo = getEvolutionsInfoUseCase.execute(id: pokemonId)
+    
+    
+    pokemonDetailInfo = PokemonDetailInfo(
+      id: pokemonInfo.id,
+      name: pokemonInfo.name,
+      weight: pokemonInfo.weight,
+      height: pokemonInfo.height,
+      category: pokemonInfo.category,
+      abilities: pokemonInfo.abilities,
+      description: pokemonInfo.description,
+      detailImageInfo: pokemonInfo.detailImageInfo,
+      types: pokemonInfo.types,
+      genderRatio: pokemonInfo.genderRatio,
+      weaknesses: pokemonInfo.weaknesses,
+      evolutionsData: evolutionsInfo)
+  }
   
 }

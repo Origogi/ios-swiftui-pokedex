@@ -16,8 +16,8 @@ class GetEvolutionsInfoUseCase {
     self.pokemonInfoRepository = pokemonInfoRepository
   }
   
-  func execute(pokemonId: Int) -> EvolutionsInfo {
-    let evolData = pokemonEvolutionsDataRepository.getByPokemonId(pokemonId: pokemonId)
+  func execute(id: Int) -> EvolutionsInfo {
+    let evolData = pokemonEvolutionsDataRepository.getByPokemonId(pokemonId: id)
     
     return EvolutionsInfo(
       chains: evolData.chains.map { chain in

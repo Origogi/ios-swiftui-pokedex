@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PokemonInfo : Hashable, Identifiable {
+struct PokemonData : Hashable, Identifiable {
   
   let id : Int
   let name : String

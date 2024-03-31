@@ -10,11 +10,11 @@ import Observation
 
 class PokemonInfoRepository {
   
-  private let data : [PokemonInfo]
+  private let data : [PokemonData]
   
   init() {
     self.data = [
-      PokemonInfo(
+      PokemonData(
         id: 1,
         name: "Bulbasaur",
         weight: 6.9,
@@ -39,7 +39,7 @@ class PokemonInfoRepository {
           .psychic
         ]
       ),
-      PokemonInfo(
+      PokemonData(
         id: 2,
         name: "Ivysaur",
         weight: 13.0,
@@ -64,7 +64,7 @@ class PokemonInfoRepository {
           .psychic
         ]
       ),
-      PokemonInfo(
+      PokemonData(
         id: 3,
         name: "Venusaur",
         weight: 100.0,
@@ -89,7 +89,7 @@ class PokemonInfoRepository {
           .psychic
         ]
       ),
-      PokemonInfo(
+      PokemonData(
         id: 4,
         name: "Charmander",
         weight: 8.5,
@@ -107,7 +107,7 @@ class PokemonInfoRepository {
         ],
         genderRatio: 0.87
       ),
-      PokemonInfo(
+      PokemonData(
         id: 5,
         name: "Charmeleon",
         weight: 19.0,
@@ -125,7 +125,7 @@ class PokemonInfoRepository {
         ],
         genderRatio: 0.87
       ),
-      PokemonInfo(
+      PokemonData(
         id: 6,
         name: "Charizard",
         weight: 90.5,
@@ -144,7 +144,7 @@ class PokemonInfoRepository {
         ],
         genderRatio: 0.87
       ),
-      PokemonInfo(
+      PokemonData(
         id: 7,
         name: "Squirtle",
         weight: 6.9,
@@ -162,7 +162,7 @@ class PokemonInfoRepository {
         ],
         genderRatio: 0.87
       ),
-      PokemonInfo(
+      PokemonData(
         id: 8,
         name: "Wartortle",
         weight: 6.9,
@@ -180,7 +180,7 @@ class PokemonInfoRepository {
         ],
         genderRatio: 0.87
       ),
-      PokemonInfo(
+      PokemonData(
         id: 9,
         name: "Blastoise",
         weight: 6.9,
@@ -198,7 +198,7 @@ class PokemonInfoRepository {
         ],
         genderRatio: 0.87
       ),
-      PokemonInfo(
+      PokemonData(
         id: 15,
         name: "Beedrill",
         weight: 6.9,
@@ -217,7 +217,7 @@ class PokemonInfoRepository {
         ],
         genderRatio: 0.5
       ),
-      PokemonInfo(
+      PokemonData(
         id: 25,
         name: "Pikachu",
         weight: 6.9,
@@ -235,7 +235,7 @@ class PokemonInfoRepository {
         ],
         genderRatio: 0.5
       ),
-      PokemonInfo(
+      PokemonData(
         id: 35,
         name: "Clefairy",
         weight: 6.9,
@@ -253,7 +253,7 @@ class PokemonInfoRepository {
         ],
         genderRatio: 0.25
       ),
-      PokemonInfo(
+      PokemonData(
         id: 51,
         name: "Dugtrio",
         weight: 6.9,
@@ -271,7 +271,7 @@ class PokemonInfoRepository {
         ],
         genderRatio: 0.5
       ),
-      PokemonInfo(
+      PokemonData(
         id: 95,
         name: "Onix",
         weight: 6.9,
@@ -290,7 +290,7 @@ class PokemonInfoRepository {
         ],
         genderRatio: 0.5
       ),
-      PokemonInfo(
+      PokemonData(
         id: 108,
         name: "Lickitung",
         weight: 6.9,
@@ -308,7 +308,7 @@ class PokemonInfoRepository {
         ],
         genderRatio: 0.5
       ),
-      PokemonInfo(
+      PokemonData(
         id: 109,
         name: "Koffing",
         weight: 6.9,
@@ -326,7 +326,7 @@ class PokemonInfoRepository {
         ],
         genderRatio: 0.5
       ),
-      PokemonInfo(
+      PokemonData(
         id: 151,
         name: "Mew",
         weight: 6.9,
@@ -343,7 +343,7 @@ class PokemonInfoRepository {
           .psychic
         ]
       ),
-      PokemonInfo(
+      PokemonData(
         id: 245,
         name: "Suicune",
         weight: 6.9,
@@ -360,7 +360,7 @@ class PokemonInfoRepository {
           .water
         ]
       ),
-      PokemonInfo(
+      PokemonData(
         id: 306,
         name: "Aggron",
         weight: 6.9,
@@ -379,7 +379,7 @@ class PokemonInfoRepository {
         ],
         genderRatio: 0.5
       ),
-      PokemonInfo(
+      PokemonData(
         id: 384,
         name: "Rayquaza",
         weight: 6.9,
@@ -396,7 +396,7 @@ class PokemonInfoRepository {
           .dragon,
         ]
       ),
-      PokemonInfo(
+      PokemonData(
         id: 448,
         name: "Lucario",
         weight: 6.9,
@@ -415,7 +415,7 @@ class PokemonInfoRepository {
         ],
         genderRatio: 0.87
       ),
-      PokemonInfo(
+      PokemonData(
         id: 497,
         name: "Serperior",
         weight: 6.9,
@@ -433,7 +433,7 @@ class PokemonInfoRepository {
         ],
         genderRatio: 0.87
       ),
-      PokemonInfo(
+      PokemonData(
         id: 571,
         name: "Zoroark",
         weight: 6.9,
@@ -451,7 +451,7 @@ class PokemonInfoRepository {
         ],
         genderRatio: 0.87
       ),
-      PokemonInfo(
+      PokemonData(
         id: 609,
         name: "Chandelure",
         weight: 6.9,
@@ -470,7 +470,7 @@ class PokemonInfoRepository {
         ],
         genderRatio: 0.5
       ),
-      PokemonInfo(
+      PokemonData(
         id: 613,
         name: "Cubchoo",
         weight: 6.9,
@@ -488,7 +488,7 @@ class PokemonInfoRepository {
         ],
         genderRatio: 0.5
       ),
-      PokemonInfo(
+      PokemonData(
         id: 733,
         name: "Toucannon",
         weight: 6.9,
@@ -510,11 +510,11 @@ class PokemonInfoRepository {
     ]
   }
   
-  func getAll() -> [PokemonInfo] {
+  func getAll() -> [PokemonData] {
     return data
   }
   
-  func getById(_ id: Int) -> PokemonInfo {
+  func getById(_ id: Int) -> PokemonData {
     return data.first { $0.id == id }!
   }
 }

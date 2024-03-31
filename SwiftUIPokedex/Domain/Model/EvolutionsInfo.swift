@@ -16,9 +16,9 @@ struct EvolutionChain : Identifiable, Hashable {
   var id: UUID = UUID()
   
   let condition : String?
-  let next : PokemonInfo
+  let next : PokemonData
   
-  init(condition: String? = nil, next: PokemonInfo) {
+  init(condition: String? = nil, next: PokemonData) {
     self.condition = condition
     self.next = next
   }

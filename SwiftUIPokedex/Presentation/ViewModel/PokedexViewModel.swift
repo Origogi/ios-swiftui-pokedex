@@ -9,7 +9,7 @@ import Foundation
 
 class PokedexViewModel : ObservableObject {
   
-  @Published var filteredPokemons : [PokemonInfo]
+  @Published var filteredPokemons : [PokemonData]
   private let pokemonInfoRepository : PokemonInfoRepository
   
   init(pokemonInfoRepository: PokemonInfoRepository) {
