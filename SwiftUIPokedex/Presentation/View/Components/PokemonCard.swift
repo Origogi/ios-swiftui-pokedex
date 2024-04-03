@@ -86,13 +86,14 @@ struct PokemonSamllCard : View {
         HStack(spacing : 4) {
           ForEach(pokemon.types, id: \.self) { type in
             ElementTypeSmallChip(type: type)
-              .frame(width: 68, height: 14)
+              .frame(width: .infinity, height: 14)
           }
+          Spacer()
+            .frame(width: 48)
         }
       }
       Spacer()
     }
-    
     .overlay(
       RoundedRectangle(cornerRadius: 90) // Rounded rectangle shape
         .stroke(Color(hex: "#E6E6E6"), lineWidth: 1) // Border with blue color and 2 points width

@@ -25,6 +25,12 @@ struct EvolutionsInfoView: View {
           }
         }
       }
+      .padding(.horizontal, 16)
+      .padding(.vertical, 24)
+      .overlay(
+        RoundedRectangle(cornerRadius: 15) // Rounded rectangle shape
+          .stroke(Color(hex: "#E6E6E6"), lineWidth: 1) // Border with blue color and 2 points width
+      )
       
     }
   }
