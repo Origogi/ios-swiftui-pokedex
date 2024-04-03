@@ -16,12 +16,12 @@ struct EvolutionsInfoView: View {
       Text("Evolutions")
         .font(.custom("Poppins-Medium", size: 18))
       VStack {
-        ForEach(evolutionsInfo.chains, id: \.self) { chain in
+        ForEach(evolutionsInfo.chains) { chain in
           VStack {
             if let condition = chain.condition {
               EvolutionConditionView(condition: condition)
             }
-            PokemonSamllCard(pokemon: chain.next)
+            PokemonSamllCard(info: chain.next)
           }
         }
       }
@@ -55,15 +55,15 @@ struct EvolutionConditionView: View {
     evolutionsInfo: EvolutionsInfo(
       chains: [
         EvolutionChain(
-          next: PokemonInfoRepository().getAll()[0]
+          next: PokemonCardInfo(pokedexId: 1, name: "name1", imagePath: "1_medium", types: [.bug])
         ),
         EvolutionChain(
           condition: "Level 16",
-          next: PokemonInfoRepository().getAll()[1]
+          next: PokemonCardInfo(pokedexId: 2, name: "name2", imagePath: "1_medium", types: [.bug])
         ),
         EvolutionChain(
           condition: "Level 32",
-          next: PokemonInfoRepository().getAll()[2]
+          next: PokemonCardInfo(pokedexId: 3, name: "name3", imagePath: "1_medium", types: [.bug])
         ),
       ]
     )

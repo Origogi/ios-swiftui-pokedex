@@ -8,18 +8,18 @@
 import SwiftUI
 
 struct PokemonCard: View {
-  let pokemonInfo : PokemonData
+  let info : PokemonCardInfo
   
   var body: some View {
     ZStack {
       HStack {
         VStack(alignment: .leading, spacing: 0) {
-          Text(pokemonInfo.id.pokemonNum())
+          Text(info.pokedexId.pokemonNum())
             .font(.custom("Poppins-SemiBold", size: 12))
             .foregroundColor(
               Color(hex : "#333333")
             )
-          Text(pokemonInfo.name)
+          Text(info.name)
             .font(.custom("Poppins-SemiBold", size: 21)
             )
             .foregroundColor(
@@ -27,7 +27,7 @@ struct PokemonCard: View {
             )
           Spacer()
           HStack(spacing : 4) {
-            ForEach(pokemonInfo.types, id: \.self) { type in
+            ForEach(info.types, id: \.self) { type in
               ElementTypeChip(type: type, fontSize: 11, iconSize: 20, innerHPadding: 7, innerVPadding: 3)
             }
           }
@@ -37,11 +37,11 @@ struct PokemonCard: View {
         .padding(.vertical, 12)
         Spacer()
         ZStack { // ZStack의 정렬을 우측 상단으로 설정
-          ElementTypeCard(type: pokemonInfo.mainType)
+          ElementTypeCard(type: info.mainType)
             .frame(width: 126, height: 100)
-            .background(pokemonInfo.mainType.primaryColor)
+            .background(info.mainType.primaryColor)
             .cornerRadius(15)
-          Image(pokemonInfo.mediumImagePath)
+          Image(info.imagePath)
             .resizable()
             .scaledToFit()
             .padding(4)
@@ -57,7 +57,7 @@ struct PokemonCard: View {
         }.frame(maxWidth: 126, maxHeight: 100)
       }
     }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: 100)
-      .background(pokemonInfo.mainType.secondaryColor)
+      .background(info.mainType.secondaryColor)
       .cornerRadius(15)
     
   }
@@ -65,26 +65,26 @@ struct PokemonCard: View {
 
 
 struct PokemonSamllCard : View {
-  let pokemon : PokemonData
+  let info : PokemonCardInfo
   var body: some View {
     HStack {
       ZStack {
-        ElementTypeCard(type: pokemon.mainType)
+        ElementTypeCard(type: info.mainType)
           .frame(width: 94, height: 74)
-          .background(pokemon.mainType.primaryColor)
+          .background(info.mainType.primaryColor)
           .cornerRadius(71)
       }
       VStack(alignment: .leading, spacing: 4) {
-        Text(pokemon.name)
+        Text(info.name)
           .font(.custom("Poppins-Medium", size: 16))
           .foregroundColor(Color(hex: "#1A1A1A"))
-        Text(pokemon.id.pokemonNum())
+        Text(info.pokedexId.pokemonNum())
           .font(.custom("Poppins-SemiBold", size: 12))
           .foregroundColor(
             Color(hex : "#4D4D4D")
           )
         HStack(spacing : 4) {
-          ForEach(pokemon.types, id: \.self) { type in
+          ForEach(info.types, id: \.self) { type in
             ElementTypeSmallChip(type: type)
               .frame(width: .infinity, height: 14)
           }
@@ -105,7 +105,14 @@ struct PokemonSamllCard : View {
   
   List {
     ForEach(PokemonInfoRepository().getAll(), id: \.self) { info in
-      PokemonSamllCard(pokemon: info)
+      PokemonCard(info: PokemonCardInfo(
+        pokedexId: 1,
+        name: "Name",
+        imagePath: "1_medium",
+        types: [
+        .bug,
+        .dark,
+      ]))
     }
   }
 }

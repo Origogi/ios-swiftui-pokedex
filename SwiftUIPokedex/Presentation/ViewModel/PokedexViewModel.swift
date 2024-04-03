@@ -9,11 +9,14 @@ import Foundation
 
 class PokedexViewModel : ObservableObject {
   
-  @Published var filteredPokemons : [PokemonData]
-  private let pokemonInfoRepository : PokemonInfoRepository
+  @Published var filteredInfos : [PokemonCardInfo] = []
+  private let getPokemonListCardInfosUseCase : GetPokemonListCardInfosUseCase
   
-  init(pokemonInfoRepository: PokemonInfoRepository) {
-    self.pokemonInfoRepository = pokemonInfoRepository
-    self.filteredPokemons = pokemonInfoRepository.getAll()
+  init(getPokemonListCardInfosUseCase: GetPokemonListCardInfosUseCase) {
+    self.getPokemonListCardInfosUseCase = getPokemonListCardInfosUseCase
+  }
+  
+  func load() {
+    filteredInfos = getPokemonListCardInfosUseCase.execute()
   }
 }

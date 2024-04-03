@@ -35,6 +35,8 @@
 		9F0D5AF72B9D3754001D7009 /* 613.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9F0D5AF02B9D3754001D7009 /* 613.gif */; };
 		9F0D5AFD2B9D436F001D7009 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0D5AFC2B9D436F001D7009 /* BackButton.swift */; };
 		9F0D5AFF2B9D49CE001D7009 /* BigFavButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0D5AFE2B9D49CE001D7009 /* BigFavButton.swift */; };
+		9F1A7C222BBD8D2A00BF9F62 /* PokemonCardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1A7C212BBD8D2A00BF9F62 /* PokemonCardInfo.swift */; };
+		9F1A7C242BBD8E8200BF9F62 /* GetPokemonListCardInfosUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1A7C232BBD8E8200BF9F62 /* GetPokemonListCardInfosUseCase.swift */; };
 		9F44882F2B90B28F005F0F96 /* PokemonDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F44882E2B90B28F005F0F96 /* PokemonDetailScreen.swift */; };
 		9F4680DF2BA1743C0004234E /* GenderRatioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4680DE2BA1743C0004234E /* GenderRatioView.swift */; };
 		9F4CC3F92BB8EAD50008DFB1 /* PokemonEvolutionsDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F4CC3F82BB8EAD50008DFB1 /* PokemonEvolutionsDataRepository.swift */; };
@@ -114,6 +116,8 @@
 		9F0D5AF02B9D3754001D7009 /* 613.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = 613.gif; sourceTree = "<group>"; };
 		9F0D5AFC2B9D436F001D7009 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		9F0D5AFE2B9D49CE001D7009 /* BigFavButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigFavButton.swift; sourceTree = "<group>"; };
+		9F1A7C212BBD8D2A00BF9F62 /* PokemonCardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCardInfo.swift; sourceTree = "<group>"; };
+		9F1A7C232BBD8E8200BF9F62 /* GetPokemonListCardInfosUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPokemonListCardInfosUseCase.swift; sourceTree = "<group>"; };
 		9F44882E2B90B28F005F0F96 /* PokemonDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDetailScreen.swift; sourceTree = "<group>"; };
 		9F4680DE2BA1743C0004234E /* GenderRatioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderRatioView.swift; sourceTree = "<group>"; };
 		9F4CC3F82BB8EAD50008DFB1 /* PokemonEvolutionsDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonEvolutionsDataRepository.swift; sourceTree = "<group>"; };
@@ -267,6 +271,7 @@
 			children = (
 				9F76DC002BA7AA9F0053137B /* EvolutionsInfo.swift */,
 				9F4CC4042BB8F6E10008DFB1 /* PokemonDetailInfo.swift */,
+				9F1A7C212BBD8D2A00BF9F62 /* PokemonCardInfo.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -276,6 +281,7 @@
 			children = (
 				9F4CC3FE2BB8F2B20008DFB1 /* GetEvolutionsInfoUseCase.swift */,
 				9F4CC4022BB8F64A0008DFB1 /* GetPokemonInfoUseCase.swift */,
+				9F1A7C232BBD8E8200BF9F62 /* GetPokemonListCardInfosUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -593,6 +599,7 @@
 				9FE75E972BB5AC3E00787D53 /* PokedexViewModel.swift in Sources */,
 				9F4CC4012BB8F5AC0008DFB1 /* PokemonDetailViewModel.swift in Sources */,
 				9F0D5AFD2B9D436F001D7009 /* BackButton.swift in Sources */,
+				9F1A7C222BBD8D2A00BF9F62 /* PokemonCardInfo.swift in Sources */,
 				9FBE4FCC2B875AA900EA8ED7 /* ColorExt.swift in Sources */,
 				9F0265252B84DF5F001F1AD3 /* SwiftUIPokedexApp.swift in Sources */,
 				9FD705432B8AC3FC00CBFA42 /* PokemonData.swift in Sources */,
@@ -608,6 +615,7 @@
 				9FBE4FD32B883E4100EA8ED7 /* RegionTabView.swift in Sources */,
 				9FBE4FD52B883E6300EA8ED7 /* ProfilePageView.swift in Sources */,
 				9FD705472B8ACCC700CBFA42 /* PokemonCard.swift in Sources */,
+				9F1A7C242BBD8E8200BF9F62 /* GetPokemonListCardInfosUseCase.swift in Sources */,
 				9F4CC3FC2BB8EDFA0008DFB1 /* EvolutionsData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

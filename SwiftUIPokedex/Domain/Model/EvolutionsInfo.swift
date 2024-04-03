@@ -8,17 +8,17 @@
 import Foundation
 
 
-struct EvolutionsInfo {
+struct EvolutionsInfo{
   let chains : [EvolutionChain]
 }
 
-struct EvolutionChain : Identifiable, Hashable {
-  var id: UUID = UUID()
+struct EvolutionChain : Identifiable {
+  let id: UUID = UUID()
   
   let condition : String?
-  let next : PokemonData
+  let next : PokemonCardInfo
   
-  init(condition: String? = nil, next: PokemonData) {
+  init(condition: String? = nil, next: PokemonCardInfo) {
     self.condition = condition
     self.next = next
   }

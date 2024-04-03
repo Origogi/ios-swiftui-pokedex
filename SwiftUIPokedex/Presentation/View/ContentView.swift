@@ -43,17 +43,17 @@ enum Tab : CaseIterable {
 
 struct ContentView: View {
   @State private var selectedTab: Tab = .pokedex
-  @ObservedObject private var pokedexViewModel : PokedexViewModel
-  
-  init(pokedexViewModel: PokedexViewModel) {
-    self.pokedexViewModel = pokedexViewModel
-  }
+  @StateObject var pokedexViewModel = PokedexViewModel(
+    getPokemonListCardInfosUseCase: GetPokemonListCardInfosUseCase(
+      pokemonInfoRepository: PokemonInfoRepository()
+    )
+  )
   
   var body: some View {
     NavigationView {
       VStack(spacing: 0) {
         TabView(selection: $selectedTab) {
-          PokedexTabView(pokemons: pokedexViewModel.filteredPokemons)
+          PokedexTabView(viewModel: pokedexViewModel)
             .tag(Tab.pokedex)
           RegionTabView()
             .tag(Tab.region)
@@ -99,7 +99,9 @@ struct ContentView: View {
 #Preview {
   ContentView(
     pokedexViewModel: PokedexViewModel(
-      pokemonInfoRepository : PokemonInfoRepository()
+      getPokemonListCardInfosUseCase: GetPokemonListCardInfosUseCase(
+        pokemonInfoRepository: PokemonInfoRepository()
+      )
     )
   )
 }

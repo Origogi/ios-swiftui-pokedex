@@ -16,9 +16,7 @@ struct PokemonDetailScreen: View {
     self.viewModel = viewModel
   }
   
-  var body: some View {
-    let poekmonInfo = viewModel.pokemonDetailInfo
-    
+  var body: some View {    
     VStack {
       if let poekmonInfo = viewModel.pokemonDetailInfo {
         GeometryReader { geometry in

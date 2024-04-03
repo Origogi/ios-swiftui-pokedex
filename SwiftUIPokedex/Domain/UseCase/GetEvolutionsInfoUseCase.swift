@@ -25,7 +25,7 @@ class GetEvolutionsInfoUseCase {
         
         return EvolutionChain(
           condition: chain.condition,
-          next: pokemonData
+          next: PokemonCardInfo(pokedexId: pokemonData.id, name: pokemonData.name, imagePath: pokemonData.mediumImagePath, types: pokemonData.types)
         )
       }
     )
