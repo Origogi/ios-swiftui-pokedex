@@ -9,9 +9,9 @@ import Foundation
 
 class GetEvolutionsInfoUseCase {
   private let pokemonEvolutionsDataRepository : PokemonEvolutiosDataRepository
-  private let pokemonInfoRepository : PokemonInfoRepository
+  private let pokemonInfoRepository : PokemonDataRepository
   
-  init(pokemonEvolutionsDataRepository: PokemonEvolutiosDataRepository, pokemonInfoRepository: PokemonInfoRepository) {
+  init(pokemonEvolutionsDataRepository: PokemonEvolutiosDataRepository, pokemonInfoRepository: PokemonDataRepository) {
     self.pokemonEvolutionsDataRepository = pokemonEvolutionsDataRepository
     self.pokemonInfoRepository = pokemonInfoRepository
   }

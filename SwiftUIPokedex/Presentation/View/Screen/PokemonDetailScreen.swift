@@ -136,11 +136,11 @@ struct PokemonStausInfosView: View {
   PokemonDetailScreen(
     viewModel: PokemonDetailViewModel(
       getPokemonInfoUseCase: GetPokemonInfoUseCase(
-        pokemonInfoRepository: PokemonInfoRepository()
+        pokemonInfoRepository: PokemonDataRepository()
       ),
       getEvolutionsInfoUseCase: GetEvolutionsInfoUseCase(
         pokemonEvolutionsDataRepository: PokemonEvolutiosDataRepository(),
-        pokemonInfoRepository: PokemonInfoRepository()
+        pokemonInfoRepository: PokemonDataRepository()
       ),
       pokemonId: 1
     )

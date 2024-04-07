@@ -8,7 +8,7 @@
 import SwiftUI
 import Observation
 
-class PokemonInfoRepository {
+class PokemonDataRepository {
   
   private let data : [PokemonData]
   
@@ -199,6 +199,22 @@ class PokemonInfoRepository {
         genderRatio: 0.87
       ),
       PokemonData(
+        id: 13,
+        name: "Weedie",
+        types: [
+          .bug,
+          .poison
+        ]
+      ),
+      PokemonData(
+        id: 14,
+        name: "Kakuna",
+        types: [
+          .bug,
+          .poison
+        ]
+      ),
+      PokemonData(
         id: 15,
         name: "Beedrill",
         weight: 6.9,
@@ -236,6 +252,27 @@ class PokemonInfoRepository {
         genderRatio: 0.5
       ),
       PokemonData(
+        id: 172,
+        name: "Pichu",
+        types: [
+          .electric
+        ]
+      ),
+      PokemonData(
+        id: 26,
+        name: "Raichu",
+        types: [
+          .electric
+        ]
+      ),
+      PokemonData(
+        id: 35,
+        name: "Cleffa",
+        types: [
+          .fairy
+        ]
+      ),
+      PokemonData(
         id: 35,
         name: "Clefairy",
         weight: 6.9,
@@ -252,6 +289,20 @@ class PokemonInfoRepository {
           .fairy
         ],
         genderRatio: 0.25
+      ),
+      PokemonData(
+        id: 35,
+        name: "Clefable",
+        types: [
+          .fairy
+        ]
+      ),
+      PokemonData(
+        id: 50,
+        name: "Diglett",
+        types: [
+          .ground
+        ]
       ),
       PokemonData(
         id: 51,
@@ -291,6 +342,14 @@ class PokemonInfoRepository {
         genderRatio: 0.5
       ),
       PokemonData(
+        id: 208,
+        name: "Steelix",
+        types: [
+          .rock,
+          .steel
+        ]
+      ),
+      PokemonData(
         id: 108,
         name: "Lickitung",
         weight: 6.9,
@@ -309,6 +368,13 @@ class PokemonInfoRepository {
         genderRatio: 0.5
       ),
       PokemonData(
+        id: 463,
+        name: "Lickilicky",
+        types: [
+          .normal
+        ]
+      ),
+      PokemonData(
         id: 109,
         name: "Koffing",
         weight: 6.9,
@@ -325,6 +391,13 @@ class PokemonInfoRepository {
           .poison
         ],
         genderRatio: 0.5
+      ),
+      PokemonData(
+        id: 110,
+        name: "Weezing",
+        types: [
+          .poison
+        ]
       ),
       PokemonData(
         id: 151,
@@ -361,6 +434,22 @@ class PokemonInfoRepository {
         ]
       ),
       PokemonData(
+        id: 304,
+        name: "Aron",
+        types: [
+          .steel,
+          .ground
+        ]
+      ),
+      PokemonData(
+        id: 305,
+        name: "Lairon",
+        types: [
+          .steel,
+          .ground
+        ]
+      ),
+      PokemonData(
         id: 306,
         name: "Aggron",
         weight: 6.9,
@@ -394,6 +483,14 @@ class PokemonInfoRepository {
         ),
         types: [
           .dragon,
+        ]
+      ),
+      PokemonData(
+        id: 447,
+        name: "Riolu",
+        types: [
+          .fighting,
+          .steel
         ]
       ),
       PokemonData(

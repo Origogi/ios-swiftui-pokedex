@@ -104,7 +104,7 @@ struct PokemonSamllCard : View {
 #Preview {
   
   List {
-    ForEach(PokemonInfoRepository().getAll(), id: \.self) { info in
+    ForEach(PokemonDataRepository().getAll(), id: \.self) { info in
       PokemonCard(info: PokemonCardInfo(
         pokedexId: 1,
         name: "Name",

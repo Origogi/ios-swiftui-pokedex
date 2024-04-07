@@ -9,15 +9,19 @@ import Foundation
 
 class GetPokemonListCardInfosUseCase {
   
-  private let pokemonInfoRepository : PokemonInfoRepository
+  private let pokemonInfoRepository : PokemonDataRepository
   
-  init(pokemonInfoRepository: PokemonInfoRepository) {
+  init(pokemonInfoRepository: PokemonDataRepository) {
     self.pokemonInfoRepository = pokemonInfoRepository
   }
   
   func execute() -> [PokemonCardInfo] {
-    return pokemonInfoRepository.getAll().map { pokemon in
-      PokemonCardInfo(
+    return pokemonInfoRepository.getAll()
+      .filter { pokemon in
+        pokemon.hasDetailInfo
+      }
+      .map { pokemon in
+        PokemonCardInfo(
         pokedexId : pokemon.id,
         name : pokemon.name,
         imagePath : pokemon.mediumImagePath,

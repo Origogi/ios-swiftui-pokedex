@@ -45,7 +45,7 @@ struct ContentView: View {
   @State private var selectedTab: Tab = .pokedex
   @StateObject var pokedexViewModel = PokedexViewModel(
     getPokemonListCardInfosUseCase: GetPokemonListCardInfosUseCase(
-      pokemonInfoRepository: PokemonInfoRepository()
+      pokemonInfoRepository: PokemonDataRepository()
     )
   )
   
@@ -100,7 +100,7 @@ struct ContentView: View {
   ContentView(
     pokedexViewModel: PokedexViewModel(
       getPokemonListCardInfosUseCase: GetPokemonListCardInfosUseCase(
-        pokemonInfoRepository: PokemonInfoRepository()
+        pokemonInfoRepository: PokemonDataRepository()
       )
     )
   )
