@@ -266,7 +266,7 @@ class PokemonDataRepository {
         ]
       ),
       PokemonData(
-        id: 35,
+        id: 173,
         name: "Cleffa",
         types: [
           .fairy
@@ -531,6 +531,13 @@ class PokemonDataRepository {
         genderRatio: 0.87
       ),
       PokemonData(
+        id: 570,
+        name: "Zoroa",
+        types: [
+          .dark
+        ]
+      ),
+      PokemonData(
         id: 571,
         name: "Zoroark",
         weight: 6.9,
@@ -584,6 +591,29 @@ class PokemonDataRepository {
           .ice
         ],
         genderRatio: 0.5
+      ),
+      PokemonData(
+        id: 614,
+        name: "Beartic",
+        types: [
+          .ice
+        ]
+      ),
+      PokemonData(
+        id: 731,
+        name: "Pipipek",
+        types: [
+          .flying,
+          .normal
+        ]
+      ),
+      PokemonData(
+        id: 732,
+        name: "Trumbeak",
+        types: [
+          .flying,
+          .normal
+        ]
       ),
       PokemonData(
         id: 733,
