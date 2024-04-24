@@ -15,7 +15,9 @@ struct RegionCard: View {
     ZStack {
       Image(regionInfo.bgImagePath)
         .resizable()
-        .scaledToFit()
+        .scaledToFill()
+        .frame(maxWidth: .infinity, maxHeight: 115)
+
       Rectangle()
         .foregroundStyle(
           LinearGradient(
@@ -24,7 +26,7 @@ struct RegionCard: View {
             endPoint: .bottomTrailing
           )
         )
-        .frame(width: .infinity, height: .infinity)
+        .frame(maxWidth: .infinity, maxHeight: 115)
       HStack {
         VStack(alignment: .leading) {
           Text(regionInfo.regionName)
@@ -48,10 +50,8 @@ struct RegionCard: View {
       .padding(.trailing, 16)
     }
     .cornerRadius(15)
-    .frame(width: .infinity, height: 120)
+    .frame(height: 115)
     .padding(.horizontal, 16)
-    
-    
   }
 }
 

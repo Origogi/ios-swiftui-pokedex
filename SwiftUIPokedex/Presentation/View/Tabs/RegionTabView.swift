@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct RegionTabView: View {
+  let repository = RegionInfoRepository()
+  
     var body: some View {
-      VStack {
-        Text("Region Page")
-        
+      ScrollView {
+        VStack {
+          ForEach(repository.getAll()) { region in
+            RegionCard(regionInfo: region)
+          }
+        }.padding(.horizontal, 16)
       }
-      .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 

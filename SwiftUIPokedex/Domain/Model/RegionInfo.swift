@@ -7,7 +7,9 @@
 
 import Foundation
 
-struct RegionInfo {
+struct RegionInfo : Hashable, Identifiable {
+  var id: UUID = UUID()
+  
   let bgImagePath: String
   let regionName: String
   let generationNumer : Int
