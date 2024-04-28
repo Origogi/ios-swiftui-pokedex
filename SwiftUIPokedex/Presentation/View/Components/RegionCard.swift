@@ -51,7 +51,6 @@ struct RegionCard: View {
     }
     .cornerRadius(15)
     .frame(height: 115)
-    .padding(.horizontal, 16)
   }
 }
 

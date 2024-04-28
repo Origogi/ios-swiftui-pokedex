@@ -9,6 +9,8 @@ SwiftUi Framework를 이용하여 Pokedex 앱을 만들어보자.
 ## Todo
 
 - [ ] Design & Architecture Desgin doc.
+- [ ] Constants
+  - [ ] 
 - [ ] Favortie
   - [ ] Screen
   - [ ] Add to favorite Usecase
