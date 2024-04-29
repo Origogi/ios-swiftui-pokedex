@@ -14,6 +14,19 @@ struct PokedexTabView: View {
   var body: some View {
     ScrollView {
       LazyVStack(spacing : 12) {
+        HStack(spacing: 16) {
+          BottomSheetButton(
+            title: "All types",
+            onTap: {
+            }
+          )
+          BottomSheetButton(
+            title: "Smallest number",
+            onTap: {
+            }
+          )
+        }
+        
         ForEach(viewModel.filteredInfos) { info in
           NavigationLink(
             destination: PokemonDetailScreen(

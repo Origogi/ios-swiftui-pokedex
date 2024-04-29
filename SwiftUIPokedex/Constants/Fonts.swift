@@ -22,7 +22,7 @@ enum CustomFont {
     case .title2:
       return Font.custom("Poppins-Semibold", size: 18)
     case .caption1:
-      return Font.custom("Avenir-Medium", size: 16)
+      return Font.custom("Poppins-Semibold", size: 14)
     case .caption2:
       return Font.custom("Avenir-Medium", size: 14)
     case .desc:

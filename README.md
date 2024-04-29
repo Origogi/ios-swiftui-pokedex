@@ -12,6 +12,12 @@ SwiftUi Framework를 이용하여 Pokedex 앱을 만들어보자.
 - [ ] Constants
   - [ ] Font : replace hard-coded values with pre-defined values
   - [ ] Color : replace hard-coded values with pre-defined values
+- [ ] Pokedex
+  - [ ] View
+    - [ ] List
+    - [ ] Bottom Sheet
+  - [ ] Filtering by Type
+  
 - [ ] Favorite
   - [ ] Screen
     - [x] Empty (Default)
@@ -26,8 +32,9 @@ SwiftUi Framework를 이용하여 Pokedex 앱을 만들어보자.
   - [x] View
   - [ ] Filter Pokemon by region Usecase
 - [ ] Pokemon Detail
-  - [ ] Screen
-    - [ ] Pokemon Images
+  - [x] Screen
+    - [x] Pokemon Images
   - [x] Pokemon Detail Usecase
+  - [ ] Routing another Pokemon Detail
      
 
