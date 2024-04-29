@@ -77,7 +77,7 @@ class PokemonEvolutiosDataRepository {
         chains: [
           EvolutionChainData(next: 173),
           EvolutionChainData(next: 35, condition: "Friendship Level"),
-          EvolutionChainData(next: 35, condition: "Moon Stone")
+          EvolutionChainData(next: 36, condition: "Moon Stone")
         ]
       )
     )
@@ -167,8 +167,7 @@ class PokemonEvolutiosDataRepository {
         chains: [
           EvolutionChainData(next: 495),
           EvolutionChainData(next: 496, condition: "Level 17"),
-          EvolutionChainData(next: 496, condition: "Level 36"),
-
+          EvolutionChainData(next: 497, condition: "Level 36"),
         ]
       )
     )

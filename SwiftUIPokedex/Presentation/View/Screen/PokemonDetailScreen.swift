@@ -100,8 +100,6 @@ struct PokemonDetailScreen: View {
               }
               .padding(.horizontal, 16)
               .padding(.top, 10)
-              
-              
               Spacer()
             }
           }

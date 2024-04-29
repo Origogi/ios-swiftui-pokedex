@@ -73,6 +73,11 @@ struct PokemonSamllCard : View {
           .frame(width: 94, height: 74)
           .background(info.mainType.primaryColor)
           .cornerRadius(71)
+        Image(info.imagePath)
+          .resizable()
+          .scaledToFit()
+          .frame(width: 65, height: 65)
+          .padding(4)
       }
       VStack(alignment: .leading, spacing: 4) {
         Text(info.name)
@@ -86,7 +91,7 @@ struct PokemonSamllCard : View {
         HStack(spacing : 4) {
           ForEach(info.types, id: \.self) { type in
             ElementTypeSmallChip(type: type)
-              .frame(width: .infinity, height: 14)
+              .frame(maxWidth: .infinity, maxHeight: 14)
           }
           Spacer()
             .frame(width: 48)
@@ -104,15 +109,37 @@ struct PokemonSamllCard : View {
 #Preview {
   
   List {
-    ForEach(PokemonDataRepository().getAll(), id: \.self) { info in
-      PokemonCard(info: PokemonCardInfo(
-        pokedexId: 1,
-        name: "Name",
-        imagePath: "1_medium",
-        types: [
+    PokemonCard(info: PokemonCardInfo(
+      pokedexId: 1,
+      name: "Name",
+      imagePath: "1_medium",
+      types: [
         .bug,
         .dark,
       ]))
-    }
+    PokemonSamllCard(info: PokemonCardInfo(
+      pokedexId: 1,
+      name: "Name",
+      imagePath: "1_small",
+      types: [
+        .bug,
+        .dark,
+      ]))
+    PokemonSamllCard(info: PokemonCardInfo(
+      pokedexId: 1,
+      name: "Name",
+      imagePath: "2_small",
+      types: [
+        .bug,
+        .dark,
+      ]))
+    PokemonSamllCard(info: PokemonCardInfo(
+      pokedexId: 1,
+      name: "Name",
+      imagePath: "3_small",
+      types: [
+        .bug,
+        .dark,
+      ]))
   }
 }

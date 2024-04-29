@@ -18,7 +18,7 @@ enum CustomFont {
   var font : Font {
     switch self {
     case .title1:
-      return Font.custom("Avenir-Heavy", size: 28)
+      return Font.custom("Poppins-Semibold", size: 20)
     case .title2:
       return Font.custom("Poppins-Semibold", size: 18)
     case .caption1:
@@ -26,14 +26,14 @@ enum CustomFont {
     case .caption2:
       return Font.custom("Avenir-Medium", size: 14)
     case .desc:
-      return Font.custom("Avenir-Medium", size: 12)
+      return Font.custom("Poppins-Regular", size: 14)
     }
   }
   
   var defaultColr : Color {
     switch self {
     case .title1:
-      return Color.black
+      return gray800
     case .title2:
       return gray800
     case .caption1:
@@ -41,7 +41,7 @@ enum CustomFont {
     case .caption2:
       return Color.black
     case .desc:
-      return gray800
+      return gray700
     }
   }
 }

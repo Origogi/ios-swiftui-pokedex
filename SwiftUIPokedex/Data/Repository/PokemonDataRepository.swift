@@ -291,7 +291,7 @@ class PokemonDataRepository {
         genderRatio: 0.25
       ),
       PokemonData(
-        id: 35,
+        id: 36,
         name: "Clefable",
         types: [
           .fairy
@@ -513,6 +513,20 @@ class PokemonDataRepository {
         genderRatio: 0.87
       ),
       PokemonData(
+        id: 495,
+        name: "Riolu",
+        types: [
+          .grass
+        ]
+      ),
+      PokemonData(
+        id: 496,
+        name: "Servine",
+        types: [
+          .grass
+        ]
+      ),
+      PokemonData(
         id: 497,
         name: "Serperior",
         weight: 6.9,
@@ -554,6 +568,22 @@ class PokemonDataRepository {
           .dark
         ],
         genderRatio: 0.87
+      ),
+      PokemonData(
+        id: 607,
+        name: "Litwick",
+        types: [
+          .ghost,
+          .fire
+        ]
+      ),
+      PokemonData(
+        id: 608,
+        name: "Lampent",
+        types: [
+          .ghost,
+          .fire
+        ]
       ),
       PokemonData(
         id: 609,

@@ -280,7 +280,7 @@
 		9F4CC3F72BB8EA3E0008DFB1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				9FE75E922BB5AB4200787D53 /* Model */,
+				9FE75E922BB5AB4200787D53 /* DTO */,
 				9FBE4FDA2B88D11000EA8ED7 /* Repository */,
 			);
 			path = Data;
@@ -407,7 +407,7 @@
 			path = gif;
 			sourceTree = "<group>";
 		};
-		9FE75E922BB5AB4200787D53 /* Model */ = {
+		9FE75E922BB5AB4200787D53 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
 				9FBE4FDB2B88D13400EA8ED7 /* ElementTypeInfo.swift */,
@@ -415,7 +415,7 @@
 				9FE4B3AF2B99FF6800A2BDD8 /* PokemonDetailImageInfo.swift */,
 				9F4CC3FB2BB8EDFA0008DFB1 /* EvolutionsData.swift */,
 			);
-			path = Model;
+			path = DTO;
 			sourceTree = "<group>";
 		};
 		9FE75E932BB5AB6B00787D53 /* Resources */ = {
