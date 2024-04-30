@@ -17,31 +17,36 @@ class PokemonFavoriteDataRepository {
     }
   }
   
-  private func loadFavorites() -> Set<Int> {
+  private func set() -> Set<Int> {
     // Retrieve and decode the array of favorite IDs from UserDefaults, converting to a Set
     let array = UserDefaults.standard.array(forKey: favoritesKey) as? [Int] ?? []
     return Set(array)
   }
   
-  private func saveFavorites(_ favorites: Set<Int>) {
+  private func update(_ favorites: Set<Int>) {
     // Encode and save the array of favorite IDs to UserDefaults
     UserDefaults.standard.set(Array(favorites), forKey: favoritesKey)
   }
   
-  func isFavorite(id: Int) -> Bool {
-    let favorites = loadFavorites()
+  func list() -> [Int] {
+    let favorites = set()
+    return Array(favorites)
+  }
+  
+  func contains(id: Int) -> Bool {
+    let favorites = set()
     return favorites.contains(id)
   }
   
-  func addFavorite(id: Int) {
-    var favorites = loadFavorites()
+  func add(id: Int) {
+    var favorites = set()
     favorites.insert(id)
-    saveFavorites(favorites)
+    update(favorites)
   }
   
-  func removeFavorite(id: Int) {
-    var favorites = loadFavorites()
+  func remove(id: Int) {
+    var favorites = set()
     favorites.remove(id)
-    saveFavorites(favorites)
+    update(favorites)
   }
 }

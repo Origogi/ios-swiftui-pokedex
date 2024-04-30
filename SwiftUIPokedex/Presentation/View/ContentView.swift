@@ -49,13 +49,15 @@ struct ContentView: View {
     NavigationView {
       VStack(spacing: 0) {
         TabView(selection: $selectedTab) {
-          PokedexTabView(viewModel: PokedexViewModel())
+          PokedexTabView(viewModel: PokedexTabViewModel())
             .tag(Tab.pokedex)
           RegionTabView()
             .tag(Tab.region)
-          FavoritePageView()
+          FavoriteTabView(
+            viewModel: FavoriteTabViewModel()
+          )
             .tag(Tab.favorite)
-          ProfilePageView()
+          ProfileTabView()
             .tag(Tab.profile)
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))

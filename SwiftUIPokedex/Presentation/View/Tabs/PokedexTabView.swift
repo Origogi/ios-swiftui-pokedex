@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PokedexTabView: View {
   
-  @ObservedObject var viewModel: PokedexViewModel
+  @ObservedObject var viewModel: PokedexTabViewModel
   @State private var showFilterBottomSheet = false
   @State private var showSortingBottomSheet = false
 
@@ -96,7 +96,7 @@ struct PokedexTabView: View {
 #Preview {
   NavigationView {
     PokedexTabView(
-      viewModel: PokedexViewModel()
+      viewModel: PokedexTabViewModel()
     )
   }
 }

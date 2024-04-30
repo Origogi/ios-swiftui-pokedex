@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProfilePageView: View {
+struct ProfileTabView: View {
     var body: some View {
       VStack {
         Text("Profile Page")
@@ -18,5 +18,5 @@ struct ProfilePageView: View {
 }
 
 #Preview {
-    ProfilePageView()
+    ProfileTabView()
 }

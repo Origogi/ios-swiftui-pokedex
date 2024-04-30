@@ -16,20 +16,20 @@ class FavoriteButtonViewModel : ObservableObject {
   
   init(id: Int) {
     pokedexId = id
-    isFavorite = repository.isFavorite(id: id)
+    isFavorite = repository.contains(id: id)
   }
   
   func refresh() {
-    isFavorite = repository.isFavorite(id: pokedexId)
+    isFavorite = repository.contains(id: pokedexId)
   }
   
   func toggleFavorite() {
-    if repository.isFavorite(id: pokedexId) {
-      repository.removeFavorite(id: pokedexId)
+    if repository.contains(id: pokedexId) {
+      repository.remove(id: pokedexId)
     } else {
-      repository.addFavorite(id: pokedexId)
+      repository.add(id: pokedexId)
     }
     
-    isFavorite = repository.isFavorite(id: pokedexId)
+    isFavorite = repository.contains(id: pokedexId)
   }
 }

@@ -7,13 +7,13 @@
 
 import Foundation
 
-class PokedexViewModel : ObservableObject {
+class PokedexTabViewModel : ObservableObject {
   
   @Published var list : [PokemonCardInfo] = []
   @Published var selectedType : PokemonTypeInfo?
   @Published var selectedSorting : SortingInfo = .idAscending
   
-  private let getPokemonListCardInfosUseCase : GetPokemonListCardInfosUseCase = GetPokemonListCardInfosUseCase()
+  private let getPokemonListCardInfosUseCase : GetPokedexListUseCase = GetPokedexListUseCase()
   
   init() {
     load()

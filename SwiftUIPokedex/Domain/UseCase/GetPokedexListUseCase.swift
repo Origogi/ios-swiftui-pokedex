@@ -7,7 +7,7 @@
 
 import Foundation
 
-class GetPokemonListCardInfosUseCase {
+class GetPokedexListUseCase {
   
   private let pokemonInfoRepository : PokemonDataRepository = PokemonDataRepository()
 
