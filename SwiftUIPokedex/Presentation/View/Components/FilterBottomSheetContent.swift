@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct FilterByTypeBottomSheetContent: View {
+struct FilterBottomSheetContent: View {
   @Binding var isShowing: Bool  // sheet의 표시 상태를 제어하기 위한 바인딩
-  var onSelect: (PokemonTypeInfo?) -> Void  // 선택 콜백
+  let onSelect: (PokemonTypeInfo?) -> Void  // 선택 콜백
   
   var body: some View {
     VStack {
@@ -60,7 +60,7 @@ struct FilterByTypeBottomSheetContent: View {
 
 
 #Preview {
-  FilterByTypeBottomSheetContent(
+  FilterBottomSheetContent(
     isShowing: .constant(true),
     onSelect: { _ in }
   )

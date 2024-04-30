@@ -9,8 +9,9 @@ import Foundation
 
 class PokedexViewModel : ObservableObject {
   
-  @Published var filteredInfos : [PokemonCardInfo] = []
+  @Published var list : [PokemonCardInfo] = []
   @Published var selectedType : PokemonTypeInfo?
+  @Published var selectedSorting : SortingInfo = .idAscending
   
   private let getPokemonListCardInfosUseCase : GetPokemonListCardInfosUseCase
   
@@ -20,7 +21,7 @@ class PokedexViewModel : ObservableObject {
   }
   
   func load() {
-    filteredInfos = getPokemonListCardInfosUseCase.execute()
+    list = getPokemonListCardInfosUseCase.execute()
   }
   
   func filter(type : PokemonTypeInfo?) {
@@ -30,6 +31,28 @@ class PokedexViewModel : ObservableObject {
     
     selectedType = type
     
-    filteredInfos = getPokemonListCardInfosUseCase.execute(type : type)
+    list = getPokemonListCardInfosUseCase.execute(type : type)
+  }
+  
+  func sort(sorting : SortingInfo) {
+    if (selectedSorting == sorting) {
+      return  // Do nothing if the sorting is the same
+    }
+    
+    selectedSorting = sorting
+    var newList = list
+    
+    switch(sorting) {
+    case .idAscending:
+      newList.sort { $0.pokedexId < $1.pokedexId }
+    case .idDescending:
+      newList.sort { $0.pokedexId > $1.pokedexId }
+    case .nameAscending:
+      newList.sort { $0.name < $1.name }
+    case .nameDescending:
+      newList.sort { $0.name > $1.name }
+    }
+    
+    list = newList
   }
 }

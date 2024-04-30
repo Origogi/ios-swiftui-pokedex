@@ -10,8 +10,9 @@ import SwiftUI
 struct PokedexTabView: View {
   
   @ObservedObject var viewModel: PokedexViewModel
-  @State private var showBottomSheet = false
-  
+  @State private var showFilterBottomSheet = false
+  @State private var showSortingBottomSheet = false
+
   var body: some View {
     ZStack {
       ScrollView {
@@ -24,7 +25,7 @@ struct PokedexTabView: View {
                 titleColor: type.textColorOnPrimaryColorBg,
                 bgColor: type.primaryColor,
                 onTap: {
-                  showBottomSheet.toggle()
+                  showFilterBottomSheet.toggle()
                 }
               )
             } else {
@@ -33,7 +34,7 @@ struct PokedexTabView: View {
                 titleColor: .white,
                 bgColor: gray800,
                 onTap: {
-                  showBottomSheet.toggle()
+                  showFilterBottomSheet.toggle()
                 }
               )
             }
@@ -43,11 +44,13 @@ struct PokedexTabView: View {
               titleColor: .white,
               bgColor: gray800,
               onTap: {
+                showSortingBottomSheet.toggle()
+
               }
             )
           }
           .padding(.bottom, 4)
-          ForEach(viewModel.filteredInfos) { info in
+          ForEach(viewModel.list) { info in
             NavigationLink(
               destination: PokemonDetailScreen(
                 viewModel: PokemonDetailViewModel(
@@ -69,9 +72,9 @@ struct PokedexTabView: View {
       }
       
     }
-    .sheet(isPresented: $showBottomSheet) {
-      FilterByTypeBottomSheetContent(
-        isShowing: $showBottomSheet,
+    .sheet(isPresented: $showFilterBottomSheet) {
+      FilterBottomSheetContent(
+        isShowing: $showFilterBottomSheet,
         onSelect: { selected in
           withAnimation {
             viewModel.filter(type: selected)
@@ -80,6 +83,18 @@ struct PokedexTabView: View {
       )
       .presentationDetents([.fraction(2/3)])
     }
+    .sheet(isPresented: $showSortingBottomSheet) {
+      SortingBottomSheetContent(
+        isShowing: $showSortingBottomSheet,
+        onSelect: { selected in
+          withAnimation {
+            viewModel.sort(sorting: selected)
+          }
+        }
+      )
+      .presentationDetents([.height(230)])
+    }
+
     
   }
 }
