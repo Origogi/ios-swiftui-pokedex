@@ -11,6 +11,7 @@ import SwiftUI
 enum CustomFont {
   case title1
   case title2
+  case title3
   case caption1
   case caption2
   case desc
@@ -21,6 +22,8 @@ enum CustomFont {
       return Font.custom("Poppins-Semibold", size: 20)
     case .title2:
       return Font.custom("Poppins-Semibold", size: 18)
+    case .title3:
+      return Font.custom("Poppins-Semibold", size: 16)
     case .caption1:
       return Font.custom("Poppins-Semibold", size: 14)
     case .caption2:
@@ -35,6 +38,8 @@ enum CustomFont {
     case .title1:
       return gray800
     case .title2:
+      return gray800
+    case .title3:
       return gray800
     case .caption1:
       return Color.black
