@@ -11,19 +11,15 @@ class PokemonDetailViewModel : ObservableObject {
   
   @Published var pokemonDetailInfo : PokemonDetailInfo?
   
-  private let getPokemonInfoUseCase : GetPokemonInfoUseCase
-  private let getEvolutionsInfoUseCase : GetEvolutionsInfoUseCase
+  private let getPokemonInfoUseCase : GetPokemonInfoUseCase = GetPokemonInfoUseCase()
+  private let getEvolutionsInfoUseCase : GetEvolutionsInfoUseCase = GetEvolutionsInfoUseCase()
   private let pokemonId : Int
   
-  init(
-    getPokemonInfoUseCase: GetPokemonInfoUseCase,
-    getEvolutionsInfoUseCase: GetEvolutionsInfoUseCase,
-    pokemonId : Int) {
-      
-      self.getPokemonInfoUseCase = getPokemonInfoUseCase
-      self.getEvolutionsInfoUseCase = getEvolutionsInfoUseCase
-      self.pokemonId = pokemonId
-    }
+  init(pokemonId: Int) {
+    self.pokemonId = pokemonId
+    load()
+  }
+  
   
   func load() {
     let pokemonInfo = getPokemonInfoUseCase.execute(id: pokemonId)

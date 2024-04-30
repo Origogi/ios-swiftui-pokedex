@@ -16,9 +16,9 @@ struct PokemonDetailScreen: View {
     self.viewModel = viewModel
   }
   
-  var body: some View {    
+  var body: some View {
     VStack {
-      if let poekmonInfo = viewModel.pokemonDetailInfo {
+      if let pokemonInfo = viewModel.pokemonDetailInfo {
         GeometryReader { geometry in
           ScrollView {
             LazyVStack(alignment: .leading) {
@@ -30,7 +30,7 @@ struct PokemonDetailScreen: View {
                 Rectangle()
                   .offset(y: -300)
                 
-                Image(poekmonInfo.mainType.smallImagePath)
+                Image(pokemonInfo.mainType.smallImagePath)
                   .resizable()
                   .renderingMode(.template)
                   .foregroundStyle(
@@ -43,58 +43,64 @@ struct PokemonDetailScreen: View {
                   .offset(y: -15)
                   .scaledToFit()
                   .frame(width: 220, height: 220)
+                
+                
+                // 움직이는 이미지
                 VStack(alignment: .center) {
+                  Spacer()
+                  PokemonDetailImageView(
+                    detailImageInfo: pokemonInfo.detailImageInfo
+                  )
+                }
+                
+                // 탑 버튼
+                VStack {
                   HStack {
                     BackButton()
                     Spacer()
-                    BigFavButton()
-                      .environmentObject(FavoriteButtonViewModel(id: poekmonInfo.id))
+                    BigFavButton(viewModel: FavoriteButtonViewModel(id: pokemonInfo.id))
                   }
+                  .padding(.top, 8)
                   .padding(.horizontal, 16)
-                  
                   .frame(width: geometry.size.width)
-                  
                   Spacer()
-                  PokemonDetailImageView(
-                    detailImageInfo: poekmonInfo.detailImageInfo
-                  )
                 }
                 
               }
               .frame(width: geometry.size.width, height: 280)
-              .foregroundColor(poekmonInfo.mainType.primaryColor)
+              .foregroundColor(pokemonInfo.mainType.primaryColor)
               
               VStack(alignment: .leading) {
-                Text(poekmonInfo.name)
+                Text(pokemonInfo.name)
                   .font(.custom("Poppins-Medium", size: 32))
-                Text(poekmonInfo.id.pokemonNum())
+                Text(pokemonInfo.id.pokemonNum())
                   .font(.custom("Poppins-Medium", size: 16))
                   .foregroundColor(Color(hex: "#333333"))
                 HStack(spacing : 7) {
-                  ForEach(poekmonInfo.types, id: \.self) { type in
+                  ForEach(pokemonInfo.types, id: \.self) { type in
                     ElementTypeChip(type: type, fontSize: 14, iconSize: 28, innerHPadding: 14, innerVPadding : 4)
                   }
                 }
                 Spacer()
                   .frame(height: 24)
-                Text(poekmonInfo.description)
+                Text(pokemonInfo.description)
                   .font(.custom("Poppins-Regular", size: 14))
                   .foregroundColor(Color(hex: "#333333").opacity(0.7))
                 Divider()
                   .padding(.vertical, 16)
                 StatusGroupView(
-                  weight: poekmonInfo.weight,
-                  height: poekmonInfo.height,
-                  category: poekmonInfo.category,
-                  abilities: poekmonInfo.abilities
+                  weight: pokemonInfo.weight,
+                  height: pokemonInfo.height,
+                  category: pokemonInfo.category,
+                  abilities: pokemonInfo.abilities
                 )
                 .padding(.bottom, 19)
-                GenderRatioView(ratio: poekmonInfo.genderRatio)
+                GenderRatioView(ratio: pokemonInfo.genderRatio)
                   .padding(.bottom , 40)
-                WeaknessesView(types: poekmonInfo.weaknesses)
+                WeaknessesView(types: pokemonInfo.weaknesses)
                   .padding(.bottom, 40)
                 EvolutionsInfoView(
-                  evolutionsInfo: poekmonInfo.evolutionsData
+                  evolutionsInfo: pokemonInfo.evolutionsData
                 )
               }
               .padding(.horizontal, 16)
@@ -111,8 +117,8 @@ struct PokemonDetailScreen: View {
       viewModel.load()
     }
   }
-    
-    
+  
+  
 }
 
 
@@ -132,14 +138,7 @@ struct PokemonStausInfosView: View {
   
   PokemonDetailScreen(
     viewModel: PokemonDetailViewModel(
-      getPokemonInfoUseCase: GetPokemonInfoUseCase(
-        pokemonInfoRepository: PokemonDataRepository()
-      ),
-      getEvolutionsInfoUseCase: GetEvolutionsInfoUseCase(
-        pokemonEvolutionsDataRepository: PokemonEvolutiosDataRepository(),
-        pokemonInfoRepository: PokemonDataRepository()
-      ),
-      pokemonId: 1
+      pokemonId: 95
     )
   )
 }

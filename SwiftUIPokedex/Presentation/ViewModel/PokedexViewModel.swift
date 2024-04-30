@@ -13,10 +13,9 @@ class PokedexViewModel : ObservableObject {
   @Published var selectedType : PokemonTypeInfo?
   @Published var selectedSorting : SortingInfo = .idAscending
   
-  private let getPokemonListCardInfosUseCase : GetPokemonListCardInfosUseCase
+  private let getPokemonListCardInfosUseCase : GetPokemonListCardInfosUseCase = GetPokemonListCardInfosUseCase()
   
-  init(getPokemonListCardInfosUseCase: GetPokemonListCardInfosUseCase) {
-    self.getPokemonListCardInfosUseCase = getPokemonListCardInfosUseCase
+  init() {
     load()
   }
   

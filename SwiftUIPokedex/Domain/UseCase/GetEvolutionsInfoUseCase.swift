@@ -8,13 +8,9 @@
 import Foundation
 
 class GetEvolutionsInfoUseCase {
-  private let pokemonEvolutionsDataRepository : PokemonEvolutiosDataRepository
-  private let pokemonInfoRepository : PokemonDataRepository
+  private let pokemonEvolutionsDataRepository : PokemonEvolutiosDataRepository = PokemonEvolutiosDataRepository()
+  private let pokemonInfoRepository : PokemonDataRepository = PokemonDataRepository()
   
-  init(pokemonEvolutionsDataRepository: PokemonEvolutiosDataRepository, pokemonInfoRepository: PokemonDataRepository) {
-    self.pokemonEvolutionsDataRepository = pokemonEvolutionsDataRepository
-    self.pokemonInfoRepository = pokemonInfoRepository
-  }
   
   func execute(id: Int) -> EvolutionsInfo {
     let evolData = pokemonEvolutionsDataRepository.getByPokemonId(pokemonId: id)

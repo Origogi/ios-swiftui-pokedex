@@ -9,8 +9,7 @@ import SwiftUI
 
 struct BigFavButton: View {
   
-  @EnvironmentObject var viewModel: FavoriteButtonViewModel
-
+  @ObservedObject var viewModel: FavoriteButtonViewModel
 
   var body: some View {
     Button (action: {
@@ -25,6 +24,7 @@ struct BigFavButton: View {
 }
 
 #Preview {
-  BigFavButton()
-    .environmentObject(FavoriteButtonViewModel(id: 1))
+  BigFavButton(
+    viewModel: FavoriteButtonViewModel(id: 1)
+  )
 }

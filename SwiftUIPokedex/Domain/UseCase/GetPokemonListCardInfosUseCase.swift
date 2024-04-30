@@ -9,11 +9,8 @@ import Foundation
 
 class GetPokemonListCardInfosUseCase {
   
-  private let pokemonInfoRepository : PokemonDataRepository
-  
-  init(pokemonInfoRepository: PokemonDataRepository) {
-    self.pokemonInfoRepository = pokemonInfoRepository
-  }
+  private let pokemonInfoRepository : PokemonDataRepository = PokemonDataRepository()
+
   
   func execute(type: PokemonTypeInfo? = nil) -> [PokemonCardInfo] {
     // Retrieve data: either filtered by type or all entries

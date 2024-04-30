@@ -54,13 +54,6 @@ struct PokedexTabView: View {
             NavigationLink(
               destination: PokemonDetailScreen(
                 viewModel: PokemonDetailViewModel(
-                  getPokemonInfoUseCase: GetPokemonInfoUseCase(
-                    pokemonInfoRepository: PokemonDataRepository()
-                  ),
-                  getEvolutionsInfoUseCase: GetEvolutionsInfoUseCase(
-                    pokemonEvolutionsDataRepository: PokemonEvolutiosDataRepository(),
-                    pokemonInfoRepository: PokemonDataRepository()
-                  ),
                   pokemonId: info.pokedexId
                 )
               )
@@ -103,11 +96,7 @@ struct PokedexTabView: View {
 #Preview {
   NavigationView {
     PokedexTabView(
-      viewModel: PokedexViewModel(
-        getPokemonListCardInfosUseCase: GetPokemonListCardInfosUseCase(
-          pokemonInfoRepository: PokemonDataRepository()
-        )
-      )
+      viewModel: PokedexViewModel()
     )
   }
 }

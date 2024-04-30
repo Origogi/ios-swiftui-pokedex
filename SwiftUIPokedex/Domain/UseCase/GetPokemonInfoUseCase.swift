@@ -9,11 +9,7 @@ import Foundation
 
 class GetPokemonInfoUseCase {
   
-  private let pokemonInfoRepository : PokemonDataRepository
-  
-  init(pokemonInfoRepository: PokemonDataRepository) {
-    self.pokemonInfoRepository = pokemonInfoRepository
-  }
+  private let pokemonInfoRepository : PokemonDataRepository = PokemonDataRepository()
   
   func execute(id: Int) -> PokemonData {
     return pokemonInfoRepository.getById(id)

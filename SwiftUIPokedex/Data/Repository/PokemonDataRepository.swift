@@ -135,8 +135,8 @@ class PokemonDataRepository {
         description: "Spits fire that is hot enough to melt boulders. Known to cause forest fires unintentionally.",
         detailImageInfo: PokemonDetailImageInfo(
           id : 6,
-          width : 280,
-          height: 300
+          width : 260,
+          height: 280
         ),
         types: [
           .fire,
@@ -332,8 +332,8 @@ class PokemonDataRepository {
         description: "As it digs through the ground, it absorbs many hard objects. This is what makes its body so solid.",
         detailImageInfo: PokemonDetailImageInfo(
           id: 95,
-          width : 220,
-          height: 280
+          width : 200,
+          height: 260
         ),
         types: [
           .rock,

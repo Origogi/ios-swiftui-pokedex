@@ -49,11 +49,10 @@ struct PokemonCard: View {
           HStack {
             Spacer()
             VStack {
-              SmallFavButton()
-                .environmentObject(FavoriteButtonViewModel(
-                  id : info.pokedexId
-                ))
-                .padding(6)
+              SmallFavButton(viewModel: FavoriteButtonViewModel(
+                id : info.pokedexId
+              ))
+              .padding(6)
               Spacer()
             }
           }

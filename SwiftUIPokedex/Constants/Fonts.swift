@@ -64,7 +64,7 @@ struct CustomTextStyle: ViewModifier {
 
 extension View {
   func customTextStyle(font : CustomFont, color: Color? = nil) -> some View {
-    var fontColor = color ?? font.defaultColr
+    let fontColor = color ?? font.defaultColr
     return self
       .modifier(CustomTextStyle(font: font.font, color: fontColor))
   }

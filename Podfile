@@ -6,5 +6,5 @@ target 'SwiftUIPokedex' do
   use_frameworks!
 
   # Pods for SwiftUIPokedex
-  pod 'SDWebImageSwiftUI', '~> 2.0.0-beta.5'
+  pod 'SDWebImageSwiftUI', '~> 2.2.0'
 end

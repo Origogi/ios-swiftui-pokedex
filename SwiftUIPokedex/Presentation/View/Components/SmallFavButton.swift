@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SmallFavButton: View {
   
-  @EnvironmentObject var viewModel: FavoriteButtonViewModel
+  @ObservedObject var viewModel: FavoriteButtonViewModel
   
   var body: some View {
     Button (action: {
@@ -27,6 +27,7 @@ struct SmallFavButton: View {
 }
 
 #Preview {
-  SmallFavButton()
-    .environmentObject(FavoriteButtonViewModel(id : 1))
+  SmallFavButton(
+    viewModel: FavoriteButtonViewModel(id: 1)
+  )
 }
