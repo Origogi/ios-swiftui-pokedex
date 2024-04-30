@@ -15,16 +15,21 @@ class GetPokemonListCardInfosUseCase {
     self.pokemonInfoRepository = pokemonInfoRepository
   }
   
-  func execute() -> [PokemonCardInfo] {
-    return pokemonInfoRepository.getAll()
-      .filter { pokemon in
-        pokemon.hasDetailInfo
-      }
-      .map { pokemon in
-        PokemonCardInfo(
-        pokedexId : pokemon.id,
-        name : pokemon.name,
-        imagePath : pokemon.mediumImagePath,
+  func execute(type: ElementTypeInfo? = nil) -> [PokemonCardInfo] {
+    // Retrieve data: either filtered by type or all entries
+    let pokemonList = type != nil ? pokemonInfoRepository.listByType(type!) : pokemonInfoRepository.list()
+    
+    // Apply common filtering and mapping
+    return pokemonList.filter { pokemon in
+      // Include additional type check if type is provided
+      type == nil || pokemon.types.contains(type!)
+    }.filter { pokemon in
+      pokemon.hasDetailInfo
+    }.map { pokemon in
+      PokemonCardInfo(
+        pokedexId: pokemon.id,
+        name: pokemon.name,
+        imagePath: pokemon.mediumImagePath,
         types: pokemon.types
       )
     }

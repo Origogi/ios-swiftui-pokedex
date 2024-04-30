@@ -60,7 +60,9 @@ struct PokedexTabView: View {
       FilterByTypeBottomSheetContent(
         isShowing: $showBottomSheet,
         onSelect: { selected in
-          print(selected)
+          withAnimation {
+            viewModel.filter(type: selected)
+          }
         }
       )
       .presentationDetents([.fraction(2/3)])

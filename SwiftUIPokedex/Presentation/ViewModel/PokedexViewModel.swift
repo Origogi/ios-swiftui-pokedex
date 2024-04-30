@@ -19,4 +19,8 @@ class PokedexViewModel : ObservableObject {
   func load() {
     filteredInfos = getPokemonListCardInfosUseCase.execute()
   }
+  
+  func filter(type : ElementTypeInfo) {
+    filteredInfos = getPokemonListCardInfosUseCase.execute(type : type)
+  }
 }

@@ -667,11 +667,15 @@ class PokemonDataRepository {
     ]
   }
   
-  func getAll() -> [PokemonData] {
+  func list() -> [PokemonData] {
     return data
   }
   
   func getById(_ id: Int) -> PokemonData {
     return data.first { $0.id == id }!
+  }
+  
+  func listByType(_ type: ElementTypeInfo) -> [PokemonData] {
+    return data.filter { $0.types.contains(type) }
   }
 }
