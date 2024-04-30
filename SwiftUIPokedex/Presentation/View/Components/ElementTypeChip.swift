@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-struct ElementTypeSmallChip : View {
-  let type : ElementTypeInfo
+struct PkoemonTypeChip : View {
+  let type : PokemonTypeInfo
   
   var body: some View {
     HStack {
@@ -26,13 +26,13 @@ struct ElementTypeSmallChip : View {
 }
 
 struct ElementTypeChip: View {
-  let type : ElementTypeInfo
+  let type : PokemonTypeInfo
   let fontSize : CGFloat
   let iconSize : CGFloat
   let innerHPadding : CGFloat?
   let innerVPadding : CGFloat?
   
-  init(type: ElementTypeInfo, fontSize: CGFloat, iconSize: CGFloat, innerHPadding: CGFloat? = nil, innerVPadding: CGFloat? = nil) {
+  init(type: PokemonTypeInfo, fontSize: CGFloat, iconSize: CGFloat, innerHPadding: CGFloat? = nil, innerVPadding: CGFloat? = nil) {
     self.type = type
     self.fontSize = fontSize
     self.iconSize = iconSize
@@ -69,8 +69,8 @@ struct ElementTypeChip: View {
 
 #Preview {
   VStack {
-    ForEach(ElementTypeInfo.allCases, id: \.self) { type in
-      ElementTypeSmallChip(type: type)
+    ForEach(PokemonTypeInfo.allCases, id: \.self) { type in
+      PkoemonTypeChip(type: type)
         .frame(width: 68, height: 14)
     }
   }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FilterByTypeBottomSheetContent: View {
   @Binding var isShowing: Bool  // sheet의 표시 상태를 제어하기 위한 바인딩
-  var onSelect: (ElementTypeInfo?) -> Void  // 선택 콜백
+  var onSelect: (PokemonTypeInfo?) -> Void  // 선택 콜백
   
   var body: some View {
     VStack {
@@ -33,7 +33,7 @@ struct FilterByTypeBottomSheetContent: View {
             }
             .padding(.horizontal, 16)
           
-          ForEach(ElementTypeInfo.allCases, id: \.self) { type in
+          ForEach(PokemonTypeInfo.allCases, id: \.self) { type in
             Text(type.name)
               .customTextStyle(font: .caption1, color: type.textColorOnPrimaryColorBg)
               .frame(maxWidth: .infinity)

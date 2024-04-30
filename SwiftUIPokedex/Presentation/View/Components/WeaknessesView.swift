@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct WeaknessesView: View {
-  let types : [ElementTypeInfo]
+  let types : [PokemonTypeInfo]
   
   var body: some View {
     // 2 columns

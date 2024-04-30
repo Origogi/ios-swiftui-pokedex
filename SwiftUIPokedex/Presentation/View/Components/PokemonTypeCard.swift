@@ -7,10 +7,10 @@
 
 import SwiftUI
 
- struct ElementTypeCard: View {
-  let type : ElementTypeInfo
+ struct PokemonTypeCard: View {
+  let type : PokemonTypeInfo
   
-  init(type: ElementTypeInfo) {
+  init(type: PokemonTypeInfo) {
     self.type = type
   }
   
@@ -35,8 +35,8 @@ import SwiftUI
 
 #Preview {
   List {
-    ForEach(ElementTypeInfo.allCases, id: \.self) { type in
-      ElementTypeCard(type: .bug)
+    ForEach(PokemonTypeInfo.allCases, id: \.self) { type in
+      PokemonTypeCard(type: .bug)
         .frame(width: 126, height: 100)
         .background(type.primaryColor)
         .cornerRadius(15)

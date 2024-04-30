@@ -10,7 +10,7 @@ import Foundation
 class PokedexViewModel : ObservableObject {
   
   @Published var filteredInfos : [PokemonCardInfo] = []
-  @Published var selectedType : ElementTypeInfo?
+  @Published var selectedType : PokemonTypeInfo?
   
   private let getPokemonListCardInfosUseCase : GetPokemonListCardInfosUseCase
   
@@ -23,7 +23,7 @@ class PokedexViewModel : ObservableObject {
     filteredInfos = getPokemonListCardInfosUseCase.execute()
   }
   
-  func filter(type : ElementTypeInfo?) {
+  func filter(type : PokemonTypeInfo?) {
     if (selectedType == type) {
       return  // Do nothing if the type is the same
     }

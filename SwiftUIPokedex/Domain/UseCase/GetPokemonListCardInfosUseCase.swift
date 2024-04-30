@@ -15,7 +15,7 @@ class GetPokemonListCardInfosUseCase {
     self.pokemonInfoRepository = pokemonInfoRepository
   }
   
-  func execute(type: ElementTypeInfo? = nil) -> [PokemonCardInfo] {
+  func execute(type: PokemonTypeInfo? = nil) -> [PokemonCardInfo] {
     // Retrieve data: either filtered by type or all entries
     let pokemonList = type != nil ? pokemonInfoRepository.listByType(type!) : pokemonInfoRepository.list()
     

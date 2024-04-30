@@ -37,7 +37,7 @@ struct PokemonCard: View {
         .padding(.vertical, 12)
         Spacer()
         ZStack { // ZStack의 정렬을 우측 상단으로 설정
-          ElementTypeCard(type: info.mainType)
+          PokemonTypeCard(type: info.mainType)
             .frame(width: 126, height: 100)
             .background(info.mainType.primaryColor)
             .cornerRadius(15)
@@ -69,7 +69,7 @@ struct PokemonSamllCard : View {
   var body: some View {
     HStack {
       ZStack {
-        ElementTypeCard(type: info.mainType)
+        PokemonTypeCard(type: info.mainType)
           .frame(width: 94, height: 74)
           .background(info.mainType.primaryColor)
           .cornerRadius(71)
@@ -90,7 +90,7 @@ struct PokemonSamllCard : View {
           )
         HStack(spacing : 4) {
           ForEach(info.types, id: \.self) { type in
-            ElementTypeSmallChip(type: type)
+            PkoemonTypeChip(type: type)
               .frame(maxWidth: .infinity, maxHeight: 14)
           }
           Spacer()

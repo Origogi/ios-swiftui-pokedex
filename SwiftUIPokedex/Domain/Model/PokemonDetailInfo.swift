@@ -16,12 +16,12 @@ struct PokemonDetailInfo {
   let abilities: [String]
   let description : String
   let detailImageInfo : PokemonDetailImageInfo
-  let types : [ElementTypeInfo]
+  let types : [PokemonTypeInfo]
   let genderRatio : Double?
-  let weaknesses : [ElementTypeInfo]
+  let weaknesses : [PokemonTypeInfo]
   let evolutionsData : EvolutionsInfo
   
-  var mainType : ElementTypeInfo {
+  var mainType : PokemonTypeInfo {
     return types.first!
   }
   

@@ -74,11 +74,11 @@
 		9FBE4FD32B883E4100EA8ED7 /* RegionTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE4FD22B883E4100EA8ED7 /* RegionTabView.swift */; };
 		9FBE4FD52B883E6300EA8ED7 /* ProfilePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE4FD42B883E6300EA8ED7 /* ProfilePageView.swift */; };
 		9FBE4FD92B883E8B00EA8ED7 /* FavoritePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE4FD82B883E8B00EA8ED7 /* FavoritePageView.swift */; };
-		9FBE4FDC2B88D13400EA8ED7 /* ElementTypeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE4FDB2B88D13400EA8ED7 /* ElementTypeInfo.swift */; };
+		9FBE4FDC2B88D13400EA8ED7 /* PokemonTypeInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE4FDB2B88D13400EA8ED7 /* PokemonTypeInfo.swift */; };
 		9FBE4FDE2B88D70B00EA8ED7 /* ElementTypeChip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBE4FDD2B88D70B00EA8ED7 /* ElementTypeChip.swift */; };
 		9FD18FFE2B93FC0800196B2C /* IntExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD18FFD2B93FC0800196B2C /* IntExt.swift */; };
 		9FD190002B940EC900196B2C /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD18FFF2B940EC900196B2C /* StatusView.swift */; };
-		9FD705412B8AC08400CBFA42 /* ElementTypeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD705402B8AC08400CBFA42 /* ElementTypeCard.swift */; };
+		9FD705412B8AC08400CBFA42 /* PokemonTypeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD705402B8AC08400CBFA42 /* PokemonTypeCard.swift */; };
 		9FD705432B8AC3FC00CBFA42 /* PokemonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD705422B8AC3FC00CBFA42 /* PokemonData.swift */; };
 		9FD705452B8AC47700CBFA42 /* PokemonDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD705442B8AC47700CBFA42 /* PokemonDataRepository.swift */; };
 		9FD705472B8ACCC700CBFA42 /* PokemonCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD705462B8ACCC700CBFA42 /* PokemonCard.swift */; };
@@ -165,11 +165,11 @@
 		9FBE4FD22B883E4100EA8ED7 /* RegionTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionTabView.swift; sourceTree = "<group>"; };
 		9FBE4FD42B883E6300EA8ED7 /* ProfilePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePageView.swift; sourceTree = "<group>"; };
 		9FBE4FD82B883E8B00EA8ED7 /* FavoritePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritePageView.swift; sourceTree = "<group>"; };
-		9FBE4FDB2B88D13400EA8ED7 /* ElementTypeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTypeInfo.swift; sourceTree = "<group>"; };
+		9FBE4FDB2B88D13400EA8ED7 /* PokemonTypeInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTypeInfo.swift; sourceTree = "<group>"; };
 		9FBE4FDD2B88D70B00EA8ED7 /* ElementTypeChip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTypeChip.swift; sourceTree = "<group>"; };
 		9FD18FFD2B93FC0800196B2C /* IntExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntExt.swift; sourceTree = "<group>"; };
 		9FD18FFF2B940EC900196B2C /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
-		9FD705402B8AC08400CBFA42 /* ElementTypeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementTypeCard.swift; sourceTree = "<group>"; };
+		9FD705402B8AC08400CBFA42 /* PokemonTypeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTypeCard.swift; sourceTree = "<group>"; };
 		9FD705422B8AC3FC00CBFA42 /* PokemonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonData.swift; sourceTree = "<group>"; };
 		9FD705442B8AC47700CBFA42 /* PokemonDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDataRepository.swift; sourceTree = "<group>"; };
 		9FD705462B8ACCC700CBFA42 /* PokemonCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCard.swift; sourceTree = "<group>"; };
@@ -343,7 +343,7 @@
 			isa = PBXGroup;
 			children = (
 				9FBE4FDD2B88D70B00EA8ED7 /* ElementTypeChip.swift */,
-				9FD705402B8AC08400CBFA42 /* ElementTypeCard.swift */,
+				9FD705402B8AC08400CBFA42 /* PokemonTypeCard.swift */,
 				9F07B8592B8C4C0D00BE905F /* SmallFavButton.swift */,
 				9FD705462B8ACCC700CBFA42 /* PokemonCard.swift */,
 				9FBE4FC82B874F1000EA8ED7 /* TabViewBottomButton.swift */,
@@ -429,7 +429,7 @@
 		9FE75E922BB5AB4200787D53 /* DTO */ = {
 			isa = PBXGroup;
 			children = (
-				9FBE4FDB2B88D13400EA8ED7 /* ElementTypeInfo.swift */,
+				9FBE4FDB2B88D13400EA8ED7 /* PokemonTypeInfo.swift */,
 				9FD705422B8AC3FC00CBFA42 /* PokemonData.swift */,
 				9FE4B3AF2B99FF6800A2BDD8 /* PokemonDetailImageInfo.swift */,
 				9F4CC3FB2BB8EDFA0008DFB1 /* EvolutionsData.swift */,
@@ -652,7 +652,7 @@
 				9FBE4FCC2B875AA900EA8ED7 /* ColorExt.swift in Sources */,
 				9F0265252B84DF5F001F1AD3 /* SwiftUIPokedexApp.swift in Sources */,
 				9FD705432B8AC3FC00CBFA42 /* PokemonData.swift in Sources */,
-				9FBE4FDC2B88D13400EA8ED7 /* ElementTypeInfo.swift in Sources */,
+				9FBE4FDC2B88D13400EA8ED7 /* PokemonTypeInfo.swift in Sources */,
 				9F0CB06B2BD93ED700F52128 /* RegionInfo.swift in Sources */,
 				9F4CC3F92BB8EAD50008DFB1 /* PokemonEvolutionsDataRepository.swift in Sources */,
 				9F4680DF2BA1743C0004234E /* GenderRatioView.swift in Sources */,
@@ -660,7 +660,7 @@
 				9FABA33F2B99E2EB0053517D /* PokomonDetailImageView.swift in Sources */,
 				9F4CC4032BB8F64A0008DFB1 /* GetPokemonInfoUseCase.swift in Sources */,
 				9FBE4FC92B874F1000EA8ED7 /* TabViewBottomButton.swift in Sources */,
-				9FD705412B8AC08400CBFA42 /* ElementTypeCard.swift in Sources */,
+				9FD705412B8AC08400CBFA42 /* PokemonTypeCard.swift in Sources */,
 				9FE4B3B02B99FF6800A2BDD8 /* PokemonDetailImageInfo.swift in Sources */,
 				9F2DA65D2BDFD36D00FA8B1E /* FilterByTypeBottomSheetContent.swift in Sources */,
 				9FBE4FD32B883E4100EA8ED7 /* RegionTabView.swift in Sources */,

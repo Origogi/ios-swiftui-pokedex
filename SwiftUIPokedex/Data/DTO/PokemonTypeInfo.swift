@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum ElementTypeInfo : CaseIterable {
+enum PokemonTypeInfo : CaseIterable {
   case normal
   case fire
   case water

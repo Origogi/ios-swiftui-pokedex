@@ -13,9 +13,9 @@ struct PokemonCardInfo : Identifiable, Equatable, Hashable {
   let pokedexId : Int
   let name : String
   let imagePath : String
-  let types : [ElementTypeInfo]
+  let types : [PokemonTypeInfo]
   
-  var mainType : ElementTypeInfo {
+  var mainType : PokemonTypeInfo {
     return types.first!
   }
 }
