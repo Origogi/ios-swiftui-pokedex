@@ -8,18 +8,15 @@
 import SwiftUI
 
 struct BigFavButton: View {
-  @Binding var isFav : Bool
   
-  init(isFav: Binding<Bool>) {
-    self._isFav = isFav
-  }
-  
-  
+  @EnvironmentObject var viewModel: FavoriteButtonViewModel
+
+
   var body: some View {
     Button (action: {
-      isFav.toggle()
+      viewModel.toggleFavorite()
     }, label: {
-      Image(isFav ? "BigFavOn" : "BigFavOff")
+      Image(viewModel.isFavorite ? "BigFavOn" : "BigFavOff")
         .resizable()
       
     })
@@ -28,8 +25,6 @@ struct BigFavButton: View {
 }
 
 #Preview {
-  BigFavButton(
-    isFav: .constant(true)
-    
-  )
+  BigFavButton()
+    .environmentObject(FavoriteButtonViewModel(id: 1))
 }

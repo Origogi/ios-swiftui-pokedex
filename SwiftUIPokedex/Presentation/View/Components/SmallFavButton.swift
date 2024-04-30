@@ -9,26 +9,24 @@ import SwiftUI
 
 struct SmallFavButton: View {
   
-  @Binding var isFav : Bool
-  
-  init(isFav: Binding<Bool>) {
-    self._isFav = isFav
-  }
+  @EnvironmentObject var viewModel: FavoriteButtonViewModel
   
   var body: some View {
     Button (action: {
-      isFav.toggle()
+      viewModel.toggleFavorite()
     }, label: {
-      Image(isFav ? "SmallFavOn" : "SmallFavOff")
+      Image(viewModel.isFavorite ? "SmallFavOn" : "SmallFavOff")
         .resizable()
       
     })
     .frame(width: 32, height: 32)
+    .onAppear {
+      viewModel.refresh()
+    }
   }
 }
 
 #Preview {
-  SmallFavButton(
-    isFav: .constant(true)
-  )
+  SmallFavButton()
+    .environmentObject(FavoriteButtonViewModel(id : 1))
 }

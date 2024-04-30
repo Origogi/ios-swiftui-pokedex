@@ -47,9 +47,8 @@ struct PokemonDetailScreen: View {
                   HStack {
                     BackButton()
                     Spacer()
-                    BigFavButton(
-                      isFav: .constant(false)
-                    )
+                    BigFavButton()
+                      .environmentObject(FavoriteButtonViewModel(id: poekmonInfo.id))
                   }
                   .padding(.horizontal, 16)
                   

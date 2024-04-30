@@ -61,6 +61,8 @@
 		9FABA33F2B99E2EB0053517D /* PokomonDetailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FABA33E2B99E2EB0053517D /* PokomonDetailImageView.swift */; };
 		9FBAB4592BE0B8CA00E9AD23 /* SortingBottomSheetContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAB4582BE0B8CA00E9AD23 /* SortingBottomSheetContent.swift */; };
 		9FBAB45B2BE0B96400E9AD23 /* SortingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAB45A2BE0B96400E9AD23 /* SortingInfo.swift */; };
+		9FBAB45D2BE0D5E400E9AD23 /* PokemonFavoriteDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAB45C2BE0D5E400E9AD23 /* PokemonFavoriteDataRepository.swift */; };
+		9FBAB45F2BE0D71800E9AD23 /* FavoriteButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAB45E2BE0D71800E9AD23 /* FavoriteButtonViewModel.swift */; };
 		9FBE4FB32B874D6C00EA8ED7 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE4FA12B874D6B00EA8ED7 /* Poppins-Light.ttf */; };
 		9FBE4FB42B874D6C00EA8ED7 /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE4FA22B874D6B00EA8ED7 /* Poppins-Thin.ttf */; };
 		9FBE4FB82B874D6C00EA8ED7 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9FBE4FA62B874D6B00EA8ED7 /* Poppins-SemiBold.ttf */; };
@@ -153,6 +155,8 @@
 		9FABA33E2B99E2EB0053517D /* PokomonDetailImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokomonDetailImageView.swift; sourceTree = "<group>"; };
 		9FBAB4582BE0B8CA00E9AD23 /* SortingBottomSheetContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingBottomSheetContent.swift; sourceTree = "<group>"; };
 		9FBAB45A2BE0B96400E9AD23 /* SortingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingInfo.swift; sourceTree = "<group>"; };
+		9FBAB45C2BE0D5E400E9AD23 /* PokemonFavoriteDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonFavoriteDataRepository.swift; sourceTree = "<group>"; };
+		9FBAB45E2BE0D71800E9AD23 /* FavoriteButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteButtonViewModel.swift; sourceTree = "<group>"; };
 		9FBE4FA12B874D6B00EA8ED7 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
 		9FBE4FA22B874D6B00EA8ED7 /* Poppins-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Thin.ttf"; sourceTree = "<group>"; };
 		9FBE4FA62B874D6B00EA8ED7 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -395,6 +399,7 @@
 				9FD705442B8AC47700CBFA42 /* PokemonDataRepository.swift */,
 				9F4CC3F82BB8EAD50008DFB1 /* PokemonEvolutionsDataRepository.swift */,
 				9F0CB0712BD949F300F52128 /* RegionInfoRepository.swift */,
+				9FBAB45C2BE0D5E400E9AD23 /* PokemonFavoriteDataRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -468,6 +473,7 @@
 			children = (
 				9FE75E962BB5AC3E00787D53 /* PokedexViewModel.swift */,
 				9F4CC4002BB8F5AC0008DFB1 /* PokemonDetailViewModel.swift */,
+				9FBAB45E2BE0D71800E9AD23 /* FavoriteButtonViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -655,6 +661,7 @@
 				9F2DA6562BDFB32700FA8B1E /* BottomSheetButton.swift in Sources */,
 				9F0CB06D2BD93FC200F52128 /* RegionCard.swift in Sources */,
 				9F1F149B2BDDD7BE00AE5C6E /* Fonts.swift in Sources */,
+				9FBAB45F2BE0D71800E9AD23 /* FavoriteButtonViewModel.swift in Sources */,
 				9F0D5AFD2B9D436F001D7009 /* BackButton.swift in Sources */,
 				9F1A7C222BBD8D2A00BF9F62 /* PokemonCardInfo.swift in Sources */,
 				9FBE4FCC2B875AA900EA8ED7 /* ColorExt.swift in Sources */,
@@ -671,6 +678,7 @@
 				9FD705412B8AC08400CBFA42 /* PokemonTypeCard.swift in Sources */,
 				9FE4B3B02B99FF6800A2BDD8 /* PokemonDetailImageInfo.swift in Sources */,
 				9F2DA65D2BDFD36D00FA8B1E /* FilterBottomSheetContent.swift in Sources */,
+				9FBAB45D2BE0D5E400E9AD23 /* PokemonFavoriteDataRepository.swift in Sources */,
 				9FBE4FD32B883E4100EA8ED7 /* RegionTabView.swift in Sources */,
 				9F0CB0702BD944D900F52128 /* Colors.swift in Sources */,
 				9FBE4FD52B883E6300EA8ED7 /* ProfilePageView.swift in Sources */,
