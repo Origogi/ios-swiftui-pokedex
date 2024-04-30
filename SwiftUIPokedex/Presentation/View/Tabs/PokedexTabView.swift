@@ -17,14 +17,31 @@ struct PokedexTabView: View {
       ScrollView {
         LazyVStack(spacing : 12) {
           HStack(spacing: 16) {
-            BottomSheetButton(
-              title: "All types",
-              onTap: {
-                showBottomSheet.toggle()
-              }
-            )
+            
+            if let type = viewModel.selectedType {
+              BottomSheetButton(
+                title: type.name,
+                titleColor: type.textColorOnPrimaryColorBg,
+                bgColor: type.primaryColor,
+                onTap: {
+                  showBottomSheet.toggle()
+                }
+              )
+            } else {
+              BottomSheetButton(
+                title: "All Types",
+                titleColor: .white,
+                bgColor: gray800,
+                onTap: {
+                  showBottomSheet.toggle()
+                }
+              )
+            }
+            
             BottomSheetButton(
               title: "Smallest number",
+              titleColor: .white,
+              bgColor: gray800,
               onTap: {
               }
             )
@@ -51,10 +68,6 @@ struct PokedexTabView: View {
         }.padding(.horizontal, 16)
       }
       
-    }
-    
-    .onAppear {
-      viewModel.load()
     }
     .sheet(isPresented: $showBottomSheet) {
       FilterByTypeBottomSheetContent(

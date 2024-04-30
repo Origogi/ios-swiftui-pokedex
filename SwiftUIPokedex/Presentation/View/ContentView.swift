@@ -50,6 +50,7 @@ struct ContentView: View {
   )
   
   var body: some View {
+    
     NavigationView {
       VStack(spacing: 0) {
         TabView(selection: $selectedTab) {
@@ -74,12 +75,12 @@ struct ContentView: View {
               foregroundColor: Color.white,
               onImagePath: tab.onImagePath,
               offImagePath: tab.offImagePath,
-              isActivated: selectedTab == tab,
-              title: tab.title
+              title: tab.title,
+              isActivated: bindingForTab(tab)
             ).onTapGesture {
-              withAnimation {
-                selectedTab = tab
-              }
+              selectedTab = tab
+              print("selectedTab: \(selectedTab)")
+
             }
             Spacer()
           }
@@ -93,6 +94,15 @@ struct ContentView: View {
           .background(Material.bar)
       }
     }
+  }
+  
+  private func bindingForTab(_ tab: Tab) -> Binding<Bool> {
+    Binding<Bool>(
+      get: { self.selectedTab == tab },
+      set: { isSelected in
+        if isSelected { self.selectedTab = tab }
+      }
+    )
   }
 }
 
