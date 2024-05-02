@@ -11,24 +11,24 @@ struct RegionTabView: View {
   let repository = RegionInfoRepository()
   
   var body: some View {
-    ScrollView {
-
-      VStack(alignment: .leading, spacing : 12) {
-        
-        Text("Regions")
-          .customTextStyle(font: .title2)
-          .padding(.horizontal, 16)
-          .padding(.vertical, 20)
-
-        Divider()
-        ForEach(repository.getAll()) { region in
-          RegionCard(regionInfo: region)
-        }
+    VStack(alignment: .leading, spacing: 0) {
+      Text("Regions")
+        .customTextStyle(font: .title2)
         .padding(.horizontal, 16)
-        
-
-      }.padding(.bottom, 16)
+        .padding(.vertical, 20)
+      Divider()
+      
+      ScrollView {
+        VStack(alignment: .leading, spacing : 12) {
+          ForEach(repository.getAll()) { region in
+            RegionCard(regionInfo: region)
+          }
+          .padding(.horizontal, 16)
+        }
+        .padding(.bottom, 16)
+      }
     }
+    
   }
 }
 

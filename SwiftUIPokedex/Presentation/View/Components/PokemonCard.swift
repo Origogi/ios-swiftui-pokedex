@@ -110,7 +110,7 @@ struct PokemonSamllCard : View {
 
 #Preview {
   
-  List {
+  VStack {
     PokemonCard(info: PokemonCardInfo(
       pokedexId: 1,
       name: "Name",

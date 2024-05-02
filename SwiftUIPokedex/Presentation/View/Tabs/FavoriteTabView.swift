@@ -12,37 +12,55 @@ struct FavoriteTabView: View {
   @ObservedObject var viewModel: FavoriteTabViewModel
   
   var body: some View {
-    if viewModel.list.isEmpty {
-      EmptyView()
-    } else {
-      ScrollView {
-        LazyVStack {
-          ForEach(viewModel.list) { info in
-            NavigationLink(
-              destination: PokemonDetailScreen(
-                viewModel: PokemonDetailViewModel(
-                  pokemonId: info.pokedexId
-                )
-              )
-            ) {
-              PokemonCard(info: info)
-                .padding(.horizontal, 16)
-            }
-          }
-        }
-      }
-    }
-  }
-}
-
-private struct EmptyView : View {
-  var body: some View {
-    VStack(alignment: .leading) {
+    VStack(alignment: .leading, spacing: 0) {
       Text("Favorites")
         .customTextStyle(font: .title2)
         .padding(.horizontal, 16)
         .padding(.vertical, 20)
       Divider()
+      
+      if viewModel.list.isEmpty {
+        EmptyView()
+      } else {
+        ScrollView {
+          LazyVStack(spacing : 12) {
+            Spacer()
+              .frame(height: 0)
+            ForEach(viewModel.list) { info in
+              NavigationLink(
+                destination: PokemonDetailScreen(
+                  viewModel: PokemonDetailViewModel(
+                    pokemonId: info.pokedexId
+                  )
+                )
+              ) {
+                SwipeableView (
+                  content : {
+                    PokemonCard(info: info)
+                  },
+                  onDelete: {
+                    withAnimation {
+                      viewModel.remove(id: info.pokedexId)
+                    }
+                  }
+                )
+                .cornerRadius(15)
+                .padding(.horizontal, 16)
+                
+                
+              }
+            }
+          }
+        }
+      }
+    }
+    }
+    
+}
+
+private struct EmptyView : View {
+  var body: some View {
+    VStack(alignment: .leading) {
       Spacer()
       VStack(alignment: .center, spacing: 0) {
         Image("NoFavoriteBackground")

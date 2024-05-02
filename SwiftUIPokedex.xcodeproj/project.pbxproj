@@ -58,6 +58,8 @@
 		9F76DBFF2BA670600053137B /* WeaknessesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F76DBFE2BA670600053137B /* WeaknessesView.swift */; };
 		9F76DC012BA7AA9F0053137B /* EvolutionsInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F76DC002BA7AA9F0053137B /* EvolutionsInfo.swift */; };
 		9F76DC052BA7AC3E0053137B /* EvolutionsInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F76DC042BA7AC3E0053137B /* EvolutionsInfoView.swift */; };
+		9FA4337A2BE338C9003B4505 /* SwipeableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA433792BE338C9003B4505 /* SwipeableView.swift */; };
+		9FA4337C2BE35226003B4505 /* RemoveFavoriteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FA4337B2BE35226003B4505 /* RemoveFavoriteUseCase.swift */; };
 		9FABA33F2B99E2EB0053517D /* PokomonDetailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FABA33E2B99E2EB0053517D /* PokomonDetailImageView.swift */; };
 		9FBAB4592BE0B8CA00E9AD23 /* SortingBottomSheetContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAB4582BE0B8CA00E9AD23 /* SortingBottomSheetContent.swift */; };
 		9FBAB45B2BE0B96400E9AD23 /* SortingInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBAB45A2BE0B96400E9AD23 /* SortingInfo.swift */; };
@@ -154,6 +156,8 @@
 		9F76DBFE2BA670600053137B /* WeaknessesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaknessesView.swift; sourceTree = "<group>"; };
 		9F76DC002BA7AA9F0053137B /* EvolutionsInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionsInfo.swift; sourceTree = "<group>"; };
 		9F76DC042BA7AC3E0053137B /* EvolutionsInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionsInfoView.swift; sourceTree = "<group>"; };
+		9FA433792BE338C9003B4505 /* SwipeableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeableView.swift; sourceTree = "<group>"; };
+		9FA4337B2BE35226003B4505 /* RemoveFavoriteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveFavoriteUseCase.swift; sourceTree = "<group>"; };
 		9FABA33E2B99E2EB0053517D /* PokomonDetailImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokomonDetailImageView.swift; sourceTree = "<group>"; };
 		9FBAB4582BE0B8CA00E9AD23 /* SortingBottomSheetContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingBottomSheetContent.swift; sourceTree = "<group>"; };
 		9FBAB45A2BE0B96400E9AD23 /* SortingInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortingInfo.swift; sourceTree = "<group>"; };
@@ -333,6 +337,7 @@
 				9F4CC4022BB8F64A0008DFB1 /* GetPokemonInfoUseCase.swift */,
 				9F1A7C232BBD8E8200BF9F62 /* GetPokedexListUseCase.swift */,
 				9FBAB4622BE126FE00E9AD23 /* GetFavoriteListUseCase.swift */,
+				9FA4337B2BE35226003B4505 /* RemoveFavoriteUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 				9F2DA65C2BDFD36D00FA8B1E /* FilterBottomSheetContent.swift */,
 				9FBAB4582BE0B8CA00E9AD23 /* SortingBottomSheetContent.swift */,
 				9F2DA65E2BDFD40A00FA8B1E /* HandlerBar.swift */,
+				9FA433792BE338C9003B4505 /* SwipeableView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -666,6 +672,7 @@
 				9F2DA65B2BDFCE2B00FA8B1E /* RoundCorner.swift in Sources */,
 				9F4CC4012BB8F5AC0008DFB1 /* PokemonDetailViewModel.swift in Sources */,
 				9F2DA6562BDFB32700FA8B1E /* BottomSheetButton.swift in Sources */,
+				9FA4337C2BE35226003B4505 /* RemoveFavoriteUseCase.swift in Sources */,
 				9F0CB06D2BD93FC200F52128 /* RegionCard.swift in Sources */,
 				9F1F149B2BDDD7BE00AE5C6E /* Fonts.swift in Sources */,
 				9FBAB45F2BE0D71800E9AD23 /* FavoriteButtonViewModel.swift in Sources */,
@@ -687,6 +694,7 @@
 				9F2DA65D2BDFD36D00FA8B1E /* FilterBottomSheetContent.swift in Sources */,
 				9FBAB45D2BE0D5E400E9AD23 /* PokemonFavoriteDataRepository.swift in Sources */,
 				9FBE4FD32B883E4100EA8ED7 /* RegionTabView.swift in Sources */,
+				9FA4337A2BE338C9003B4505 /* SwipeableView.swift in Sources */,
 				9FBAB4632BE126FE00E9AD23 /* GetFavoriteListUseCase.swift in Sources */,
 				9F0CB0702BD944D900F52128 /* Colors.swift in Sources */,
 				9FBE4FD52B883E6300EA8ED7 /* ProfileTabView.swift in Sources */,

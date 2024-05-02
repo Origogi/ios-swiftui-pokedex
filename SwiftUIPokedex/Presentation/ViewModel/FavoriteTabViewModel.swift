@@ -9,11 +9,19 @@ import Foundation
 
 class FavoriteTabViewModel : ObservableObject {
   
-  private let useCase = GetFavoriteListUseCase()
+  private let getFavoriteListUseCase = GetFavoriteListUseCase()
+  private let removeFavoriteUseCase = RemoveFavoriteUseCase()
   
   @Published var list : [PokemonCardInfo] = []
   
   init() {
-    list = useCase.execute()
+    list = getFavoriteListUseCase.execute()
+  }
+  
+  func remove(id : Int) {
+    removeFavoriteUseCase.execute(id: id)
+    var removedList = list
+    removedList.removeAll { $0.pokedexId == id }
+    list = removedList
   }
 }
