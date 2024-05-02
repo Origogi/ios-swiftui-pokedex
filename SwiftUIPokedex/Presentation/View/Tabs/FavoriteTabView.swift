@@ -10,6 +10,8 @@ import SwiftUI
 struct FavoriteTabView: View {
   
   @ObservedObject var viewModel: FavoriteTabViewModel
+  @State private var navigateToDetail = false
+  @State private var selectedPokemonID: Int?
   
   var body: some View {
     VStack(alignment: .leading, spacing: 0) {
@@ -22,6 +24,15 @@ struct FavoriteTabView: View {
       if viewModel.list.isEmpty {
         EmptyView()
       } else {
+        NavigationLink(
+          destination: PokemonDetailScreen(
+            viewModel: PokemonDetailViewModel(pokemonId: selectedPokemonID ?? 1)
+          ),
+          isActive: $navigateToDetail
+        ) {
+          Spacer()
+            .frame(width: 0, height: 0)
+        }
         ScrollView {
           LazyVStack(spacing : 12) {
             Spacer()
@@ -36,18 +47,24 @@ struct FavoriteTabView: View {
               ) {
                 SwipeableView (
                   content : {
-                    PokemonCard(info: info)
+                    PokemonCard(
+                      info: info,
+                      showFavButton: false
+                    )
                   },
                   onDelete: {
                     withAnimation {
                       viewModel.remove(id: info.pokedexId)
                     }
+                  },
+                  onTapAction: {
+                    // Set the selected Pokemon ID and trigger navigation
+                    selectedPokemonID = info.pokedexId
+                    navigateToDetail = true
                   }
                 )
                 .cornerRadius(15)
                 .padding(.horizontal, 16)
-                
-                
               }
             }
           }

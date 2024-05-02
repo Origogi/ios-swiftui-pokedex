@@ -9,6 +9,12 @@ import SwiftUI
 
 struct PokemonCard: View {
   let info : PokemonCardInfo
+  let showFavButton : Bool
+  
+  init (info : PokemonCardInfo, showFavButton : Bool = true) {
+    self.info = info
+    self.showFavButton = showFavButton
+  }
   
   var body: some View {
     ZStack {
@@ -46,16 +52,20 @@ struct PokemonCard: View {
             .scaledToFit()
             .padding(4)
           
-          HStack {
-            Spacer()
-            VStack {
-              SmallFavButton(viewModel: FavoriteButtonViewModel(
-                id : info.pokedexId
-              ))
-              .padding(6)
+          if showFavButton {
+            HStack {
               Spacer()
+              VStack {
+                SmallFavButton(viewModel: FavoriteButtonViewModel(
+                  id : info.pokedexId
+                ))
+                .padding(6)
+                Spacer()
+              }
             }
           }
+          
+          
         }.frame(maxWidth: 126, maxHeight: 100)
       }
     }.frame(maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, maxHeight: 100)
@@ -119,6 +129,16 @@ struct PokemonSamllCard : View {
         .bug,
         .dark,
       ]))
+    PokemonCard(info: PokemonCardInfo(
+      pokedexId: 1,
+      name: "Name",
+      imagePath: "1_medium",
+      types: [
+        .bug,
+        .dark,
+      ]),
+                showFavButton: false
+    )
     PokemonSamllCard(info: PokemonCardInfo(
       pokedexId: 1,
       name: "Name",

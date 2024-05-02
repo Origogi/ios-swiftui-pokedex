@@ -19,11 +19,11 @@ SwiftUi Framework를 이용하여 Pokedex 앱을 만들어보자.
     - [x] Sorting Bottom Sheet
   - [x] Filtering by Type
   - [x] Sorting Pokemon list
-- [ ] Favorite
+- [x] Favorite
   - [x] Screen
     - [x] Empty (Default)
     - [x] List
-      - [ ] slide remove item
+      - [x] slide remove item
   - [x] Add to favorite Usecase
   - [x] Remove from favorite Usecase
   - [x] Favorite Data Source & Repository

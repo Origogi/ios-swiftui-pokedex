@@ -52,8 +52,8 @@ enum CustomFont {
 }
 
 struct CustomTextStyle: ViewModifier {
-  var font: Font
-  var color: Color
+  let font: Font
+  let color: Color
   
   func body(content: Content) -> some View {
     content
