@@ -20,7 +20,7 @@ struct SortingBottomSheetContent: View {
           .customTextStyle(font: .title3, color: .black)
         ForEach(SortingInfo.allCases, id: \.self) { sortingInfo in
           Text(sortingInfo.title)
-            .customTextStyle(font: .caption1, color: .white)
+            .customTextStyle(font: .caption3, color: .white)
             .frame(maxWidth: .infinity)
             .padding(.vertical, 8)
             .background(

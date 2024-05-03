@@ -19,6 +19,20 @@ struct RegionDetailScreen: View {
           Spacer()
         }
         .padding(.horizontal, 16)
+        FilteringSortingButtons(
+          selectedType: viewModel.selectedType,
+          selectedSorting: viewModel.selectedSorting,
+          onSelectType: { type in
+            withAnimation {
+              viewModel.filter(type: type)
+            }
+          },
+          onSelectSorting: { sort in
+            withAnimation {
+              viewModel.sort(sorting: sort)
+            }
+          }
+        )
         PokemonCardListView(list: viewModel.list)
       }.navigationBarHidden(true)
 

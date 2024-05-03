@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PkoemonTypeChip : View {
+struct PokemonTypeSmallChip : View {
   let type : PokemonTypeInfo
   
   var body: some View {
@@ -25,7 +25,7 @@ struct PkoemonTypeChip : View {
   }
 }
 
-struct ElementTypeChip: View {
+struct PokemonTypeMediumChip: View {
   let type : PokemonTypeInfo
   let fontSize : CGFloat
   let iconSize : CGFloat
@@ -70,7 +70,7 @@ struct ElementTypeChip: View {
 #Preview {
   VStack {
     ForEach(PokemonTypeInfo.allCases, id: \.self) { type in
-      PkoemonTypeChip(type: type)
+      PokemonTypeSmallChip(type: type)
         .frame(width: 68, height: 14)
     }
   }

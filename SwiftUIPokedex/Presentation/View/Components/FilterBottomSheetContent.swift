@@ -19,7 +19,7 @@ struct FilterBottomSheetContent: View {
           .customTextStyle(font: .title3, color: .black)
         ScrollView {
           Text("All Types")
-            .customTextStyle(font: .caption1, color: .white)
+            .customTextStyle(font: .caption3, color: .white)
             .frame(maxWidth: .infinity)
             .padding(.vertical, 8)
             .background(
@@ -35,7 +35,7 @@ struct FilterBottomSheetContent: View {
           
           ForEach(PokemonTypeInfo.allCases, id: \.self) { type in
             Text(type.name)
-              .customTextStyle(font: .caption1, color: type.textColorOnPrimaryColorBg)
+              .customTextStyle(font: .caption3, color: type.textColorOnPrimaryColorBg)
               .frame(maxWidth: .infinity)
               .padding(.vertical, 8)
               .background(

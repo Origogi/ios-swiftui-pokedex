@@ -17,7 +17,7 @@ struct BottomSheetButton: View {
   var body: some View {
     HStack(spacing: 8) {
       Text(title)
-        .customTextStyle(font: .caption1, color: titleColor)
+        .customTextStyle(font: .caption3, color: titleColor)
       Image("ShevronDown")
         .resizable()
         .frame(width: 8, height: 4)

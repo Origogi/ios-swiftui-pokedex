@@ -21,20 +21,13 @@ struct PokemonCard: View {
       HStack {
         VStack(alignment: .leading, spacing: 0) {
           Text(info.pokedexId.pokemonNum())
-            .font(.custom("Poppins-SemiBold", size: 12))
-            .foregroundColor(
-              Color(hex : "#333333")
-            )
+            .customTextStyle(font: .title4)
           Text(info.name)
-            .font(.custom("Poppins-SemiBold", size: 21)
-            )
-            .foregroundColor(
-              Color(hex : "#000000")
-            )
+            .customTextStyle(font: .title1, color: .black)
           Spacer()
           HStack(spacing : 4) {
             ForEach(info.types, id: \.self) { type in
-              ElementTypeChip(type: type, fontSize: 11, iconSize: 20, innerHPadding: 7, innerVPadding: 3)
+              PokemonTypeMediumChip(type: type, fontSize: 11, iconSize: 20, innerHPadding: 7, innerVPadding: 3)
             }
           }
           
@@ -93,16 +86,12 @@ struct PokemonSamllCard : View {
       }
       VStack(alignment: .leading, spacing: 4) {
         Text(info.name)
-          .font(.custom("Poppins-Medium", size: 16))
-          .foregroundColor(Color(hex: "#1A1A1A"))
+          .customTextStyle(font: .caption2, color : gray900)
         Text(info.pokedexId.pokemonNum())
-          .font(.custom("Poppins-SemiBold", size: 12))
-          .foregroundColor(
-            Color(hex : "#4D4D4D")
-          )
+          .customTextStyle(font: .title4, color : gray700)
         HStack(spacing : 4) {
           ForEach(info.types, id: \.self) { type in
-            PkoemonTypeChip(type: type)
+            PokemonTypeSmallChip(type: type)
               .frame(maxWidth: .infinity, maxHeight: 14)
           }
           Spacer()
@@ -113,7 +102,7 @@ struct PokemonSamllCard : View {
     }
     .overlay(
       RoundedRectangle(cornerRadius: 90) // Rounded rectangle shape
-        .stroke(Color(hex: "#E6E6E6"), lineWidth: 1) // Border with blue color and 2 points width
+        .stroke(gray100, lineWidth: 1) // Border with blue color and 2 points width
     )
   }
 }

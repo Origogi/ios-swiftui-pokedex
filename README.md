@@ -29,13 +29,12 @@ SwiftUi Framework를 이용하여 Pokedex 앱을 만들어보자.
   - [x] Add to favorite Usecase
   - [x] Remove from favorite Usecase
   - [x] Favorite Data Source & Repository
-- [ ] Region
+- [x] Region
   - [x] View
-  - [ ] Filter Pokemon by region Usecase
-- [ ] Pokemon Detail
+  - [x] Filter Pokemon by region Usecase
+- [x] Pokemon Detail
   - [x] Screen
     - [x] Pokemon Images
   - [x] Pokemon Detail Usecase
-  - [ ] Routing another Pokemon Detail
      
 

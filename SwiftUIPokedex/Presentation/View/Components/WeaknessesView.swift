@@ -21,7 +21,7 @@ struct WeaknessesView: View {
         .font(.custom("Poppins-Medium", size: 18))
       LazyVGrid(columns: columns, spacing: 12) {
         ForEach(types, id: \.self) { type in
-          ElementTypeChip(type: type, fontSize: 14, iconSize: 28, innerVPadding: 4)
+          PokemonTypeMediumChip(type: type, fontSize: 14, iconSize: 28, innerVPadding: 4)
           
         }
       }

@@ -72,20 +72,18 @@ struct PokemonDetailScreen: View {
               
               VStack(alignment: .leading) {
                 Text(pokemonInfo.name)
-                  .font(.custom("Poppins-Medium", size: 32))
+                  .customTextStyle(font: .caption1)
                 Text(pokemonInfo.id.pokemonNum())
-                  .font(.custom("Poppins-Medium", size: 16))
-                  .foregroundColor(Color(hex: "#333333"))
+                  .customTextStyle(font: .caption2)
                 HStack(spacing : 7) {
                   ForEach(pokemonInfo.types, id: \.self) { type in
-                    ElementTypeChip(type: type, fontSize: 14, iconSize: 28, innerHPadding: 14, innerVPadding : 4)
+                    PokemonTypeMediumChip(type: type, fontSize: 14, iconSize: 28, innerHPadding: 14, innerVPadding : 4)
                   }
                 }
                 Spacer()
                   .frame(height: 24)
                 Text(pokemonInfo.description)
-                  .font(.custom("Poppins-Regular", size: 14))
-                  .foregroundColor(Color(hex: "#333333").opacity(0.7))
+                  .customTextStyle(font: .caption4, color: gray800.opacity(0.8))
                 Divider()
                   .padding(.vertical, 16)
                 StatusGroupView(
