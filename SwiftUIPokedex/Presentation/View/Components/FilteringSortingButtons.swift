@@ -22,27 +22,14 @@ struct FilteringSortingButtons: View {
   
   var body: some View {
     HStack(spacing: 16) {
-      
-      if let type = selectedType {
-        BottomSheetButton(
-          title: type.name,
-          titleColor: type.textColorOnPrimaryColorBg,
-          bgColor: type.primaryColor,
-          onTap: {
-            showFilterBottomSheet.toggle()
-          }
-        )
-      } else {
-        BottomSheetButton(
-          title: "All Types",
-          titleColor: .white,
-          bgColor: gray800,
-          onTap: {
-            showFilterBottomSheet.toggle()
-          }
-        )
-      }
-      
+      BottomSheetButton(
+        title: selectedType?.name ?? "All Types",
+        titleColor: selectedType?.textColorOnPrimaryColorBg ?? .white,
+        bgColor: selectedType?.primaryColor ?? gray800,
+        onTap: {
+          showFilterBottomSheet.toggle()
+        }
+      )
       BottomSheetButton(
         title: selectedSorting.title,
         titleColor: .white,

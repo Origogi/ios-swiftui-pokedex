@@ -31,7 +31,7 @@ class GetPokemonCardInfoListUseCase {
         pokemon.hasDetailInfo
       }.map { pokemon in
         PokemonCardInfo(
-          pokedexId: pokemon.id,
+          id: pokemon.id,
           name: pokemon.name,
           imagePath: pokemon.mediumImagePath,
           types: pokemon.types

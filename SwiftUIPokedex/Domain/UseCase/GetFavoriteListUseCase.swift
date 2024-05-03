@@ -23,7 +23,7 @@ class GetFavoriteListUseCase {
       let pokemonData = pokemonRepository.getById(id)
       
       return PokemonCardInfo(
-        pokedexId: pokemonData.id,
+        id: pokemonData.id,
         name: pokemonData.name,
         imagePath: pokemonData.mediumImagePath,
         types: pokemonData.types

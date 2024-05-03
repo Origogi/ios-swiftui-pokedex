@@ -60,15 +60,15 @@ struct EvolutionConditionView: View {
     evolutionsInfo: EvolutionsInfo(
       chains: [
         EvolutionChain(
-          next: PokemonCardInfo(pokedexId: 1, name: "name1", imagePath: "1_medium", types: [.bug])
+          next: PokemonCardInfo(id: 1, name: "name1", imagePath: "1_medium", types: [.bug])
         ),
         EvolutionChain(
           condition: "Level 16",
-          next: PokemonCardInfo(pokedexId: 2, name: "name2", imagePath: "1_medium", types: [.bug])
+          next: PokemonCardInfo(id: 2, name: "name2", imagePath: "1_medium", types: [.bug])
         ),
         EvolutionChain(
           condition: "Level 32",
-          next: PokemonCardInfo(pokedexId: 3, name: "name3", imagePath: "1_medium", types: [.bug])
+          next: PokemonCardInfo(id: 3, name: "name3", imagePath: "1_medium", types: [.bug])
         ),
       ]
     )

@@ -21,7 +21,7 @@ class FavoriteTabViewModel : ObservableObject {
   func remove(id : Int) {
     removeFavoriteUseCase.execute(id: id)
     var removedList = list
-    removedList.removeAll { $0.pokedexId == id }
+    removedList.removeAll { $0.id == id }
     list = removedList
   }
 }

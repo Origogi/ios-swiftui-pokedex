@@ -30,6 +30,11 @@ struct BottomSheetButton: View {
     .onTapGesture {
       onTap()
     }
+    .animation(.default, value: title)
+    .animation(.default, value: titleColor)
+    .animation(.default, value: bgColor)
+
+
   }
 }
 

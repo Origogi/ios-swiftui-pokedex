@@ -9,8 +9,7 @@ import Foundation
 
 struct PokemonCardInfo : Identifiable, Equatable, Hashable {
 
-  let id = UUID()
-  let pokedexId : Int
+  let id : Int
   let name : String
   let imagePath : String
   let types : [PokemonTypeInfo]

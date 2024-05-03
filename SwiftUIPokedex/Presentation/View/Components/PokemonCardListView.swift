@@ -18,7 +18,7 @@ struct PokemonCardListView: View {
           NavigationLink(
             destination: PokemonDetailScreen(
               viewModel: PokemonDetailViewModel(
-                pokemonId: info.pokedexId
+                pokemonId: info.id
               )
             )
           ) {
@@ -27,6 +27,8 @@ struct PokemonCardListView: View {
         }
       }.padding(.horizontal, 16)
     }
+    .animation(.default, value: list)
+
   }
 }
 
@@ -36,7 +38,7 @@ struct PokemonCardListView: View {
   PokemonCardListView(
     list: [
       PokemonCardInfo(
-        pokedexId: 1,
+        id: 1,
         name: "Name",
         imagePath: "1_medium",
         types: [
@@ -44,7 +46,7 @@ struct PokemonCardListView: View {
           .dark,
         ]),
       PokemonCardInfo(
-        pokedexId: 1,
+        id: 1,
         name: "Name",
         imagePath: "1_medium",
         types: [
@@ -52,7 +54,7 @@ struct PokemonCardListView: View {
           .dark,
         ]),
       PokemonCardInfo(
-        pokedexId: 1,
+        id: 1,
         name: "Name",
         imagePath: "1_medium",
         types: [
@@ -60,7 +62,7 @@ struct PokemonCardListView: View {
           .dark,
         ]),
       PokemonCardInfo(
-          pokedexId: 1,
+        id: 1,
           name: "Name",
           imagePath: "1_medium",
           types: [

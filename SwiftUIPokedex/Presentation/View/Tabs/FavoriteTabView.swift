@@ -41,7 +41,7 @@ struct FavoriteTabView: View {
               NavigationLink(
                 destination: PokemonDetailScreen(
                   viewModel: PokemonDetailViewModel(
-                    pokemonId: info.pokedexId
+                    pokemonId: info.id
                   )
                 )
               ) {
@@ -54,12 +54,12 @@ struct FavoriteTabView: View {
                   },
                   onDelete: {
                     withAnimation {
-                      viewModel.remove(id: info.pokedexId)
+                      viewModel.remove(id: info.id)
                     }
                   },
                   onTapAction: {
                     // Set the selected Pokemon ID and trigger navigation
-                    selectedPokemonID = info.pokedexId
+                    selectedPokemonID = info.id
                     navigateToDetail = true
                   }
                 )

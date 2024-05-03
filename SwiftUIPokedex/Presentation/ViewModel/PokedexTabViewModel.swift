@@ -19,18 +19,13 @@ class PokedexTabViewModel : ObservableObject {
     load()
   }
   
-  func load() {
-    list = getPokemonListCardInfosUseCase.execute()
-  }
-  
   func filter(type : PokemonTypeInfo?) {
     if (selectedType == type) {
       return  // Do nothing if the type is the same
     }
     
     selectedType = type
-    
-    list = getPokemonListCardInfosUseCase.execute(type : type)
+    load()
   }
   
   func sort(sorting : SortingInfo) {
@@ -39,13 +34,17 @@ class PokedexTabViewModel : ObservableObject {
     }
     
     selectedSorting = sorting
-    var newList = list
+    load()
+  }
+  
+  func load() {
     
-    switch(sorting) {
+    var newList = getPokemonListCardInfosUseCase.execute(type : selectedType)
+    switch(selectedSorting) {
     case .idAscending:
-      newList.sort { $0.pokedexId < $1.pokedexId }
+      newList.sort { $0.id < $1.id }
     case .idDescending:
-      newList.sort { $0.pokedexId > $1.pokedexId }
+      newList.sort { $0.id > $1.id }
     case .nameAscending:
       newList.sort { $0.name < $1.name }
     case .nameDescending:

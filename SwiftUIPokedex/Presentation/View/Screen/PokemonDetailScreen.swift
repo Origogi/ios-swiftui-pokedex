@@ -111,9 +111,6 @@ struct PokemonDetailScreen: View {
       }
     }
     .navigationBarHidden(true)
-    .onAppear {
-      viewModel.load()
-    }
   }
   
   

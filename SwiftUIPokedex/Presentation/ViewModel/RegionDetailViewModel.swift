@@ -22,19 +22,13 @@ class RegionDetailViewModel : ObservableObject {
     
   }
   
-  func load() {
-    list = getPokemonListCardInfosUseCase.execute(region: regionInfo.type)
-  }
-  
-  
   func filter(type : PokemonTypeInfo?) {
     if (selectedType == type) {
       return  // Do nothing if the type is the same
     }
     
     selectedType = type
-    
-    list = getPokemonListCardInfosUseCase.execute(type : type, region: regionInfo.type)
+    load()
   }
   
   func sort(sorting : SortingInfo) {
@@ -43,13 +37,17 @@ class RegionDetailViewModel : ObservableObject {
     }
     
     selectedSorting = sorting
-    var newList = list
+    load()
+  }
+  
+  func load() {
     
-    switch(sorting) {
+    var newList = getPokemonListCardInfosUseCase.execute(type : selectedType, region: regionInfo.type)
+    switch(selectedSorting) {
     case .idAscending:
-      newList.sort { $0.pokedexId < $1.pokedexId }
+      newList.sort { $0.id < $1.id }
     case .idDescending:
-      newList.sort { $0.pokedexId > $1.pokedexId }
+      newList.sort { $0.id > $1.id }
     case .nameAscending:
       newList.sort { $0.name < $1.name }
     case .nameDescending:

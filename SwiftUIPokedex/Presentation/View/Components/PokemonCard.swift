@@ -20,7 +20,7 @@ struct PokemonCard: View {
     ZStack {
       HStack {
         VStack(alignment: .leading, spacing: 0) {
-          Text(info.pokedexId.pokemonNum())
+          Text(info.id.pokemonNum())
             .customTextStyle(font: .title4)
           Text(info.name)
             .customTextStyle(font: .title1, color: .black)
@@ -50,7 +50,7 @@ struct PokemonCard: View {
               Spacer()
               VStack {
                 SmallFavButton(viewModel: FavoriteButtonViewModel(
-                  id : info.pokedexId
+                  id : info.id
                 ))
                 .padding(6)
                 Spacer()
@@ -87,7 +87,7 @@ struct PokemonSamllCard : View {
       VStack(alignment: .leading, spacing: 4) {
         Text(info.name)
           .customTextStyle(font: .caption2, color : gray900)
-        Text(info.pokedexId.pokemonNum())
+        Text(info.id.pokemonNum())
           .customTextStyle(font: .caption4, color : gray700)
         HStack(spacing : 4) {
           ForEach(info.types, id: \.self) { type in
@@ -111,7 +111,7 @@ struct PokemonSamllCard : View {
   
   VStack {
     PokemonCard(info: PokemonCardInfo(
-      pokedexId: 1,
+      id: 1,
       name: "Name",
       imagePath: "1_medium",
       types: [
@@ -119,7 +119,7 @@ struct PokemonSamllCard : View {
         .dark,
       ]))
     PokemonCard(info: PokemonCardInfo(
-      pokedexId: 1,
+      id: 1,
       name: "Name",
       imagePath: "1_medium",
       types: [
@@ -129,7 +129,7 @@ struct PokemonSamllCard : View {
                 showFavButton: false
     )
     PokemonSamllCard(info: PokemonCardInfo(
-      pokedexId: 1,
+      id: 1,
       name: "Name",
       imagePath: "1_small",
       types: [
@@ -137,7 +137,7 @@ struct PokemonSamllCard : View {
         .dark,
       ]))
     PokemonSamllCard(info: PokemonCardInfo(
-      pokedexId: 1,
+      id: 1,
       name: "Name",
       imagePath: "2_small",
       types: [
@@ -145,7 +145,7 @@ struct PokemonSamllCard : View {
         .dark,
       ]))
     PokemonSamllCard(info: PokemonCardInfo(
-      pokedexId: 1,
+      id: 1,
       name: "Name",
       imagePath: "3_small",
       types: [
