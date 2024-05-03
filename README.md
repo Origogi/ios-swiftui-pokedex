@@ -22,21 +22,21 @@ This Pokedex app was built using SwiftUI, allowing users to explore and search f
 ## Screenshots
 
 <div align="center">
-    <img src="https://github.com/Origogi/Origogi/assets/35194820/95f91e53-4e87-4f6f-947e-477356776462" width="30%">
-    <img src="https://github.com/Origogi/Origogi/assets/35194820/803ef7ff-ecf0-4a3b-947b-81c02793eef6" width="30%">
-    <img src="https://github.com/Origogi/Origogi/assets/35194820/879f407a-8b92-429b-9509-db2d2677ef31" width="30%">
+    <img src="https://github.com/Origogi/Origogi/assets/35194820/95f91e53-4e87-4f6f-947e-477356776462" width="25%">
+    <img src="https://github.com/Origogi/Origogi/assets/35194820/803ef7ff-ecf0-4a3b-947b-81c02793eef6" width="25%">
+    <img src="https://github.com/Origogi/Origogi/assets/35194820/879f407a-8b92-429b-9509-db2d2677ef31" width="25%">
 </a>
 </div>
 <div align="center">
-    <img src="https://github.com/Origogi/Origogi/assets/35194820/a566e6ff-5203-4481-8f9b-dce9a21ee896" width="30%">
-    <img src="https://github.com/Origogi/Origogi/assets/35194820/8b55fb8a-0236-4108-a70f-c73c948aaa76" width="30%">
-    <img src="https://github.com/Origogi/Origogi/assets/35194820/40782e9c-bc03-4bc4-9edb-7f356345f10f" width="30%">
+    <img src="https://github.com/Origogi/Origogi/assets/35194820/a566e6ff-5203-4481-8f9b-dce9a21ee896" width="25%">
+    <img src="https://github.com/Origogi/Origogi/assets/35194820/8b55fb8a-0236-4108-a70f-c73c948aaa76" width="25%">
+    <img src="https://github.com/Origogi/leetcode/assets/35194820/3ea44944-30d2-4a40-a82e-4f1c93d98e1f" width="25%">
 </a>
 </div>
 <div align="center">
-    <img src="https://github.com/Origogi/Origogi/assets/35194820/906c3a3e-4c29-4c83-9acc-b7ba380f679f" width="30%">
-    <img src="https://github.com/Origogi/Origogi/assets/35194820/207e6dc9-7399-4b92-a2c6-405bd243ab40" width="30%">
-    <img src="https://github.com/Origogi/Origogi/assets/35194820/4a702d0e-380d-4fff-941d-bcb11876377c" width="30%">
+    <img src="https://github.com/Origogi/Origogi/assets/35194820/906c3a3e-4c29-4c83-9acc-b7ba380f679f" width="25%">
+    <img src="https://github.com/Origogi/Origogi/assets/35194820/207e6dc9-7399-4b92-a2c6-405bd243ab40" width="25%">
+    <img src="https://github.com/Origogi/Origogi/assets/35194820/4a702d0e-380d-4fff-941d-bcb11876377c" width="25%">
 </a>
 </div>
 
