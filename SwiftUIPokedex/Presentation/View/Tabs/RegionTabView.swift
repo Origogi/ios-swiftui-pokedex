@@ -17,8 +17,9 @@ struct RegionTabView: View {
         .padding(.horizontal, 16)
         .padding(.vertical, 20)
       Divider()
-      
+        
       ScrollView {
+        Spacer(minLength: 12)
         VStack(alignment: .leading, spacing : 12) {
           ForEach(repository.list()) { region in
             NavigationLink(destination: RegionDetailScreen(

@@ -41,7 +41,7 @@ enum Tab : CaseIterable {
   
 }
 
-struct ContentView: View {
+struct HomeScreen: View {
   @State private var selectedTab: Tab = .pokedex
     
   var body: some View {
@@ -76,8 +76,6 @@ struct ContentView: View {
               isActivated: bindingForTab(tab)
             ).onTapGesture {
               selectedTab = tab
-              print("selectedTab: \(selectedTab)")
-
             }
             Spacer()
           }
@@ -104,5 +102,5 @@ struct ContentView: View {
 }
 
 #Preview {
-  ContentView()
+  HomeScreen()
 }

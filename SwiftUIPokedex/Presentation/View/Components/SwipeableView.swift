@@ -74,6 +74,9 @@ struct SwipeableView<Content: View>: View {
             }
           }
         }
+    }.onAppear {
+      offset = 0
+      isSwipeActive = false
     }
   }
 }
