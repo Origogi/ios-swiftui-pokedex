@@ -23,7 +23,7 @@ This Pokedex app was built using SwiftUI, allowing users to explore and search f
 <div align="center">
     <img src="https://github.com/Origogi/Origogi/assets/35194820/a566e6ff-5203-4481-8f9b-dce9a21ee896" width="30%">
     <img src="https://github.com/Origogi/Origogi/assets/35194820/8b55fb8a-0236-4108-a70f-c73c948aaa76" width="30%">
-    <img src="https://github.com/Origogi/Origogi/assets/35194820/9c0a8113-81ce-4b1f-8479-7e35ba608b60" width="30%">
+    <img src="https://github.com/Origogi/Origogi/assets/35194820/40782e9c-bc03-4bc4-9edb-7f356345f10f" width="30%">
 </a>
 </div>
 <div align="center">
