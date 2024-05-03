@@ -10,7 +10,14 @@ This Pokedex app was built using SwiftUI, allowing users to explore and search f
 
 ## Reference(Design)
 
-- [Pokedex App](https://www.figma.com/community/file/1202971127473077147)
+<div>
+<img src="https://github.com/Origogi/leetcode/assets/35194820/874ee8bb-336c-4278-aa52-5c6f3b578e56" width="30%">
+</a>
+</div>
+
+[Figma](https://www.figma.com/community/file/1202971127473077147)
+
+[Creator Profile](https://www.linkedin.com/in/junior-saraiva/)
 
 ## Screenshots
 
@@ -46,11 +53,22 @@ No API is used in this project. All data is stored locally. (Image, Pokemon data
 
 ## Architecture
 
-### Folder Structure
+`Layered architecture`, `MVVM(Model-View-ViewModel)` is used in this project.
 
+<div align="center">
+    <img src="https://github.com/Origogi/Origogi/assets/35194820/7074b560-0972-4880-a591-de4b88e7996f" width="80%">
 
+</a>
+</div>
 
-## TODO
+## Next Steps
 
 - [ ] Poke API Integration
+- [ ] Integrate with Firebase Auth
+
+### Long-term goals
+
+- [ ] Make by Andoid Compose
+- [ ] Make by Flutter
+
 
