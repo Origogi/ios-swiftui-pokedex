@@ -18,7 +18,7 @@ struct WeaknessesView: View {
     ]
     VStack(alignment: .leading, spacing: 12) {
       Text("Weaknesses")
-        .font(.custom("Poppins-Medium", size: 18))
+        .customTextStyle(font: .caption2, color: .black)
       LazyVGrid(columns: columns, spacing: 12) {
         ForEach(types, id: \.self) { type in
           PokemonTypeMediumChip(type: type, fontSize: 14, iconSize: 28, innerVPadding: 4)

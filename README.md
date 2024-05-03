@@ -10,8 +10,8 @@ SwiftUi Framework를 이용하여 Pokedex 앱을 만들어보자.
 
 - [ ] Design & Architecture Desgin doc.
 - [ ] Constants
-  - [ ] Font : replace hard-coded values with pre-defined values
-  - [ ] Color : replace hard-coded values with pre-defined values
+  - [x] Font : replace hard-coded values with pre-defined values
+  - [x] Color : replace hard-coded values with pre-defined values
 - [ ] Slpash Screen
 - [ ] App Icon
 - [x] Pokedex

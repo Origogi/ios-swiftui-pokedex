@@ -14,18 +14,15 @@ struct EvolutionsInfoView: View {
   var body: some View {
     VStack(alignment: .leading, spacing: 8) {
       Text("Evolutions")
-        .font(.custom("Poppins-Medium", size: 18))
+        .customTextStyle(font: .caption2, color: .black)
       VStack(alignment: .leading, spacing :0) {
         if evolutionsInfo.chains.count == 1 {
           Text("This Pokémon does not evolve")
-            .font(.custom("Poppins-Medium", size: 16))
-            .foregroundColor(
-              Color(hex : "#4D4D4D")
-            )
+            .customTextStyle(font: .caption2, color: gray700)
             .padding(.bottom, 16)
         }
         ForEach(evolutionsInfo.chains) { chain in
-          VStack {
+          VStack(spacing : 0) {
             if let condition = chain.condition {
               EvolutionConditionView(condition: condition)
             }
@@ -51,8 +48,8 @@ struct EvolutionConditionView: View {
     HStack(spacing :8) {
       Image("ArrowDown")
       Text(condition)
-        .font(.custom("Poppins-Medium", size: 14))
-    }.foregroundColor(Color(hex: "#173EA5"))
+        .customTextStyle(font: .caption2, color : Color(hex: "#173EA5"))
+    }.padding(8)
   }
 }
 

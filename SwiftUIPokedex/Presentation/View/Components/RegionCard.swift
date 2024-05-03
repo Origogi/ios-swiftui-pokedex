@@ -30,11 +30,9 @@ struct RegionCard: View {
       HStack {
         VStack(alignment: .leading) {
           Text(regionInfo.regionName)
-            .font(.custom("Poppins-SemiBold", size: 18))
-          .foregroundColor(.white)
-          Text(" \(regionInfo.generationNumer)º Generation")
-            .font(.custom("Poppins-Medium", size: 11))
-            .foregroundColor(gray200)
+            .customTextStyle(font: .title2, color: .white)
+          Text("\(regionInfo.generationNumer)º Generation")
+            .customTextStyle(font: .caption4, color: gray200)
         }
         Spacer()
         HStack(spacing: 0) {

@@ -88,7 +88,7 @@ struct PokemonSamllCard : View {
         Text(info.name)
           .customTextStyle(font: .caption2, color : gray900)
         Text(info.pokedexId.pokemonNum())
-          .customTextStyle(font: .title4, color : gray700)
+          .customTextStyle(font: .caption4, color : gray700)
         HStack(spacing : 4) {
           ForEach(info.types, id: \.self) { type in
             PokemonTypeSmallChip(type: type)

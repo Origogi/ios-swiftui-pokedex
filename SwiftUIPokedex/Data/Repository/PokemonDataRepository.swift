@@ -108,7 +108,12 @@ class PokemonDataRepository {
         types: [
           .fire
         ],
-        genderRatio: 0.87,
+        genderRatio: 0.87, 
+        weaknesses: [
+          .water,
+          .ground,
+          .rock
+        ],
         region: .kanto
       ),
       PokemonData(
@@ -148,14 +153,19 @@ class PokemonDataRepository {
           .flying
         ],
         genderRatio: 0.87,
+        weaknesses: [
+          .water,
+          .electric,
+          .rock
+        ],
         region: .kanto
 
       ),
       PokemonData(
         id: 7,
         name: "Squirtle",
-        weight: 6.9,
-        height: 0.7,
+        weight: 9.0,
+        height: 0.5,
         category: "Tiny Turtle",
         abilities: ["Torrent"],
         description: "After birth, its back swells and hardens into a shell. It sprays a potent foam from its mouth.",
@@ -168,13 +178,17 @@ class PokemonDataRepository {
           .water
         ],
         genderRatio: 0.87,
+        weaknesses: [
+          .electric,
+          .grass
+        ],
         region: .kanto
       ),
       PokemonData(
         id: 8,
         name: "Wartortle",
-        weight: 6.9,
-        height: 0.7,
+        weight: 1,
+        height: 22.5,
         category: "Turtle",
         abilities: ["Torrent"],
         description: "Wartortle’s long, furry tail is a symbol of longevity, so this Pokémon is quite popular among older people.",
@@ -187,15 +201,19 @@ class PokemonDataRepository {
           .water
         ],
         genderRatio: 0.87,
+        weaknesses: [
+          .electric,
+          .grass
+        ],
         region: .kanto
 
       ),
       PokemonData(
         id: 9,
         name: "Blastoise",
-        weight: 6.9,
-        height: 0.7,
-        category: "Shellfis",
+        weight: 85.5,
+        height: 1.6,
+        category: "Shellfish",
         abilities: ["Torrent"],
         description: "It deliberately increases its body weight so it can withstand the recoil of the water jets it fires.",
         detailImageInfo: PokemonDetailImageInfo(
@@ -207,6 +225,10 @@ class PokemonDataRepository {
           .water
         ],
         genderRatio: 0.87,
+        weaknesses: [
+          .electric,
+          .grass
+        ],
         region: .kanto
 
       ),
@@ -233,8 +255,8 @@ class PokemonDataRepository {
       PokemonData(
         id: 15,
         name: "Beedrill",
-        weight: 6.9,
-        height: 0.7,
+        weight: 29.5,
+        height: 1.0,
         category: "Poison Bee",
         abilities: ["Swarm"],
         description: "It has three poisonous stingers on its forelegs and its tail. They are used to jab its enemy repeatedly.",
@@ -248,6 +270,12 @@ class PokemonDataRepository {
           .poison
         ],
         genderRatio: 0.5,
+        weaknesses: [
+          .fire,
+          .flying,
+          .psychic,
+          .rock
+        ],
         region: .kanto
 
       ),
@@ -255,7 +283,7 @@ class PokemonDataRepository {
         id: 25,
         name: "Pikachu",
         weight: 6.9,
-        height: 0.7,
+        height: 0.4,
         category: "Mouze",
         abilities: ["Static"],
         description: "It raises its tail to check its surroundings. The tail is sometimes struck by lightning in this pose.",
@@ -268,6 +296,9 @@ class PokemonDataRepository {
           .electric
         ],
         genderRatio: 0.5,
+        weaknesses: [
+          .ground
+        ],
         region: .kanto
 
       ),
@@ -300,8 +331,8 @@ class PokemonDataRepository {
       PokemonData(
         id: 35,
         name: "Clefairy",
-        weight: 6.9,
-        height: 0.7,
+        weight: 7.5,
+        height: 0.6,
         category: "Fairy",
         abilities: ["Cute", "Charm", "Magic", "Gaurd"],
         description: "On nights with a full moon, Clefairy gather from all over and dance. Bathing in moonlight makes them float.",
@@ -314,6 +345,10 @@ class PokemonDataRepository {
           .fairy
         ],
         genderRatio: 0.25,
+        weaknesses: [
+          .steel,
+          .poison
+        ],
         region: .kanto
 
       ),
@@ -338,7 +373,7 @@ class PokemonDataRepository {
       PokemonData(
         id: 51,
         name: "Dugtrio",
-        weight: 6.9,
+        weight: 33.3,
         height: 0.7,
         category: "Mole",
         abilities: ["Sand Veil", "Arena Trap"],
@@ -352,14 +387,19 @@ class PokemonDataRepository {
           .ground
         ],
         genderRatio: 0.5,
+        weaknesses: [
+          .grass,
+          .ice,
+          .water
+        ],
         region: .kanto
 
       ),
       PokemonData(
         id: 95,
         name: "Onix",
-        weight: 6.9,
-        height: 0.7,
+        weight: 210.0,
+        height: 8.8,
         category: "Seed",
         abilities: ["Rock Head", "Sturdy"],
         description: "As it digs through the ground, it absorbs many hard objects. This is what makes its body so solid.",
@@ -373,6 +413,14 @@ class PokemonDataRepository {
           .ground
         ],
         genderRatio: 0.5,
+        weaknesses: [
+          .fighting,
+          .grass,
+          .ground,
+          .ice,
+          .steel,
+          .water
+        ],
         region: .kanto
 
       ),
@@ -389,8 +437,8 @@ class PokemonDataRepository {
       PokemonData(
         id: 108,
         name: "Lickitung",
-        weight: 6.9,
-        height: 0.7,
+        weight: 65.5,
+        height: 1.2,
         category: "Licking",
         abilities: ["Oblivious", "Own Tempo"],
         description: "If this Pokémon’s sticky saliva gets on you and you don’t clean it off, an intense itch will set in. The itch won’t go away, either.",
@@ -403,6 +451,9 @@ class PokemonDataRepository {
           .normal
         ],
         genderRatio: 0.5,
+        weaknesses: [
+          .fighting
+        ],
         region: .kanto
 
       ),
@@ -416,8 +467,8 @@ class PokemonDataRepository {
       PokemonData(
         id: 109,
         name: "Koffing",
-        weight: 6.9,
-        height: 0.7,
+        weight: 1.0,
+        height: 0.6,
         category: "Poison Gas",
         abilities: ["Levitate", "Neutralizing Gas"],
         description: "Toxic gas is held within its thin, balloon-shaped body, so it can cause massive explosions.",
@@ -430,6 +481,10 @@ class PokemonDataRepository {
           .poison
         ],
         genderRatio: 0.5,
+        weaknesses: [
+          .ground,
+          .psychic
+        ],
         region: .kanto
       ),
       PokemonData(
@@ -442,8 +497,8 @@ class PokemonDataRepository {
       PokemonData(
         id: 151,
         name: "Mew",
-        weight: 6.9,
-        height: 0.7,
+        weight: 4.0,
+        height: 0.4,
         category: "New Species",
         abilities: ["Synchronize"],
         description: "When viewed through a microscope, this Pokémon’s short, fine, delicate hair can be seen.",
@@ -455,13 +510,18 @@ class PokemonDataRepository {
         types: [
           .psychic
         ],
+        weaknesses: [
+          .bug,
+          .dark,
+          .ghost
+        ],
         region: .kanto
       ),
       PokemonData(
         id: 245,
         name: "Suicune",
-        weight: 6.9,
-        height: 0.7,
+        weight: 187.0,
+        height: 2.0,
         category: "Aurora",
         abilities: ["Pressure"],
         description: "Suicune embodies the compassion of a pure spring of water. It runs across the land with gracefulness. This Pokémon has the power to purify dirty water.",
@@ -472,6 +532,10 @@ class PokemonDataRepository {
         ),
         types: [
           .water
+        ],
+        weaknesses: [
+          .electric,
+          .grass
         ],
         region: .johto
       ),
@@ -494,8 +558,8 @@ class PokemonDataRepository {
       PokemonData(
         id: 306,
         name: "Aggron",
-        weight: 6.9,
-        height: 0.7,
+        weight: 360.0,
+        height: 2.1,
         category: "Iron Armor",
         abilities: ["Rock Head","Sturdy"],
         description: "Aggron claims an entire mountain as its own territory. It mercilessly beats up anything that violates its environment. This Pokémon vigilantly patrols its territory at all times.",
@@ -509,13 +573,18 @@ class PokemonDataRepository {
           .ground
         ],
         genderRatio: 0.5,
+        weaknesses: [
+          .fighting,
+          .fire,
+          .ground
+        ],
         region: .hoenn
       ),
       PokemonData(
         id: 384,
         name: "Rayquaza",
-        weight: 6.9,
-        height: 0.7,
+        weight: 206.5,
+        height: 7.0,
         category: "Sky High",
         abilities: ["Air Lock"],
         description: "Rayquaza is said to have lived for hundreds of millions of years. Legends remain of how it put to rest the clash between Kyogre and Groudon.",
@@ -526,6 +595,11 @@ class PokemonDataRepository {
         ),
         types: [
           .dragon,
+        ],
+        weaknesses: [
+          .dragon,
+          .fairy,
+          .ice
         ],
         region: .hoenn
 
@@ -541,8 +615,8 @@ class PokemonDataRepository {
       PokemonData(
         id: 448,
         name: "Lucario",
-        weight: 6.9,
-        height: 0.7,
+        weight: 54.0,
+        height: 1.2,
         category: "Aura",
         abilities: ["Inner Focus", "Steadfast"],
         description: "It’s said that no foe can remain invisible to Lucario, since it can detect auras—even those of foes it could not otherwise see.",
@@ -556,6 +630,11 @@ class PokemonDataRepository {
           .steel
         ],
         genderRatio: 0.87,
+        weaknesses: [
+          .fighting,
+          .fire,
+          .ground
+        ],
         region: .sinnoh
       ),
       PokemonData(
@@ -575,8 +654,8 @@ class PokemonDataRepository {
       PokemonData(
         id: 497,
         name: "Serperior",
-        weight: 6.9,
-        height: 0.7,
+        weight: 60.3,
+        height: 3.3,
         category: "Regal",
         abilities: ["Overgrow"],
         description: "It generates energy from sunlight, then amplifies that energy dozens of times within its long body.",
@@ -589,6 +668,13 @@ class PokemonDataRepository {
           .grass
         ],
         genderRatio: 0.87,
+        weaknesses: [
+          .bug,
+          .fire,
+          .flying,
+          .ice,
+          .poison
+        ],
         region: .unova
       ),
       PokemonData(
@@ -601,8 +687,8 @@ class PokemonDataRepository {
       PokemonData(
         id: 571,
         name: "Zoroark",
-        weight: 6.9,
-        height: 0.7,
+        weight: 81.1,
+        height: 1.6,
         category: "Illusion Fox",
         abilities: ["Illusion"],
         description: "Stories say those who tried to catch Zoroark were trapped in an illusion and punished.",
@@ -615,6 +701,11 @@ class PokemonDataRepository {
           .dark
         ],
         genderRatio: 0.87,
+        weaknesses: [
+          .bug,
+          .fairy,
+          .fighting
+        ],
         region: .unova
       ),
       PokemonData(
@@ -636,8 +727,8 @@ class PokemonDataRepository {
       PokemonData(
         id: 609,
         name: "Chandelure",
-        weight: 6.9,
-        height: 0.7,
+        weight: 34.3,
+        height: 1.0,
         category: "Luring",
         abilities: ["Falsh Fire", "Frame Body"],
         description: "The spirits burned up in its ominous flame lose their way and wander this world forever.",
@@ -651,13 +742,20 @@ class PokemonDataRepository {
           .fire
         ],
         genderRatio: 0.5,
+        weaknesses: [
+          .dark,
+          .ghost,
+          .ground,
+          .rock,
+          .water
+        ],
         region: .unova
       ),
       PokemonData(
         id: 613,
         name: "Cubchoo",
-        weight: 6.9,
-        height: 0.7,
+        weight: 8.5,
+        height: 0.5,
         category: "Chill",
         abilities: ["Snow Cloak", "Slush Rush"],
         description: "Many of this species can be found along the shorelines of cold regions. If a Cubchoo lacks dangling snot, there’s a chance it is sick.",
@@ -670,6 +768,12 @@ class PokemonDataRepository {
           .ice
         ],
         genderRatio: 0.5,
+        weaknesses: [
+          .fighting,
+          .fire,
+          .rock,
+          .steel
+        ],
         region: .unova
       ),
       PokemonData(
@@ -698,8 +802,8 @@ class PokemonDataRepository {
       PokemonData(
         id: 733,
         name: "Toucannon",
-        weight: 6.9,
-        height: 0.7,
+        weight: 26.0,
+        height: 1.1,
         category: "Cannon",
         abilities: ["Keen Eye", "Skill Link"],
         description: "The compressed gas in Toucannon’s beak launches seeds with such force that they can shatter large boulders.",
@@ -713,6 +817,11 @@ class PokemonDataRepository {
           .normal
         ],
         genderRatio: 0.5,
+        weaknesses: [
+          .electric,
+          .ice,
+          .rock
+        ],
         region: .alola
       ),
     ]

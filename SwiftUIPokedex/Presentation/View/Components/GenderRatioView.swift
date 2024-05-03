@@ -30,17 +30,17 @@ private struct UnknownGenderView : View {
   var body: some View {
     VStack(spacing : 6) {
       DiagonalStripes(lineWidth: 2, lineSpacing: 8)
-        .stroke(Color(hex: "E6E6E6"), lineWidth: 1)
+        .stroke(gray100, lineWidth: 1)
         .clipShape(Rectangle())
         .cornerRadius(50)
         .overlay( // overlay를 사용하여 테두리 추가
           RoundedRectangle(cornerRadius: 50) // 둥근 모서리 사각형
-            .stroke(Color(hex: "E6E6E6"), lineWidth: 1) // 테두리 색상과 두께 설정
+            .stroke(gray100, lineWidth: 1) // 테두리 색상과 두께 설정
         )
-      .frame(height: 8)
+        .frame(height: 8)
       Text("Unknown")
-        .font(.custom("Poppins-Medium", size: 12))
-        .foregroundColor(Color.black).opacity(0.7)
+        .customTextStyle(font: .caption4, color: .black.opacity(0.7) )
+      
     }
     
   }
@@ -72,8 +72,8 @@ private struct KnownGenderView: View {
             .scaledToFit()
             .frame(width: 12, height: 12)
           Text("\(male)%")
-            .font(.custom("Poppins-Medium", size: 12))
-            .foregroundColor(Color.black).opacity(0.7)
+            .customTextStyle(font: .caption4, color : .black.opacity(0.7))
+          
         }
         Spacer()
         HStack(spacing : 4) {
@@ -82,9 +82,7 @@ private struct KnownGenderView: View {
             .scaledToFit()
             .frame(width: 12, height: 12)
           Text("\(female)%")
-            .font(.custom("Poppins-Medium", size: 12))
-            .foregroundColor(Color.black).opacity(0.7)
-
+            .customTextStyle(font: .caption4, color : .black.opacity(0.7))
         }
         
         
@@ -100,8 +98,7 @@ struct GenderRatioView: View {
   var body: some View {
     VStack(spacing : 0) {
       Text("Gender")
-        .font(.custom("Poppins-Medium", size: 12))
-        .foregroundColor(Color.black).opacity(0.7)
+        .customTextStyle(font: .caption4, color : .black.opacity(0.7))
         .padding(.bottom, 8)
       
       if ratio == nil {

@@ -12,6 +12,7 @@ struct TabViewBottomButton: View {
   let onImagePath : String
   let offImagePath : String
   let title : String
+  
   @Binding var isActivated: Bool
   
   var body: some View {
@@ -25,8 +26,7 @@ struct TabViewBottomButton: View {
         .offset(y: isActivated ? 7 : 15)
         .animation(.easeInOut(duration: 0.2), value: isActivated) // isActivated 값 변경에 따라 애니메이션 적용
       Text(title)
-        .font(.custom("Poppins-Medium", size: 12))
-        .foregroundColor(Color(hex: "173EA5"))
+        .customTextStyle(font: .caption4, color: blue)
         .offset(y: 31)
         .opacity(isActivated ? 1 : 0)
         .animation(.easeInOut(duration: 0.2), value: isActivated) // 텍스트 투명도 변경에 애니메이션 적용
