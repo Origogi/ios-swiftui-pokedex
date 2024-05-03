@@ -20,8 +20,12 @@ struct RegionTabView: View {
       
       ScrollView {
         VStack(alignment: .leading, spacing : 12) {
-          ForEach(repository.getAll()) { region in
-            RegionCard(regionInfo: region)
+          ForEach(repository.list()) { region in
+            NavigationLink(destination: RegionDetailScreen(
+                viewModel: RegionDetailViewModel(regionInfo: region)
+            )) {
+              RegionCard(regionInfo: region)
+            }
           }
           .padding(.horizontal, 16)
         }

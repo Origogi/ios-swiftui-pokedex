@@ -56,7 +56,7 @@ struct PokemonDetailScreen: View {
                 // 탑 버튼
                 VStack {
                   HStack {
-                    BackButton()
+                    BackButton(type : .v1)
                     Spacer()
                     BigFavButton(viewModel: FavoriteButtonViewModel(id: pokemonInfo.id))
                   }

@@ -57,6 +57,7 @@ struct RegionCard: View {
 #Preview {
   RegionCard(
     regionInfo: RegionInfo(
+      type: .kanto,
       bgImagePath: "kanto",
       regionName: "Kanto",
       generationNumer: 1,

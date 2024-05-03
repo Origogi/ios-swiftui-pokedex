@@ -37,7 +37,8 @@ class PokemonDataRepository {
           .ice,
           .flying,
           .psychic
-        ]
+        ],
+        region: .kanto
       ),
       PokemonData(
         id: 2,
@@ -62,7 +63,8 @@ class PokemonDataRepository {
           .ice,
           .flying,
           .psychic
-        ]
+        ],
+        region: .kanto
       ),
       PokemonData(
         id: 3,
@@ -87,7 +89,8 @@ class PokemonDataRepository {
           .ice,
           .flying,
           .psychic
-        ]
+        ],
+        region: .kanto
       ),
       PokemonData(
         id: 4,
@@ -105,7 +108,8 @@ class PokemonDataRepository {
         types: [
           .fire
         ],
-        genderRatio: 0.87
+        genderRatio: 0.87,
+        region: .kanto
       ),
       PokemonData(
         id: 5,
@@ -123,7 +127,8 @@ class PokemonDataRepository {
         types: [
           .fire
         ],
-        genderRatio: 0.87
+        genderRatio: 0.87,
+        region: .kanto
       ),
       PokemonData(
         id: 6,
@@ -142,7 +147,9 @@ class PokemonDataRepository {
           .fire,
           .flying
         ],
-        genderRatio: 0.87
+        genderRatio: 0.87,
+        region: .kanto
+
       ),
       PokemonData(
         id: 7,
@@ -160,7 +167,8 @@ class PokemonDataRepository {
         types: [
           .water
         ],
-        genderRatio: 0.87
+        genderRatio: 0.87,
+        region: .kanto
       ),
       PokemonData(
         id: 8,
@@ -178,7 +186,9 @@ class PokemonDataRepository {
         types: [
           .water
         ],
-        genderRatio: 0.87
+        genderRatio: 0.87,
+        region: .kanto
+
       ),
       PokemonData(
         id: 9,
@@ -196,7 +206,9 @@ class PokemonDataRepository {
         types: [
           .water
         ],
-        genderRatio: 0.87
+        genderRatio: 0.87,
+        region: .kanto
+
       ),
       PokemonData(
         id: 13,
@@ -204,7 +216,9 @@ class PokemonDataRepository {
         types: [
           .bug,
           .poison
-        ]
+        ],
+        region: .kanto
+
       ),
       PokemonData(
         id: 14,
@@ -212,7 +226,9 @@ class PokemonDataRepository {
         types: [
           .bug,
           .poison
-        ]
+        ],
+        region: .kanto
+
       ),
       PokemonData(
         id: 15,
@@ -231,7 +247,9 @@ class PokemonDataRepository {
           .bug,
           .poison
         ],
-        genderRatio: 0.5
+        genderRatio: 0.5,
+        region: .kanto
+
       ),
       PokemonData(
         id: 25,
@@ -249,28 +267,35 @@ class PokemonDataRepository {
         types: [
           .electric
         ],
-        genderRatio: 0.5
+        genderRatio: 0.5,
+        region: .kanto
+
       ),
       PokemonData(
         id: 172,
         name: "Pichu",
         types: [
           .electric
-        ]
+        ],
+        region: .johto
+
       ),
       PokemonData(
         id: 26,
         name: "Raichu",
         types: [
           .electric
-        ]
+        ],
+        region: .kanto
       ),
       PokemonData(
         id: 173,
         name: "Cleffa",
         types: [
           .fairy
-        ]
+        ],
+        region: .johto
+
       ),
       PokemonData(
         id: 35,
@@ -288,21 +313,27 @@ class PokemonDataRepository {
         types: [
           .fairy
         ],
-        genderRatio: 0.25
+        genderRatio: 0.25,
+        region: .kanto
+
       ),
       PokemonData(
         id: 36,
         name: "Clefable",
         types: [
           .fairy
-        ]
+        ],
+        region: .kanto
+
       ),
       PokemonData(
         id: 50,
         name: "Diglett",
         types: [
           .ground
-        ]
+        ],
+        region: .kanto
+
       ),
       PokemonData(
         id: 51,
@@ -320,7 +351,9 @@ class PokemonDataRepository {
         types: [
           .ground
         ],
-        genderRatio: 0.5
+        genderRatio: 0.5,
+        region: .kanto
+
       ),
       PokemonData(
         id: 95,
@@ -339,7 +372,9 @@ class PokemonDataRepository {
           .rock,
           .ground
         ],
-        genderRatio: 0.5
+        genderRatio: 0.5,
+        region: .kanto
+
       ),
       PokemonData(
         id: 208,
@@ -347,7 +382,9 @@ class PokemonDataRepository {
         types: [
           .rock,
           .steel
-        ]
+        ],
+        region: .johto
+
       ),
       PokemonData(
         id: 108,
@@ -365,7 +402,9 @@ class PokemonDataRepository {
         types: [
           .normal
         ],
-        genderRatio: 0.5
+        genderRatio: 0.5,
+        region: .kanto
+
       ),
       PokemonData(
         id: 463,
@@ -390,7 +429,8 @@ class PokemonDataRepository {
         types: [
           .poison
         ],
-        genderRatio: 0.5
+        genderRatio: 0.5,
+        region: .kanto
       ),
       PokemonData(
         id: 110,
@@ -414,7 +454,8 @@ class PokemonDataRepository {
         ),
         types: [
           .psychic
-        ]
+        ],
+        region: .kanto
       ),
       PokemonData(
         id: 245,
@@ -431,7 +472,8 @@ class PokemonDataRepository {
         ),
         types: [
           .water
-        ]
+        ],
+        region: .johto
       ),
       PokemonData(
         id: 304,
@@ -466,7 +508,8 @@ class PokemonDataRepository {
           .steel,
           .ground
         ],
-        genderRatio: 0.5
+        genderRatio: 0.5,
+        region: .hoenn
       ),
       PokemonData(
         id: 384,
@@ -483,7 +526,9 @@ class PokemonDataRepository {
         ),
         types: [
           .dragon,
-        ]
+        ],
+        region: .hoenn
+
       ),
       PokemonData(
         id: 447,
@@ -510,7 +555,8 @@ class PokemonDataRepository {
           .fighting,
           .steel
         ],
-        genderRatio: 0.87
+        genderRatio: 0.87,
+        region: .sinnoh
       ),
       PokemonData(
         id: 495,
@@ -542,7 +588,8 @@ class PokemonDataRepository {
         types: [
           .grass
         ],
-        genderRatio: 0.87
+        genderRatio: 0.87,
+        region: .unova
       ),
       PokemonData(
         id: 570,
@@ -567,7 +614,8 @@ class PokemonDataRepository {
         types: [
           .dark
         ],
-        genderRatio: 0.87
+        genderRatio: 0.87,
+        region: .unova
       ),
       PokemonData(
         id: 607,
@@ -602,7 +650,8 @@ class PokemonDataRepository {
           .ghost,
           .fire
         ],
-        genderRatio: 0.5
+        genderRatio: 0.5,
+        region: .unova
       ),
       PokemonData(
         id: 613,
@@ -620,7 +669,8 @@ class PokemonDataRepository {
         types: [
           .ice
         ],
-        genderRatio: 0.5
+        genderRatio: 0.5,
+        region: .unova
       ),
       PokemonData(
         id: 614,
@@ -662,7 +712,8 @@ class PokemonDataRepository {
           .flying,
           .normal
         ],
-        genderRatio: 0.5
+        genderRatio: 0.5,
+        region: .alola
       ),
     ]
   }

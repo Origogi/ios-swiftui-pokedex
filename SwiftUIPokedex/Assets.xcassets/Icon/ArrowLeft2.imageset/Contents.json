@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "728_small.png",
+      "filename" : "ArrowLeft2.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "728_small 1.png",
+      "filename" : "ArrowLeft2 1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "728_small 2.png",
+      "filename" : "ArrowLeft2 2.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

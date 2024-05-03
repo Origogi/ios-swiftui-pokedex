@@ -20,6 +20,7 @@ struct PokemonData : Hashable, Identifiable {
   let types : [PokemonTypeInfo]
   let genderRatio : Double?
   let weaknesses : [PokemonTypeInfo]
+  let region : RegionType?
   
   init(
     id: Int,
@@ -32,7 +33,9 @@ struct PokemonData : Hashable, Identifiable {
     detailImageInfo: PokemonDetailImageInfo? = nil,
     types: [PokemonTypeInfo],
     genderRatio: Double? = nil ,
-    weaknesses: [PokemonTypeInfo] = []) {
+    weaknesses: [PokemonTypeInfo] = [],
+    region: RegionType? = nil
+  ) {
       
     self.id = id
     self.name = name
@@ -45,6 +48,7 @@ struct PokemonData : Hashable, Identifiable {
     self.types = types
     self.genderRatio = genderRatio
     self.weaknesses = weaknesses
+    self.region = region
   }
   
   

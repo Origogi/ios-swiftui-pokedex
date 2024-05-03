@@ -7,14 +7,30 @@
 
 import SwiftUI
 
+enum BackButtonType {
+  case v1
+  case v2
+  
+  var image: String {
+    switch self {
+    case .v1:
+      return "ArrowLeft"
+    case .v2:
+      return "ArrowLeft2"
+    }
+  }
+}
+
 struct BackButton: View {
   @Environment(\.dismiss) var dismiss
+  
+  let type: BackButtonType
   
   var body: some View {
     Button (action: {
       dismiss()
     }, label: {
-      Image("ArrowLeft")
+      Image(type.image)
         .resizable()
       
     })
@@ -23,6 +39,8 @@ struct BackButton: View {
 }
 
 #Preview {
-  BackButton()
+  BackButton(
+    type: .v1
+  )
     .background(.red)
 }

@@ -13,7 +13,7 @@ class PokedexTabViewModel : ObservableObject {
   @Published var selectedType : PokemonTypeInfo?
   @Published var selectedSorting : SortingInfo = .idAscending
   
-  private let getPokemonListCardInfosUseCase : GetPokedexListUseCase = GetPokedexListUseCase()
+  private let getPokemonListCardInfosUseCase : GetPokemonCardInfoListUseCase = GetPokemonCardInfoListUseCase()
   
   init() {
     load()

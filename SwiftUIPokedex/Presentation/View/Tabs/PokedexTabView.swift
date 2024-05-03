@@ -15,53 +15,45 @@ struct PokedexTabView: View {
 
   var body: some View {
     ZStack {
-      ScrollView {
-        LazyVStack(spacing : 12) {
-          HStack(spacing: 16) {
-            
-            if let type = viewModel.selectedType {
-              BottomSheetButton(
-                title: type.name,
-                titleColor: type.textColorOnPrimaryColorBg,
-                bgColor: type.primaryColor,
-                onTap: {
-                  showFilterBottomSheet.toggle()
-                }
-              )
-            } else {
-              BottomSheetButton(
-                title: "All Types",
-                titleColor: .white,
-                bgColor: gray800,
-                onTap: {
-                  showFilterBottomSheet.toggle()
-                }
-              )
-            }
-            
+      VStack {
+        HStack(spacing: 16) {
+          
+          if let type = viewModel.selectedType {
             BottomSheetButton(
-              title: "Smallest number",
+              title: type.name,
+              titleColor: type.textColorOnPrimaryColorBg,
+              bgColor: type.primaryColor,
+              onTap: {
+                showFilterBottomSheet.toggle()
+              }
+            )
+          } else {
+            BottomSheetButton(
+              title: "All Types",
               titleColor: .white,
               bgColor: gray800,
               onTap: {
-                showSortingBottomSheet.toggle()
-
+                showFilterBottomSheet.toggle()
               }
             )
           }
-          .padding(.bottom, 4)
-          ForEach(viewModel.list) { info in
-            NavigationLink(
-              destination: PokemonDetailScreen(
-                viewModel: PokemonDetailViewModel(
-                  pokemonId: info.pokedexId
-                )
-              )
-            ) {
-              PokemonCard(info: info)
+          
+          BottomSheetButton(
+            title: viewModel.selectedSorting.title,
+            titleColor: .white,
+            bgColor: gray800,
+            onTap: {
+              showSortingBottomSheet.toggle()
+              
             }
-          }
-        }.padding(.horizontal, 16)
+          )
+        }
+        .padding(.horizontal, 16)
+        .padding(.bottom, 4)
+        PokemonCardListView(
+          list: viewModel.list
+        )
+        
       }
       
     }
@@ -100,3 +92,5 @@ struct PokedexTabView: View {
     )
   }
 }
+
+
