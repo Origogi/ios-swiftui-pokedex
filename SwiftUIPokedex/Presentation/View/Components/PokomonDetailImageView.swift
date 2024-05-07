@@ -33,18 +33,13 @@ struct PokemonDetailImageView: View {
       url: URL(string: imageUrl)
     )
     .resizable()
-    .onSuccess { image, data, cacheType in
-      print(image.size)
-      let width = min(image.size.width * 2.5, maxWidth)
-      let height = min(image.size.height * 2.5, maxHeight)
-      
-      print(width)
-      print(height)
-      
-      imageSize = CGSize(
-        width: width,
-        height : height
-      )
+    .onSuccess { image, _, _ in
+      DispatchQueue.main.async {
+        let width = min(image.size.width * 2.5, maxWidth)
+        let height = min(image.size.height * 2.5, maxHeight)
+        
+        imageSize = CGSize(width: width, height: height)
+      }
     }
     .maxBufferSize(.max)
     .resizable()
