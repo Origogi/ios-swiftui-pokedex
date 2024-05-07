@@ -17,7 +17,6 @@ enum CustomFont {
   case caption2
   case caption3
   case caption4
-
   case desc
   
   var font : Font {

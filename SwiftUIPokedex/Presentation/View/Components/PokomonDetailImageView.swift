@@ -19,7 +19,9 @@ struct PokemonDetailImageView: View {
   }
   
   var body: some View {
-    AnimatedImage(name: detailImageInfo.gifFileName)
+    AnimatedImage(
+      url: URL(string: detailImageInfo.gifImageUrl)
+    )
       .maxBufferSize(.max)
       .scaledToFit()
       .frame(width: detailImageInfo.width, height: detailImageInfo.height)

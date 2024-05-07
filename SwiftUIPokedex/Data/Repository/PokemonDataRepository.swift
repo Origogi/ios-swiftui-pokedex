@@ -24,6 +24,7 @@ class PokemonDataRepository {
         description: "There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.",
         detailImageInfo: PokemonDetailImageInfo(
           id: 1,
+          name : "bulbasaur",
           width : 150,
           height: 150
         ),
@@ -50,6 +51,7 @@ class PokemonDataRepository {
         description: "When the bulb on its back grows large, it appears to lose the ability to stand on its hind legs.",
         detailImageInfo: PokemonDetailImageInfo(
           id: 2,
+          name: "ivysaur",
           width : 250,
           height: 200
         ),
@@ -76,6 +78,7 @@ class PokemonDataRepository {
         description: "Its plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.",
         detailImageInfo: PokemonDetailImageInfo(
           id : 3,
+          name: "Venusaur",
           width : 270,
           height: 200
         ),
@@ -102,6 +105,8 @@ class PokemonDataRepository {
         description: "Obviously prefers hot places. When it rains, steam is said to spout from the tip of its tail.",
         detailImageInfo: PokemonDetailImageInfo(
           id : 4,
+          name: "Charmander",
+
           width : 130,
           height: 155
         ),
@@ -126,6 +131,7 @@ class PokemonDataRepository {
         description: "When it swings its burning tail, it elevates the temperature to unbearably high levels.",
         detailImageInfo: PokemonDetailImageInfo(
           id : 5,
+          name: "Charmeleon",
           width : 170,
           height: 200
         ),
@@ -145,6 +151,7 @@ class PokemonDataRepository {
         description: "Spits fire that is hot enough to melt boulders. Known to cause forest fires unintentionally.",
         detailImageInfo: PokemonDetailImageInfo(
           id : 6,
+          name: "Charizard",
           width : 260,
           height: 280
         ),
@@ -171,6 +178,7 @@ class PokemonDataRepository {
         description: "After birth, its back swells and hardens into a shell. It sprays a potent foam from its mouth.",
         detailImageInfo: PokemonDetailImageInfo(
           id : 7,
+          name: "Squirtle",
           width : 150,
           height: 150
         ),
@@ -194,6 +202,7 @@ class PokemonDataRepository {
         description: "Wartortle’s long, furry tail is a symbol of longevity, so this Pokémon is quite popular among older people.",
         detailImageInfo: PokemonDetailImageInfo(
           id : 8,
+          name: "Wartortle",
           width : 150,
           height: 200
         ),
@@ -218,6 +227,7 @@ class PokemonDataRepository {
         description: "It deliberately increases its body weight so it can withstand the recoil of the water jets it fires.",
         detailImageInfo: PokemonDetailImageInfo(
           id : 9,
+          name: "Blastoise",
           width : 230,
           height: 230
         ),
@@ -262,6 +272,7 @@ class PokemonDataRepository {
         description: "It has three poisonous stingers on its forelegs and its tail. They are used to jab its enemy repeatedly.",
         detailImageInfo: PokemonDetailImageInfo(
           id : 15,
+          name: "Beedrill",
           width : 220,
           height: 250
         ),
@@ -289,6 +300,7 @@ class PokemonDataRepository {
         description: "It raises its tail to check its surroundings. The tail is sometimes struck by lightning in this pose.",
         detailImageInfo: PokemonDetailImageInfo(
           id: 25,
+          name: "Pikachu",
           width : 220,
           height: 170
         ),
@@ -338,6 +350,7 @@ class PokemonDataRepository {
         description: "On nights with a full moon, Clefairy gather from all over and dance. Bathing in moonlight makes them float.",
         detailImageInfo: PokemonDetailImageInfo(
           id: 35,
+          name: "Clefairy",
           width : 210,
           height: 180
         ),
@@ -380,6 +393,7 @@ class PokemonDataRepository {
         description: "Its three heads bob separately up and down to loosen the soil nearby, making it easier for it to burrow.",
         detailImageInfo: PokemonDetailImageInfo(
           id: 51,
+          name: "Dugtrio",
           width : 185,
           height: 140
         ),
@@ -405,6 +419,7 @@ class PokemonDataRepository {
         description: "As it digs through the ground, it absorbs many hard objects. This is what makes its body so solid.",
         detailImageInfo: PokemonDetailImageInfo(
           id: 95,
+          name: "Onix",
           width : 200,
           height: 260
         ),
@@ -444,6 +459,7 @@ class PokemonDataRepository {
         description: "If this Pokémon’s sticky saliva gets on you and you don’t clean it off, an intense itch will set in. The itch won’t go away, either.",
         detailImageInfo: PokemonDetailImageInfo(
           id: 108,
+          name: "Lickitung",
           width : 180,
           height: 180
         ),
@@ -474,6 +490,7 @@ class PokemonDataRepository {
         description: "Toxic gas is held within its thin, balloon-shaped body, so it can cause massive explosions.",
         detailImageInfo: PokemonDetailImageInfo(
           id: 109,
+          name: "Koffing",
           width : 230,
           height: 230
         ),
@@ -504,6 +521,7 @@ class PokemonDataRepository {
         description: "When viewed through a microscope, this Pokémon’s short, fine, delicate hair can be seen.",
         detailImageInfo: PokemonDetailImageInfo(
           id: 151,
+          name: "Mew",
           width : 140,
           height: 180
         ),
@@ -527,6 +545,7 @@ class PokemonDataRepository {
         description: "Suicune embodies the compassion of a pure spring of water. It runs across the land with gracefulness. This Pokémon has the power to purify dirty water.",
         detailImageInfo: PokemonDetailImageInfo(
           id: 245,
+          name: "Suicune",
           width : 300,
           height: 240
         ),
@@ -565,6 +584,7 @@ class PokemonDataRepository {
         description: "Aggron claims an entire mountain as its own territory. It mercilessly beats up anything that violates its environment. This Pokémon vigilantly patrols its territory at all times.",
         detailImageInfo: PokemonDetailImageInfo(
           id: 306,
+          name: "Aggron",
           width : 240,
           height: 220
         ),
@@ -590,6 +610,7 @@ class PokemonDataRepository {
         description: "Rayquaza is said to have lived for hundreds of millions of years. Legends remain of how it put to rest the clash between Kyogre and Groudon.",
         detailImageInfo: PokemonDetailImageInfo(
           id: 384,
+          name: "Rayquaza",
           width : 240,
           height: 260
         ),
@@ -622,6 +643,7 @@ class PokemonDataRepository {
         description: "It’s said that no foe can remain invisible to Lucario, since it can detect auras—even those of foes it could not otherwise see.",
         detailImageInfo: PokemonDetailImageInfo(
           id: 448,
+          name: "Lucario",
           width : 125,
           height: 230
         ),
@@ -661,6 +683,7 @@ class PokemonDataRepository {
         description: "It generates energy from sunlight, then amplifies that energy dozens of times within its long body.",
         detailImageInfo: PokemonDetailImageInfo(
           id: 497,
+          name: "Serperior",
           width : 220,
           height: 260
         ),
@@ -694,6 +717,7 @@ class PokemonDataRepository {
         description: "Stories say those who tried to catch Zoroark were trapped in an illusion and punished.",
         detailImageInfo: PokemonDetailImageInfo(
           id: 571,
+          name: "Zoroark",
           width : 220,
           height: 215
         ),
@@ -734,6 +758,7 @@ class PokemonDataRepository {
         description: "The spirits burned up in its ominous flame lose their way and wander this world forever.",
         detailImageInfo: PokemonDetailImageInfo(
           id: 609,
+          name: "Chandelure",
           width : 220,
           height: 200
         ),
@@ -761,6 +786,7 @@ class PokemonDataRepository {
         description: "Many of this species can be found along the shorelines of cold regions. If a Cubchoo lacks dangling snot, there’s a chance it is sick.",
         detailImageInfo: PokemonDetailImageInfo(
           id: 613,
+          name: "Cubchoo",
           width : 130,
           height: 150
         ),
@@ -809,6 +835,7 @@ class PokemonDataRepository {
         description: "The compressed gas in Toucannon’s beak launches seeds with such force that they can shatter large boulders.",
         detailImageInfo: PokemonDetailImageInfo(
           id: 733,
+          name: "Toucannon",
           width : 200,
           height: 170
         ),
