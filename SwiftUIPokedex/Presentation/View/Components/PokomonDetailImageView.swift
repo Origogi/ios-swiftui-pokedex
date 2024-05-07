@@ -11,25 +11,53 @@ import SDWebImageSwiftUI
 
 struct PokemonDetailImageView: View {
   
-  let detailImageInfo : PokemonDetailImageInfo
-  @State private var isAnimating = true
+  let imageUrl : String
+  let maxWidth: CGFloat
+  let maxHeight: CGFloat
   
-  init(detailImageInfo: PokemonDetailImageInfo) {
-    self.detailImageInfo = detailImageInfo
-  }
+  @State var imageSize: CGSize = CGSize(width: 0, height: 0)
+  
+  init(
+    imageUrl: String,
+    maxWidth: CGFloat,
+    maxHeight: CGFloat) {
+      
+      self.imageUrl = imageUrl
+      self.maxWidth = maxWidth
+      self.maxHeight = maxHeight
+    }
   
   var body: some View {
+    
     AnimatedImage(
-      url: URL(string: detailImageInfo.gifImageUrl)
+      url: URL(string: imageUrl)
     )
-      .maxBufferSize(.max)
-      .scaledToFit()
-      .frame(width: detailImageInfo.width, height: detailImageInfo.height)
+    .resizable()
+    .onSuccess { image, data, cacheType in
+      print(image.size)
+      let width = min(image.size.width * 2.5, maxWidth)
+      let height = min(image.size.height * 2.5, maxHeight)
+      
+      print(width)
+      print(height)
+      
+      imageSize = CGSize(
+        width: width,
+        height : height
+      )
+    }
+    .maxBufferSize(.max)
+    .resizable()
+    .scaledToFit()
+    .frame(width : imageSize.width, height: imageSize.height)
     
   }
+  
 }
 
 #Preview {
-  PokemonDetailImageView(detailImageInfo: PokemonDataRepository().list().first!.detailImageInfo!
+  PokemonDetailImageView(imageUrl: "https://projectpokemon.org/images/normal-sprite/chikorita.gif",
+                         maxWidth: 200,
+                          maxHeight: 200
   )
 }

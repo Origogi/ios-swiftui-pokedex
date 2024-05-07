@@ -49,7 +49,9 @@ struct PokemonDetailScreen: View {
                 VStack(alignment: .center) {
                   Spacer()
                   PokemonDetailImageView(
-                    detailImageInfo: pokemonInfo.detailImageInfo
+                    imageUrl: pokemonInfo.detailImageUrl,
+                    maxWidth: geometry.size.width - 40,
+                    maxHeight: 250
                   )
                 }
                 
@@ -133,7 +135,7 @@ struct PokemonStausInfosView: View {
   
   PokemonDetailScreen(
     viewModel: PokemonDetailViewModel(
-      pokemonId: 95
+      pokemonId: 6
     )
   )
 }

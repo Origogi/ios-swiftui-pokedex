@@ -34,7 +34,6 @@ class PokemonDetailViewModel : ObservableObject {
       category: pokemonInfo.category ?? "",
       abilities: pokemonInfo.abilities,
       description: pokemonInfo.description ?? "",
-      detailImageInfo: pokemonInfo.detailImageInfo!,
       types: pokemonInfo.types,
       genderRatio: pokemonInfo.genderRatio,
       weaknesses: pokemonInfo.weaknesses,

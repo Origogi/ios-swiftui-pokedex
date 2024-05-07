@@ -15,7 +15,6 @@ struct PokemonDetailInfo {
   let category: String
   let abilities: [String]
   let description : String
-  let detailImageInfo : PokemonDetailImageInfo
   let types : [PokemonTypeInfo]
   let genderRatio : Double?
   let weaknesses : [PokemonTypeInfo]
@@ -31,5 +30,9 @@ struct PokemonDetailInfo {
   
   var mediumImagePath : String {
     return "\(id)_medium"
+  }
+  
+  var detailImageUrl : String {
+    return "https://projectpokemon.org/images/normal-sprite/\(name.lowercased()).gif"
   }
 }

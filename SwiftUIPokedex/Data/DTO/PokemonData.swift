@@ -16,7 +16,6 @@ struct PokemonData : Hashable, Identifiable {
   let category: String?
   let abilities: [String]
   let description : String?
-  let detailImageInfo : PokemonDetailImageInfo?
   let types : [PokemonTypeInfo]
   let genderRatio : Double?
   let weaknesses : [PokemonTypeInfo]
@@ -30,7 +29,6 @@ struct PokemonData : Hashable, Identifiable {
     category: String? = nil,
     abilities: [String] = [],
     description: String? = nil,
-    detailImageInfo: PokemonDetailImageInfo? = nil,
     types: [PokemonTypeInfo],
     genderRatio: Double? = nil ,
     weaknesses: [PokemonTypeInfo] = [],
@@ -44,7 +42,6 @@ struct PokemonData : Hashable, Identifiable {
     self.category = category
     self.abilities = abilities
     self.description = description
-    self.detailImageInfo = detailImageInfo
     self.types = types
     self.genderRatio = genderRatio
     self.weaknesses = weaknesses
