@@ -13,11 +13,12 @@ class PokemonDetailViewModel : ObservableObject {
   
   private let getPokemonInfoUseCase : GetPokemonInfoUseCase = GetPokemonInfoUseCase()
   private let getEvolutionsInfoUseCase : GetEvolutionsInfoUseCase = GetEvolutionsInfoUseCase()
+  private let getPokemonCardInfoListUseCase : GetPokemonCardInfoListUseCase = GetPokemonCardInfoListUseCase()
+  private let pokeAPIRepository : PokeAPIRepository = PokeAPIRepository()
   private let pokemonId : Int
   
   init(pokemonId: Int) {
     self.pokemonId = pokemonId
-    load()
   }
   
   
@@ -38,6 +39,11 @@ class PokemonDetailViewModel : ObservableObject {
       genderRatio: pokemonInfo.genderRatio,
       weaknesses: pokemonInfo.weaknesses,
       evolutionsData: evolutionsInfo)
+    
+    Task {
+      let infos = await getPokemonCardInfoListUseCase.execute()
+      print(infos)
+    }
   }
   
 }

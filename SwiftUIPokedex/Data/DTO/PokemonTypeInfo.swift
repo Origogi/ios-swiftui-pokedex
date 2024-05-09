@@ -8,25 +8,25 @@
 import Foundation
 import SwiftUI
 
-enum PokemonTypeInfo : CaseIterable {
-  case normal
-  case fire
-  case water
-  case electric
-  case grass
-  case ice
-  case fighting
-  case poison
-  case ground
-  case flying
-  case psychic
-  case bug
-  case rock
-  case ghost
-  case dragon
-  case dark
-  case steel
-  case fairy
+enum PokemonTypeInfo : String, CaseIterable {
+  case normal = "Normal"
+  case fire = "Fire"
+  case water = "Water"
+  case electric = "Electric"
+  case grass = "Grass"
+  case ice = "Ice"
+  case fighting = "Fighting"
+  case poison = "Poison"
+  case ground = "Ground"
+  case flying = "Flying"
+  case psychic = "Psychic"
+  case bug = "Bug"
+  case rock = "Rock"
+  case ghost = "Ghost"
+  case dragon = "Dragon"
+  case dark = "Dark"
+  case steel = "Steel"
+  case fairy = "Fairy"
   
   var textColorOnPrimaryColorBg : Color {
     switch self {

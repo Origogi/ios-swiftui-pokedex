@@ -10,6 +10,7 @@ import Foundation
 class GetPokemonCardInfoListUseCase {
   
   private let pokemonInfoRepository : PokemonDataRepository = PokemonDataRepository()
+  private let pokeAPIRepository : PokeAPIRepository = PokeAPIRepository()
 
   
   func execute(type: PokemonTypeInfo? = nil, region: RegionType? = nil) -> [PokemonCardInfo] {
@@ -37,5 +38,41 @@ class GetPokemonCardInfoListUseCase {
           types: pokemon.types
         )
       }
+  }
+  
+  func execute() async -> [PokemonCardInfo] {
+    // Retrieve data: either filtered by type or all entries
+    guard let response = await pokeAPIRepository.list() else {
+      return []
+    }
+    
+    var pokemonCardInfos = [PokemonCardInfo]()
+    
+    await withTaskGroup(of: PokemonCardInfo?.self) { group in
+      for item in response.results {
+        group.addTask {
+          if let detailData = await self.pokeAPIRepository.getDetail(from: item.url) {
+            return PokemonCardInfo(
+              id: detailData.id,
+              name: detailData.name.capitalized,
+              imagePath: detailData.sprites.frontDefault,
+              types: detailData.types.map { type in
+                print(type.type.name.lowercased())
+                return PokemonTypeInfo(rawValue: type.type.name.capitalized) ?? .normal
+              }
+            )
+          }
+          return nil
+        }
+      }
+      
+      // 결과를 취합
+      for await result in group {
+        if let cardInfo = result {
+          pokemonCardInfos.append(cardInfo)
+        }
+      }
+    }
+    return pokemonCardInfos
   }
 }
