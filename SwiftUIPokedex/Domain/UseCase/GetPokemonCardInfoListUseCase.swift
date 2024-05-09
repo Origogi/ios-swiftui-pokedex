@@ -57,7 +57,6 @@ class GetPokemonCardInfoListUseCase {
               name: detailData.name.capitalized,
               imagePath: detailData.sprites.frontDefault,
               types: detailData.types.map { type in
-                print(type.type.name.lowercased())
                 return PokemonTypeInfo(rawValue: type.type.name.capitalized) ?? .normal
               }
             )

@@ -39,11 +39,7 @@ class PokemonDetailViewModel : ObservableObject {
       genderRatio: pokemonInfo.genderRatio,
       weaknesses: pokemonInfo.weaknesses,
       evolutionsData: evolutionsInfo)
-    
-    Task {
-      let infos = await getPokemonCardInfoListUseCase.execute()
-      print(infos)
-    }
+  
   }
   
 }

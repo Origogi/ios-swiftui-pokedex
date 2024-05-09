@@ -40,10 +40,14 @@ struct PokemonCard: View {
             .frame(width: 126, height: 100)
             .background(info.mainType.primaryColor)
             .cornerRadius(15)
-          Image(info.imagePath)
-            .resizable()
-            .scaledToFit()
-            .padding(4)
+          AsyncImage(url: URL(string: info.imagePath)) { image in
+            image
+              .resizable()
+              .scaledToFit()
+              .padding(4)
+          } placeholder: {
+            EmptyView()
+          }
           
           if showFavButton {
             HStack {
@@ -113,7 +117,7 @@ struct PokemonSamllCard : View {
     PokemonCard(info: PokemonCardInfo(
       id: 1,
       name: "Name",
-      imagePath: "1_medium",
+      imagePath: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
       types: [
         .bug,
         .dark,
@@ -121,7 +125,7 @@ struct PokemonSamllCard : View {
     PokemonCard(info: PokemonCardInfo(
       id: 1,
       name: "Name",
-      imagePath: "1_medium",
+      imagePath: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
       types: [
         .bug,
         .dark,
@@ -131,7 +135,7 @@ struct PokemonSamllCard : View {
     PokemonSamllCard(info: PokemonCardInfo(
       id: 1,
       name: "Name",
-      imagePath: "1_small",
+      imagePath: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
       types: [
         .bug,
         .dark,
@@ -139,7 +143,7 @@ struct PokemonSamllCard : View {
     PokemonSamllCard(info: PokemonCardInfo(
       id: 1,
       name: "Name",
-      imagePath: "2_small",
+      imagePath: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
       types: [
         .bug,
         .dark,
@@ -147,7 +151,7 @@ struct PokemonSamllCard : View {
     PokemonSamllCard(info: PokemonCardInfo(
       id: 1,
       name: "Name",
-      imagePath: "3_small",
+      imagePath: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
       types: [
         .bug,
         .dark,

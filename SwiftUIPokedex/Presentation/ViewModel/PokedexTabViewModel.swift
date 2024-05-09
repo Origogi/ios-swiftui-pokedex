@@ -16,7 +16,7 @@ class PokedexTabViewModel : ObservableObject {
   private let getPokemonListCardInfosUseCase : GetPokemonCardInfoListUseCase = GetPokemonCardInfoListUseCase()
   
   init() {
-    load()
+      fetch()
   }
   
   func filter(type : PokemonTypeInfo?) {
@@ -35,6 +35,33 @@ class PokedexTabViewModel : ObservableObject {
     
     selectedSorting = sorting
     load()
+  }
+  
+  func fetch() {
+    Task {
+      let newList = await getPokemonListCardInfosUseCase.execute()
+      
+      // Perform sorting on a background thread
+      let sortedList = await withCheckedContinuation { continuation in
+        var localList = newList
+        switch selectedSorting {
+        case .idAscending:
+          localList.sort { $0.id < $1.id }
+        case .idDescending:
+          localList.sort { $0.id > $1.id }
+        case .nameAscending:
+          localList.sort { $0.name < $1.name }
+        case .nameDescending:
+          localList.sort { $0.name > $1.name }
+        }
+        continuation.resume(returning: localList)
+      }
+      
+      // Update the UI on the main thread
+      await MainActor.run {
+        self.list = sortedList
+      }
+    }
   }
   
   func load() {

@@ -49,7 +49,6 @@ class PokeAPIRepository {
       
       let decoder = JSONDecoder()
       let detail = try decoder.decode(PokemonDetailData.self, from: data)
-      print("Fetched Pokemon Data: \(detail)")
       return detail
     } catch {
       print("Error fetching or decoding data: \(error.localizedDescription)")
@@ -73,7 +72,6 @@ class PokeAPIRepository {
       
       let decoder = JSONDecoder()
       let detail = try decoder.decode(PokemonDetailData.self, from: data)
-      print("Fetched Pokemon Data: \(detail)")
       return detail
     } catch {
       print("Error fetching or decoding data: \(error.localizedDescription)")
