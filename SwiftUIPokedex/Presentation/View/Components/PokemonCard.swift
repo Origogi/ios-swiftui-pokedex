@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import SDWebImage
+import SDWebImageSwiftUI
 
 struct PokemonCard: View {
   let info : PokemonCardInfo
@@ -40,14 +42,10 @@ struct PokemonCard: View {
             .frame(width: 126, height: 100)
             .background(info.mainType.primaryColor)
             .cornerRadius(15)
-          AsyncImage(url: URL(string: info.imagePath)) { image in
-            image
-              .resizable()
-              .scaledToFit()
-              .padding(4)
-          } placeholder: {
-            EmptyView()
-          }
+          WebImage(url: URL(string: info.imagePath))
+            .resizable()
+            .scaledToFit()
+            .padding(4)
           
           if showFavButton {
             HStack {

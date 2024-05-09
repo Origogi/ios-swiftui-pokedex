@@ -10,6 +10,7 @@ import SwiftUI
 struct PokemonCardListView: View {
   let list : [PokemonCardInfo]
   
+  
   var body: some View {
     ScrollView {
       LazyVStack(spacing : 12) {
