@@ -10,20 +10,16 @@ import Foundation
 struct PokemonDetailData : Decodable {
   let id : Int
   let name : String
-  let types : [PokemonTypeData]
+  let types : [PokemonDetailTypeData]
   let weight: Double
   let height: Double
   let sprites : PokemonSpritesData
+  let abilities : [PokemonAbilityData]
 }
 
-struct PokemonTypeData : Decodable {
+struct PokemonDetailTypeData : Decodable {
   let slot : Int
   let type : TypeData
-}
-
-struct TypeData : Decodable {
-  let name : String
-  let url : String
 }
 
 struct PokemonSpritesData : Decodable {
@@ -32,4 +28,13 @@ struct PokemonSpritesData : Decodable {
   enum CodingKeys: String, CodingKey {
     case frontDefault = "front_default"
   }
+}
+
+struct PokemonAbilityData : Decodable {
+  let ability : AbilityData
+}
+
+struct AbilityData : Decodable {
+  let name : String
+  let url : String
 }

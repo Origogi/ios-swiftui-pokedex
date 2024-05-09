@@ -9,7 +9,7 @@ import Foundation
 
 
 // API 응답 전체 구조를 위한 구조체
-struct PokemonListAPIResponse: Decodable {
+struct PokemonListData: Decodable {
   let count: Int
   let next: String?
   let previous: String?

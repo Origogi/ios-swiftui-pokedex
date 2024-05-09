@@ -85,7 +85,7 @@ struct PokemonDetailScreen: View {
                 Spacer()
                   .frame(height: 24)
                 Text(pokemonInfo.description)
-                  .customTextStyle(font: .caption4, color: gray800.opacity(0.8))
+                  .customTextStyle(font: .desc, color: gray800.opacity(0.8))
                 Divider()
                   .padding(.vertical, 16)
                 StatusGroupView(
