@@ -40,9 +40,9 @@ class GetPokemonCardInfoListUseCase {
       }
   }
   
-  func execute() async -> [PokemonCardInfo] {
+  func execute(offset : Int, limit : Int) async -> [PokemonCardInfo] {
     // Retrieve data: either filtered by type or all entries
-    guard let response = await pokeAPIRepository.list() else {
+    guard let response = await pokeAPIRepository.list(offset: offset, limit: limit) else {
       return []
     }
     

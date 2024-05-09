@@ -9,6 +9,8 @@ import SwiftUI
 
 struct PokemonCardListView: View {
   let list : [PokemonCardInfo]
+  // list end appear
+  let onListEnd: () -> Void
   
   
   var body: some View {
@@ -26,12 +28,22 @@ struct PokemonCardListView: View {
             PokemonCard(info: info)
           }
         }
+        ProgressView()
+          .progressViewStyle(CircularProgressViewStyle())
+          .frame(maxWidth: .infinity, alignment: .center)
+          .padding(.vertical, 16)
+          .onAppear {
+            onListEnd()
+          }
+        
+        
       }.padding(.horizontal, 16)
     }
-    .animation(.default, value: list)
-
+//    .animation(.default, value: list)
+    
   }
 }
+
 
 #Preview {
   
@@ -47,7 +59,7 @@ struct PokemonCardListView: View {
           .dark,
         ]),
       PokemonCardInfo(
-        id: 1,
+        id: 2,
         name: "Name",
         imagePath: "1_medium",
         types: [
@@ -55,7 +67,7 @@ struct PokemonCardListView: View {
           .dark,
         ]),
       PokemonCardInfo(
-        id: 1,
+        id: 3,
         name: "Name",
         imagePath: "1_medium",
         types: [
@@ -63,12 +75,64 @@ struct PokemonCardListView: View {
           .dark,
         ]),
       PokemonCardInfo(
-        id: 1,
-          name: "Name",
-          imagePath: "1_medium",
-          types: [
-            .bug,
-            .dark,
-          ])
-    ])
+        id: 4,
+        name: "Name",
+        imagePath: "1_medium",
+        types: [
+          .bug,
+          .dark,
+        ]),
+
+      PokemonCardInfo(
+        id: 5,
+        name: "Name",
+        imagePath: "1_medium",
+        types: [
+          .bug,
+          .dark,
+        ]),
+      PokemonCardInfo(
+        id: 6,
+        name: "Name",
+        imagePath: "1_medium",
+        types: [
+          .bug,
+          .dark,
+        ]),
+      PokemonCardInfo(
+        id: 7,
+        name: "Name",
+        imagePath: "1_medium",
+        types: [
+          .bug,
+          .dark,
+        ]),
+      PokemonCardInfo(
+        id: 8,
+        name: "Name",
+        imagePath: "1_medium",
+        types: [
+          .bug,
+          .dark,
+        ])
+    ]) {
+      
+    }
+}
+
+struct LoadingIndicator: View {
+  
+  @State private var isAnimating = false
+
+  var body: some View {
+    Image("loading")
+      .resizable()
+      .frame(width: 40, height: 40)
+      .rotationEffect(.degrees(isAnimating ? 360 : 0))
+      .onAppear {
+        withAnimation(Animation.linear(duration: 2).repeatForever(autoreverses: false)) {
+          isAnimating = true
+        }
+      }
+  }
 }

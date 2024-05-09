@@ -33,7 +33,9 @@ struct RegionDetailScreen: View {
             }
           }
         )
-        PokemonCardListView(list: viewModel.list)
+        PokemonCardListView(list: viewModel.list) {
+          
+        }
       }.navigationBarHidden(true)
 
     }

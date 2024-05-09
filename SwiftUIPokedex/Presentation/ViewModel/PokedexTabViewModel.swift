@@ -12,11 +12,14 @@ class PokedexTabViewModel : ObservableObject {
   @Published var list : [PokemonCardInfo] = []
   @Published var selectedType : PokemonTypeInfo?
   @Published var selectedSorting : SortingInfo = .idAscending
+  var isLoading : Bool = false
   
   private let getPokemonListCardInfosUseCase : GetPokemonCardInfoListUseCase = GetPokemonCardInfoListUseCase()
+  private let limit = 20
+  private var offset = 0
   
   init() {
-      fetch()
+    loadMore()
   }
   
   func filter(type : PokemonTypeInfo?) {
@@ -37,9 +40,15 @@ class PokedexTabViewModel : ObservableObject {
     load()
   }
   
-  func fetch() {
+  func loadMore() {
+    if isLoading {
+      return
+    }
+    
+    isLoading = true
+    
     Task {
-      let newList = await getPokemonListCardInfosUseCase.execute()
+      let newList = await getPokemonListCardInfosUseCase.execute(offset: offset, limit: limit)
       
       // Perform sorting on a background thread
       let sortedList = await withCheckedContinuation { continuation in
@@ -59,7 +68,9 @@ class PokedexTabViewModel : ObservableObject {
       
       // Update the UI on the main thread
       await MainActor.run {
-        self.list = sortedList
+        self.list = self.list + sortedList
+        isLoading = false
+        offset += limit
       }
     }
   }
