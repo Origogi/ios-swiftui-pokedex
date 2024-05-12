@@ -17,10 +17,10 @@ struct PokemonTypeData : Decodable {
 }
 
 struct DamageRelations : Decodable {
-  let doubleDamageFrom : [TypeData]
-  let doubleDamageTo : [TypeData]
-  let halfDamageFrom : [TypeData]
-  let halfDamageTo : [TypeData]
+  let doubleDamageFrom : [NameUrlData]
+  let doubleDamageTo : [NameUrlData]
+  let halfDamageFrom : [NameUrlData]
+  let halfDamageTo : [NameUrlData]
   
   enum CodingKeys: String, CodingKey {
     case doubleDamageFrom = "double_damage_from"
@@ -29,9 +29,3 @@ struct DamageRelations : Decodable {
     case halfDamageTo = "half_damage_to"
   }
 }
-
-struct TypeData : Decodable {
-  let name : String
-  let url : String
-}
-

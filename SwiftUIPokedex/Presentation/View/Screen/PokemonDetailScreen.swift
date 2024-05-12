@@ -100,7 +100,7 @@ struct PokemonDetailScreen: View {
                 WeaknessesView(types: pokemonInfo.weaknesses)
                   .padding(.bottom, 40)
                 EvolutionsInfoView(
-                  evolutionsInfo: pokemonInfo.evolutionsData
+                  evolutionChain: pokemonInfo.evolutionChain
                 )
               }
               .padding(.horizontal, 16)

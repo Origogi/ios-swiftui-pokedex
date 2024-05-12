@@ -12,9 +12,18 @@ struct PokemonSpeciesData : Decodable {
   let flavorTextEntries : [FlavorTextEntry]
   let genera : [PokemonGeneraData]
   let gendrerRate : Int
+  let evolutionChain : UrlData
   
   var englishFlavorText : String {
     return flavorTextEntries.first(where: { $0.language.name == "en" })?.flavorText ?? ""
+  }
+  
+  var genderRateFraction : Double? {
+    if (gendrerRate == -1) {
+      return nil
+    }
+    
+    return ((8 - Double(gendrerRate)) / 8 )
   }
   
   var englishGenus : String {
@@ -25,12 +34,13 @@ struct PokemonSpeciesData : Decodable {
     case flavorTextEntries = "flavor_text_entries"
     case gendrerRate = "gender_rate"
     case genera
+    case evolutionChain = "evolution_chain"
   }
 }
 
 struct FlavorTextEntry : Decodable {
   let flavorText : String
-  let language : LanguageData
+  let language : NameUrlData
   
   enum CodingKeys: String, CodingKey {
     case flavorText = "flavor_text"
@@ -40,7 +50,8 @@ struct FlavorTextEntry : Decodable {
 
 struct PokemonGeneraData : Decodable {
   let genus : String
-  let language : LanguageData
+  let language : NameUrlData
 }
+
 
 

@@ -80,7 +80,7 @@ struct PokemonSamllCard : View {
           .frame(width: 94, height: 74)
           .background(info.mainType.primaryColor)
           .cornerRadius(71)
-        Image(info.imagePath)
+        WebImage(url: URL(string: info.imagePath))
           .resizable()
           .scaledToFit()
           .frame(width: 65, height: 65)

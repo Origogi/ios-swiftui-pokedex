@@ -19,7 +19,7 @@ struct PokemonDetailData : Decodable {
 
 struct PokemonDetailTypeData : Decodable {
   let slot : Int
-  let type : TypeData
+  let type : NameUrlData
 }
 
 struct PokemonSpritesData : Decodable {
@@ -31,10 +31,5 @@ struct PokemonSpritesData : Decodable {
 }
 
 struct PokemonAbilityData : Decodable {
-  let ability : AbilityData
-}
-
-struct AbilityData : Decodable {
-  let name : String
-  let url : String
+  let ability : NameUrlData
 }

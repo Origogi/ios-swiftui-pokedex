@@ -9,24 +9,35 @@ import SwiftUI
 
 struct EvolutionsInfoView: View {
   
-  let evolutionsInfo : EvolutionsInfo
+  let evolutionChain : EvolutionChain?
   
   var body: some View {
+    
+    
+    
     VStack(alignment: .leading, spacing: 8) {
       Text("Evolutions")
         .customTextStyle(font: .caption2, color: .black)
+      
+      let array = chainToArray(evolutionChain)
+      
+      let first = array.first!
+      let remain = array.dropFirst()
+      
       VStack(alignment: .leading, spacing :0) {
-        if evolutionsInfo.chains.count == 1 {
+        if array.count == 1 {
           Text("This Pokémon does not evolve")
             .customTextStyle(font: .caption2, color: gray700)
             .padding(.bottom, 16)
         }
-        ForEach(evolutionsInfo.chains) { chain in
+        
+        PokemonSamllCard(info: first.cardInfo)
+        ForEach(remain, id: \.id) { item in
+
           VStack(spacing : 0) {
-            if let condition = chain.condition {
-              EvolutionConditionView(condition: condition)
-            }
-            PokemonSamllCard(info: chain.next)
+            EvolutionConditionView(condition: "")
+
+            PokemonSamllCard(info: item.cardInfo)
           }
         }
       }
@@ -39,7 +50,22 @@ struct EvolutionsInfoView: View {
       
     }
   }
+  
+  // 연결 리스트를 배열로 변환하는 도우미 함수
+  private func chainToArray(_ node: EvolutionChain?) -> [EvolutionChain] {
+    var array = [EvolutionChain]()
+    var currentNode = node
+    while let current = currentNode {
+      array.append(current)
+      currentNode = current.next
+    }
+    return array
+  }
+
+  
 }
+
+
 
 struct EvolutionConditionView: View {
   let condition : String
@@ -57,20 +83,28 @@ struct EvolutionConditionView: View {
 
 #Preview {
   EvolutionsInfoView(
-    evolutionsInfo: EvolutionsInfo(
-      chains: [
-        EvolutionChain(
-          next: PokemonCardInfo(id: 1, name: "name1", imagePath: "1_medium", types: [.bug])
+    evolutionChain: EvolutionChain(
+      cardInfo: PokemonCardInfo(
+        id: 1,
+        name: "Bulbasaur",
+        imagePath: "Bulbasaur", types: [.poison]
+      ),
+      next: EvolutionChain(
+        cardInfo: PokemonCardInfo(
+          id: 2,
+          name: "Ivysaur",
+          imagePath: "Ivysaur", types: [.poison]
         ),
-        EvolutionChain(
-          condition: "Level 16",
-          next: PokemonCardInfo(id: 2, name: "name2", imagePath: "1_medium", types: [.bug])
-        ),
-        EvolutionChain(
-          condition: "Level 32",
-          next: PokemonCardInfo(id: 3, name: "name3", imagePath: "1_medium", types: [.bug])
-        ),
-      ]
+        next: EvolutionChain(
+          cardInfo: PokemonCardInfo(
+            id: 3,
+            name: "Venusaur",
+            imagePath: "Venusaur", 
+            types: [.poison]
+          )
+        )
+      )
     )
+    
   )
 }
