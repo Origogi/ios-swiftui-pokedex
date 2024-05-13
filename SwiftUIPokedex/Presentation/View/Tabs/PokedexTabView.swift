@@ -9,7 +9,7 @@ import SwiftUI
 
 struct PokedexTabView: View {
   
-  @ObservedObject var viewModel: PokedexTabViewModel
+  @ObservedObject var viewModel: PokemonCardListViewModel
   
   var body: some View {
     VStack {
@@ -28,7 +28,8 @@ struct PokedexTabView: View {
 //        }
 //      )
       PokemonCardListView(
-        list: viewModel.list
+        list: viewModel.list,
+        needLoadMore: viewModel.needLoadMore
       ) {
         viewModel.loadMore()
       }
@@ -42,7 +43,10 @@ struct PokedexTabView: View {
 #Preview {
   NavigationView {
     PokedexTabView(
-      viewModel: PokedexTabViewModel()
+      viewModel: PokemonCardListViewModel(
+        startPokedexId: 1,
+        lastPokedexId: 20
+      )
     )
   }
 }

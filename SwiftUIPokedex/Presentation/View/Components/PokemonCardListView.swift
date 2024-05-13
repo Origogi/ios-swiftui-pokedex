@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PokemonCardListView: View {
   let list : [PokemonCardInfo]
+  let needLoadMore: Bool
   // list end appear
   let onListEnd: () -> Void
   
@@ -29,7 +30,7 @@ struct PokemonCardListView: View {
           }
         }
         
-        if !list.isEmpty {
+        if !list.isEmpty && needLoadMore {
           ProgressView()
             .progressViewStyle(CircularProgressViewStyle())
             .frame(maxWidth: .infinity, alignment: .center)
@@ -37,7 +38,6 @@ struct PokemonCardListView: View {
             .onAppear {
               onListEnd()
             }
-          
         }
         
         
@@ -117,7 +117,7 @@ struct PokemonCardListView: View {
           .bug,
           .dark,
         ])
-    ]) {
+    ], needLoadMore: false) {
       
     }
 }

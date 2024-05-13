@@ -121,19 +121,6 @@ struct PokemonDetailScreen: View {
   
 }
 
-
-struct PokemonStausInfosView: View {
-  let pokemon: PokemonData
-  
-  init(pokemon: PokemonData) {
-    self.pokemon = pokemon
-  }
-  
-  var body: some View {
-    Text("Hello, World!")
-  }
-}
-
 #Preview {
   
   PokemonDetailScreen(

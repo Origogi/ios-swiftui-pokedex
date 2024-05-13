@@ -9,7 +9,6 @@ import Foundation
 
 class GetPokemonCardInfoListUseCase {
   
-  private let pokemonInfoRepository : PokemonDataRepository = PokemonDataRepository()
   private let pokemonListDataRepository : PokemonListDataRepository = PokemonListDataRepository()
   private let pokemonDetailDataRepository : PokemonDetailDataRepository = PokemonDetailDataRepository()
 
