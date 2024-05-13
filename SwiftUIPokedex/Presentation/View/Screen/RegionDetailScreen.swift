@@ -21,11 +21,21 @@ struct RegionDetailScreen: View {
         Spacer()
       }
       .padding(.horizontal, 16)
-      PokemonCardListView(
-        list: viewModel.list,
-        needLoadMore: viewModel.needLoadMore
-      ) {
-        viewModel.loadMore()
+      
+      if viewModel.list.isEmpty {
+        ProgressView()
+          .frame(            
+            maxWidth: .infinity,
+            maxHeight: .infinity,
+            alignment: .center
+          )
+      } else {
+        PokemonCardListView(
+          list: viewModel.list,
+          needLoadMore: viewModel.needLoadMore
+        ) {
+          viewModel.loadMore()
+        }
       }
     }.navigationBarHidden(true)
       .onAppear {

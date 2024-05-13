@@ -13,26 +13,22 @@ struct PokedexTabView: View {
   
   var body: some View {
     VStack {
-//      FilteringSortingButtons(
-//        selectedType: viewModel.selectedType,
-//        selectedSorting: viewModel.selectedSorting,
-//        onSelectType: { type in
-//          withAnimation {
-//            viewModel.filter(type: type)
-//          }
-//        },
-//        onSelectSorting: { sort in
-//          withAnimation {
-//            viewModel.sort(sorting: sort)
-//          }
-//        }
-//      )
-      PokemonCardListView(
-        list: viewModel.list,
-        needLoadMore: viewModel.needLoadMore
-      ) {
-        viewModel.loadMore()
+      if viewModel.list.isEmpty {
+        ProgressView()
+          .frame(
+            maxWidth: .infinity,
+            maxHeight: .infinity,
+            alignment: .center
+          )
+      } else {
+        PokemonCardListView(
+          list: viewModel.list,
+          needLoadMore: viewModel.needLoadMore
+        ) {
+          viewModel.loadMore()
+        }
       }
+      
     }.onAppear {
       viewModel.loadMore()
     }
