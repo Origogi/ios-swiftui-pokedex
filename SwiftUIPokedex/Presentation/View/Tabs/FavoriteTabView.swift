@@ -35,7 +35,7 @@ struct FavoriteTabView: View {
               .frame(width: 0, height: 0)
           }
           ScrollView {
-            LazyVStack(spacing : 12) {
+            VStack(spacing : 12) {
               Spacer()
                 .frame(height: 0)
               ForEach(list) { info in
@@ -73,6 +73,11 @@ struct FavoriteTabView: View {
         }
       } else {
         ProgressView()
+          .frame(
+            maxWidth: .infinity,
+            maxHeight: .infinity,
+            alignment: .center
+          )
       }
       
     }.onAppear {

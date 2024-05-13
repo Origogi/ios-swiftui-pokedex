@@ -22,8 +22,9 @@ class PokemonCardListViewModel : ObservableObject {
   private let lastPokedexId : Int
   
   init(startPokedexId: Int, lastPokedexId : Int) {
-    offset = startPokedexId
+    offset = startPokedexId - 1
     self.lastPokedexId = lastPokedexId
+    loadMore()
   }
 
   func loadMore() {

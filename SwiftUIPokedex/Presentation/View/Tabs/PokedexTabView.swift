@@ -29,8 +29,6 @@ struct PokedexTabView: View {
         }
       }
       
-    }.onAppear {
-      viewModel.loadMore()
     }
   }
 }

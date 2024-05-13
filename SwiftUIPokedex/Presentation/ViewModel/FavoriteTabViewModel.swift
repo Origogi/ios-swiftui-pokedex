@@ -14,6 +14,10 @@ class FavoriteTabViewModel : ObservableObject {
   
   @Published var list : [PokemonCardInfo]? = nil
   
+//  init() {
+//    load()
+//  }
+  
   func load() {
     Task {
       list = await getFavoriteListUseCase.execute()

@@ -43,27 +43,26 @@ enum Tab : CaseIterable {
 
 struct HomeScreen: View {
   @State private var selectedTab: Tab = .pokedex
-    
+  
   var body: some View {
     
     NavigationView {
       VStack(spacing: 0) {
-        TabView(selection: $selectedTab) {
+        switch selectedTab {
+        case .pokedex:
           PokedexTabView(viewModel: PokemonCardListViewModel(
             startPokedexId: RegionType.kanto.firstPokemonId,
             lastPokedexId: RegionType.alola.lastPokemonId
           ))
-            .tag(Tab.pokedex)
+        case .region:
           RegionTabView()
-            .tag(Tab.region)
+        case .favorite:
           FavoriteTabView(
             viewModel: FavoriteTabViewModel()
           )
-            .tag(Tab.favorite)
+        case .profile:
           ProfileTabView()
-            .tag(Tab.profile)
         }
-        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
         
         
         Divider()

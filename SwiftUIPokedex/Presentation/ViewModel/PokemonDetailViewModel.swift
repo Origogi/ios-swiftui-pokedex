@@ -23,8 +23,6 @@ class PokemonDetailViewModel : ObservableObject {
     Task {      
       let result = await getPokemonInfoUseCase.execute(id: pokemonId)
       
-      print(result)
-
       // Update the UI on the main thread
       await MainActor.run {
         self.pokemonDetailInfo = result
