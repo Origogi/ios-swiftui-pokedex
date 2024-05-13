@@ -7,17 +7,30 @@
 
 import Foundation
 
-class GetPokemonInfoUseCase {
+class GetPokemonDetailInfoUseCase {
   
   private let pokemonDetailDataRepository: PokemonDetailDataRepository = PokemonDetailDataRepository()
   private let pokemonSpeciesDataRepository: PokemonSpeciesDataRepository = PokemonSpeciesDataRepository()
   private let pokemonTypeDataRepository: PokemonTypeDataRepository = PokemonTypeDataRepository()
   private let pokemonEvolutionChainDataRepository: PokemonEvolutionChainDataRepository = PokemonEvolutionChainDataRepository()
+  private let pokemonWeaknessDataRepository: PokemonWeaknessTypesRepository = PokemonWeaknessTypesRepository.shared
   
   func execute(id: Int) async -> PokemonDetailInfo {
     let detailData = await pokemonDetailDataRepository.get(id: id)!
     let speciesData = await pokemonSpeciesDataRepository.get(id: id)
-    let typeData = await pokemonTypeDataRepository.get(type: detailData.types[0].type.name.lowercased())
+    
+    let mainType = PokemonTypeInfo(rawValue: detailData.types[0].type.name.capitalized)!
+    
+    var weaknessTypes = pokemonWeaknessDataRepository.get(from: mainType)
+    if (weaknessTypes == nil) {
+      let typeData = await pokemonTypeDataRepository.get(type: mainType.name.lowercased())
+      weaknessTypes = typeData.damageRelations.doubleDamageFrom.map { PokemonTypeInfo(rawValue: $0.name.capitalized )!}
+      pokemonWeaknessDataRepository.set(weaknesses: weaknessTypes!, for: mainType)
+    } else {
+      print("Weaknesses loaded from cache")
+    }
+    
+    
     let evolutionChainData = await pokemonEvolutionChainDataRepository.get(from: speciesData.evolutionChain.url)
     
     let evolutionChain =
@@ -31,7 +44,6 @@ class GetPokemonInfoUseCase {
         )
       )
     
-    print(evolutionChain)
     
     return PokemonDetailInfo(
       id: detailData.id,
@@ -45,8 +57,8 @@ class GetPokemonInfoUseCase {
         PokemonTypeInfo(rawValue: $0.type.name.capitalized) ?? .normal
       },
       genderRatio: speciesData.genderRateFraction,
-      weaknesses: typeData.damageRelations.doubleDamageFrom.map { PokemonTypeInfo(rawValue: $0.name.capitalized )!},
-      evolutionChain: evolutionChain, 
+      weaknesses: weaknessTypes ?? [],
+      evolutionChain: evolutionChain,
       animatedImageUrl: detailData.sprites.other.showdown.frontDefault
     )
   }

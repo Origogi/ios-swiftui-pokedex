@@ -12,16 +12,18 @@ class FavoriteTabViewModel : ObservableObject {
   private let getFavoriteListUseCase = GetFavoriteListUseCase()
   private let removeFavoriteUseCase = RemoveFavoriteUseCase()
   
-  @Published var list : [PokemonCardInfo] = []
+  @Published var list : [PokemonCardInfo]? = nil
   
-  init() {
-    list = getFavoriteListUseCase.execute()
+  func load() {
+    Task {
+      list = await getFavoriteListUseCase.execute()
+    }
   }
   
   func remove(id : Int) {
     removeFavoriteUseCase.execute(id: id)
     var removedList = list
-    removedList.removeAll { $0.id == id }
+    removedList?.removeAll { $0.id == id }
     list = removedList
   }
 }

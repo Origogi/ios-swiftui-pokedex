@@ -11,7 +11,7 @@ class PokemonDetailViewModel : ObservableObject {
   
   @Published var pokemonDetailInfo : PokemonDetailInfo?
   
-  private let getPokemonInfoUseCase : GetPokemonInfoUseCase = GetPokemonInfoUseCase()
+  private let getPokemonInfoUseCase : GetPokemonDetailInfoUseCase = GetPokemonDetailInfoUseCase()
   private let pokemonId : Int
   
   init(pokemonId: Int) {

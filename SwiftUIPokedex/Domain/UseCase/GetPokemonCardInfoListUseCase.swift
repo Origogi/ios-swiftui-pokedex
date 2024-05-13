@@ -19,9 +19,7 @@ class GetPokemonCardInfoListUseCase {
     guard let response = await pokemonListDataRepository.list(offset: offset, limit: limit) else {
       return []
     }
-    
-    print("response : \(response)")
-    
+        
     var pokemonCardInfos = [PokemonCardInfo]()
     
     await withTaskGroup(of: PokemonCardInfo?.self) { group in

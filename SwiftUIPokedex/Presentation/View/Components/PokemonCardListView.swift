@@ -43,8 +43,6 @@ struct PokemonCardListView: View {
         
       }.padding(.horizontal, 16)
     }
-    //    .animation(.default, value: list)
-    
   }
 }
 
