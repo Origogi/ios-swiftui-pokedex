@@ -23,10 +23,3 @@ struct ChainData : Decodable {
     case species
   }
 }
-//
-//struct EvolutionDetail : Decodable {
-//  let name : String
-//  let id : Int
-//  let types : [NameUrlData]
-//  let sprites : PokemonSpritesData
-//}

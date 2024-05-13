@@ -32,6 +32,8 @@ struct PokedexTabView: View {
       ) {
         viewModel.loadMore()
       }
+    }.onAppear {
+      viewModel.loadMore()
     }
   }
 }

@@ -20,13 +20,19 @@ class GetPokemonInfoUseCase {
     let typeData = await pokemonTypeDataRepository.get(type: detailData.types[0].type.name.lowercased())
     let evolutionChainData = await pokemonEvolutionChainDataRepository.get(from: speciesData.evolutionChain.url)
     
-    var evolutionChain = 
+    let evolutionChain =
+    (await extractEvolutions(from: evolutionChainData.chain)) ??
       EvolutionChain(
-        cardInfo: PokemonCardInfo(id: detailData.id, name: detailData.name.capitalized, imagePath: detailData.sprites.frontDefault, types: detailData.types.map { PokemonTypeInfo(rawValue: $0.type.name.capitalized) ?? .normal }))
-        
+        cardInfo: PokemonCardInfo(
+          id: id, name: detailData.name.capitalized,
+          imagePath: detailData.sprites.versions.generationVIII.icons.frontDefault,
+          types: detailData.types.map {
+            PokemonTypeInfo(rawValue: $0.type.name.capitalized) ?? .normal }
+        )
+      )
     
     return PokemonDetailInfo(
-      id: detailData.id, 
+      id: detailData.id,
       name: detailData.name.capitalized,
       weight: detailData.weight,
       height: detailData.height,
@@ -38,38 +44,32 @@ class GetPokemonInfoUseCase {
       },
       genderRatio: speciesData.genderRateFraction,
       weaknesses: typeData.damageRelations.doubleDamageFrom.map { PokemonTypeInfo(rawValue: $0.name.capitalized )!},
-      evolutionChain: evolutionChain
-      
+      evolutionChain: evolutionChain, 
+      animatedImageUrl: detailData.sprites.other.showdown.frontDefault
     )
   }
   
-//  private func extractEvolutions(from chain: ChainData?) async -> EvolutionChain? {
-//    var evolutionInfo : EvolutionsInfo? = nil
-//    
-//    if let chain = chain {
-//      
-//      if let id = extractId(from: chain.species.url) {
-//        let pokemonDetailData = await pokemonDetailDataRepository.get(id: id)
-//        
-//        let pokemonCardInfo = PokemonCardInfo(
-//          id: id,
-//          name: pokemonDetailData?.name.capitalized ?? "", 
-//          imagePath: pokemonDetailData?.sprites.frontDefault ?? "",
-//          types: pokemonDetailData?.types.map { PokemonTypeInfo(rawValue: $0.type.name.capitalized) ?? .normal } ?? []
-//        )
-//        
-//        evolutionInfo = EvolutionsInfo(
-//          chains: [EvolutionChainInfo(
-//            species: pokemonCardInfo,
-//            evolvesTo: await extractEvolutions(from: chain.evolvesTo.first)
-//          )]
-//        )
-//      }
-//    }
-//    
-//    
-//    return evolutionInfo
-//  }
+  private func extractEvolutions(from chain: ChainData?) async -> EvolutionChain? {
+    var evolutionChain: EvolutionChain?
+    
+    if let chain = chain {
+      
+      if let id = extractId(from: chain.species.url) {
+        let pokemonDetailData = await pokemonDetailDataRepository.get(id: id)
+        
+        let pokemonCardInfo = PokemonCardInfo(
+          id: id,
+          name: pokemonDetailData?.name.capitalized ?? "",
+          imagePath: pokemonDetailData?.sprites.versions.generationVIII.icons.frontDefault ?? "",
+          types: pokemonDetailData?.types.map { PokemonTypeInfo(rawValue: $0.type.name.capitalized) ?? .normal } ?? []
+        )
+        let nextChain = await extractEvolutions(from: chain.evolvesTo.first)
+        evolutionChain = EvolutionChain(cardInfo: pokemonCardInfo, next: nextChain)
+      }
+    }
+    
+    return evolutionChain
+  }
   
   private func extractPokemonPrefix(from text: String) -> String {
     let pattern = "^(.+) Pokémon$"

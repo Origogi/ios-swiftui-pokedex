@@ -28,18 +28,22 @@ struct PokemonCardListView: View {
             PokemonCard(info: info)
           }
         }
-        ProgressView()
-          .progressViewStyle(CircularProgressViewStyle())
-          .frame(maxWidth: .infinity, alignment: .center)
-          .padding(.vertical, 16)
-          .onAppear {
-            onListEnd()
-          }
+        
+        if !list.isEmpty {
+          ProgressView()
+            .progressViewStyle(CircularProgressViewStyle())
+            .frame(maxWidth: .infinity, alignment: .center)
+            .padding(.vertical, 16)
+            .onAppear {
+              onListEnd()
+            }
+          
+        }
         
         
       }.padding(.horizontal, 16)
     }
-//    .animation(.default, value: list)
+    //    .animation(.default, value: list)
     
   }
 }
@@ -82,7 +86,7 @@ struct PokemonCardListView: View {
           .bug,
           .dark,
         ]),
-
+      
       PokemonCardInfo(
         id: 5,
         name: "Name",
@@ -123,7 +127,7 @@ struct PokemonCardListView: View {
 struct LoadingIndicator: View {
   
   @State private var isAnimating = false
-
+  
   var body: some View {
     Image("loading")
       .resizable()

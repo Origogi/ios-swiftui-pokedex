@@ -19,6 +19,7 @@ struct PokemonDetailInfo {
   let genderRatio : Double?
   let weaknesses : [PokemonTypeInfo]
   let evolutionChain : EvolutionChain
+  let animatedImageUrl : String
   
   var mainType : PokemonTypeInfo {
     return types.first!

@@ -14,38 +14,13 @@ class GetPokemonCardInfoListUseCase {
   private let pokemonDetailDataRepository : PokemonDetailDataRepository = PokemonDetailDataRepository()
 
   
-  func execute(type: PokemonTypeInfo? = nil, region: RegionType? = nil) -> [PokemonCardInfo] {
-    // Retrieve data: either filtered by type or all entries
-    let pokemonList = type != nil ? pokemonInfoRepository.listByType(type!) : pokemonInfoRepository.list()
-    
-    // Apply common filtering and mapping
-    return pokemonList
-      .filter { pokemon in
-        // Include additional type check if type is provided
-        type == nil || pokemon.types.contains(type!)
-      }
-      .filter { pokemon in
-        // Include additional region check if region is provided
-        region == nil || pokemon.region == region
-        
-      }
-      .filter { pokemon in
-        pokemon.hasDetailInfo
-      }.map { pokemon in
-        PokemonCardInfo(
-          id: pokemon.id,
-          name: pokemon.name,
-          imagePath: pokemon.mediumImagePath,
-          types: pokemon.types
-        )
-      }
-  }
-  
   func execute(offset : Int, limit : Int) async -> [PokemonCardInfo] {
     // Retrieve data: either filtered by type or all entries
     guard let response = await pokemonListDataRepository.list(offset: offset, limit: limit) else {
       return []
     }
+    
+    print("response : \(response)")
     
     var pokemonCardInfos = [PokemonCardInfo]()
     
@@ -53,6 +28,7 @@ class GetPokemonCardInfoListUseCase {
       for item in response.results {
         group.addTask {
           if let detailData = await self.pokemonDetailDataRepository.get(name: item.name) {
+                        
             return PokemonCardInfo(
               id: detailData.id,
               name: detailData.name.capitalized,

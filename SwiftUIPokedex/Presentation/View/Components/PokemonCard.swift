@@ -133,7 +133,7 @@ struct PokemonSamllCard : View {
     PokemonSamllCard(info: PokemonCardInfo(
       id: 1,
       name: "Name",
-      imagePath: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+      imagePath: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/1.png",
       types: [
         .bug,
         .dark,
@@ -141,7 +141,7 @@ struct PokemonSamllCard : View {
     PokemonSamllCard(info: PokemonCardInfo(
       id: 1,
       name: "Name",
-      imagePath: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+      imagePath: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/2.png",
       types: [
         .bug,
         .dark,
@@ -149,7 +149,7 @@ struct PokemonSamllCard : View {
     PokemonSamllCard(info: PokemonCardInfo(
       id: 1,
       name: "Name",
-      imagePath: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
+      imagePath: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/3.png",
       types: [
         .bug,
         .dark,
