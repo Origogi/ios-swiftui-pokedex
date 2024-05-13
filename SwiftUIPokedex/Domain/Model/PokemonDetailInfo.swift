@@ -18,21 +18,10 @@ struct PokemonDetailInfo {
   let types : [PokemonTypeInfo]
   let genderRatio : Double?
   let weaknesses : [PokemonTypeInfo]
-  let evolutionsData : EvolutionsInfo
+  let evolutionChain : EvolutionChain
+  let animatedImageUrl : String
   
   var mainType : PokemonTypeInfo {
     return types.first!
-  }
-  
-  var smallImagePath : String {
-    return "\(id)_small"
-  }
-  
-  var mediumImagePath : String {
-    return "\(id)_medium"
-  }
-  
-  var detailImageUrl : String {
-    return "https://projectpokemon.org/images/normal-sprite/\(name.lowercased()).gif"
   }
 }

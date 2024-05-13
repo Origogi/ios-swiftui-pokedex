@@ -9,27 +9,32 @@ import SwiftUI
 
 struct PokedexTabView: View {
   
-  @ObservedObject var viewModel: PokedexTabViewModel
+  @ObservedObject var viewModel: PokemonCardListViewModel
   
   var body: some View {
     VStack {
-      FilteringSortingButtons(
-        selectedType: viewModel.selectedType,
-        selectedSorting: viewModel.selectedSorting,
-        onSelectType: { type in
-          withAnimation {
-            viewModel.filter(type: type)
-          }
-        },
-        onSelectSorting: { sort in
-          withAnimation {
-            viewModel.sort(sorting: sort)
-          }
-        }
-      )
+//      FilteringSortingButtons(
+//        selectedType: viewModel.selectedType,
+//        selectedSorting: viewModel.selectedSorting,
+//        onSelectType: { type in
+//          withAnimation {
+//            viewModel.filter(type: type)
+//          }
+//        },
+//        onSelectSorting: { sort in
+//          withAnimation {
+//            viewModel.sort(sorting: sort)
+//          }
+//        }
+//      )
       PokemonCardListView(
-        list: viewModel.list
-      )
+        list: viewModel.list,
+        needLoadMore: viewModel.needLoadMore
+      ) {
+        viewModel.loadMore()
+      }
+    }.onAppear {
+      viewModel.loadMore()
     }
   }
 }
@@ -38,7 +43,10 @@ struct PokedexTabView: View {
 #Preview {
   NavigationView {
     PokedexTabView(
-      viewModel: PokedexTabViewModel()
+      viewModel: PokemonCardListViewModel(
+        startPokedexId: 1,
+        lastPokedexId: 20
+      )
     )
   }
 }

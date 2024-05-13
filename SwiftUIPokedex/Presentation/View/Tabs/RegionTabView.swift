@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct RegionTabView: View {
-  let repository = RegionInfoRepository()
   
   var body: some View {
     VStack(alignment: .leading, spacing: 0) {
@@ -21,11 +20,15 @@ struct RegionTabView: View {
       ScrollView {
         Spacer(minLength: 12)
         VStack(alignment: .leading, spacing : 12) {
-          ForEach(repository.list()) { region in
+          ForEach(RegionType.allCases) { region in
             NavigationLink(destination: RegionDetailScreen(
-                viewModel: RegionDetailViewModel(regionInfo: region)
+                viewModel: PokemonCardListViewModel(
+                  startPokedexId: region.firstPokemonId,
+                  lastPokedexId: region.lastPokemonId
+                ),
+                regionName: region.title
             )) {
-              RegionCard(regionInfo: region)
+              RegionCard(region: region)
             }
           }
           .padding(.horizontal, 16)

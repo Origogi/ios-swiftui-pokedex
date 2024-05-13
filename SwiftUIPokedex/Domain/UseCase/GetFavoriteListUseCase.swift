@@ -10,24 +10,41 @@ import Foundation
 class GetFavoriteListUseCase {
   
   private let favoriteRepository = PokemonFavoriteDataRepository()
-  private let pokemonRepository = PokemonDataRepository()
+  private let pokemonDetailDataRepository = PokemonDetailDataRepository()
   
-  func execute() -> [PokemonCardInfo] {
+  func execute() async -> [PokemonCardInfo] {
     var favoriteIds =  favoriteRepository.list()
     
-    favoriteIds.sort {
-      pokemonRepository.getById($0).id < pokemonRepository.getById($1).id
-    }
+    var pokemonCardInfos = [PokemonCardInfo]()
     
-    return favoriteIds.map { id in
-      let pokemonData = pokemonRepository.getById(id)
+    await withTaskGroup(of: PokemonCardInfo?.self) { group in
+      for id in favoriteIds {
+        group.addTask {
+          if let detailData = await self.pokemonDetailDataRepository.get(id: id) {
+            
+            return PokemonCardInfo(
+              id: detailData.id,
+              name: detailData.name.capitalized,
+              imagePath: detailData.sprites.frontDefault,
+              types: detailData.types.map { type in
+                return PokemonTypeInfo(rawValue: type.type.name.capitalized) ?? .normal
+              }
+            )
+          }
+          return nil
+        }
+      }
       
-      return PokemonCardInfo(
-        id: pokemonData.id,
-        name: pokemonData.name,
-        imagePath: pokemonData.mediumImagePath,
-        types: pokemonData.types
-      )
+      // 결과를 취합
+      for await result in group {
+        if let cardInfo = result {
+          pokemonCardInfos.append(cardInfo)
+        }
+      }
+      
+      pokemonCardInfos.sort { $0.id < $1.id }
     }
+
+    return pokemonCardInfos
   }
 }

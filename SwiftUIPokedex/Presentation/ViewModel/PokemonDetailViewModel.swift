@@ -11,33 +11,26 @@ class PokemonDetailViewModel : ObservableObject {
   
   @Published var pokemonDetailInfo : PokemonDetailInfo?
   
-  private let getPokemonInfoUseCase : GetPokemonInfoUseCase = GetPokemonInfoUseCase()
-  private let getEvolutionsInfoUseCase : GetEvolutionsInfoUseCase = GetEvolutionsInfoUseCase()
+  private let getPokemonInfoUseCase : GetPokemonDetailInfoUseCase = GetPokemonDetailInfoUseCase()
   private let pokemonId : Int
   
   init(pokemonId: Int) {
     self.pokemonId = pokemonId
-    load()
   }
   
   
   func load() {
-    let pokemonInfo = getPokemonInfoUseCase.execute(id: pokemonId)
-    let evolutionsInfo = getEvolutionsInfoUseCase.execute(id: pokemonId)
-    
-    
-    pokemonDetailInfo = PokemonDetailInfo(
-      id: pokemonInfo.id,
-      name: pokemonInfo.name,
-      weight: pokemonInfo.weight ?? 0.0,
-      height: pokemonInfo.height ?? 0.0,
-      category: pokemonInfo.category ?? "",
-      abilities: pokemonInfo.abilities,
-      description: pokemonInfo.description ?? "",
-      types: pokemonInfo.types,
-      genderRatio: pokemonInfo.genderRatio,
-      weaknesses: pokemonInfo.weaknesses,
-      evolutionsData: evolutionsInfo)
+    Task {      
+      let result = await getPokemonInfoUseCase.execute(id: pokemonId)
+      
+      print(result)
+
+      // Update the UI on the main thread
+      await MainActor.run {
+        self.pokemonDetailInfo = result
+      }
+    }
+  
   }
   
 }

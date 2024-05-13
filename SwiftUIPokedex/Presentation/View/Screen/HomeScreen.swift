@@ -49,7 +49,10 @@ struct HomeScreen: View {
     NavigationView {
       VStack(spacing: 0) {
         TabView(selection: $selectedTab) {
-          PokedexTabView(viewModel: PokedexTabViewModel())
+          PokedexTabView(viewModel: PokemonCardListViewModel(
+            startPokedexId: RegionType.kanto.firstPokemonId,
+            lastPokedexId: RegionType.alola.lastPokemonId
+          ))
             .tag(Tab.pokedex)
           RegionTabView()
             .tag(Tab.region)

@@ -21,57 +21,64 @@ struct FavoriteTabView: View {
         .padding(.vertical, 20)
       Divider()
       
-      if viewModel.list.isEmpty {
-        EmptyView()
-      } else {
-        NavigationLink(
-          destination: PokemonDetailScreen(
-            viewModel: PokemonDetailViewModel(pokemonId: selectedPokemonID ?? 1)
-          ),
-          isActive: $navigateToDetail
-        ) {
-          Spacer()
-            .frame(width: 0, height: 0)
-        }
-        ScrollView {
-          LazyVStack(spacing : 12) {
+      if let list = viewModel.list {
+        if list.isEmpty {
+          EmptyView()
+        } else {
+          NavigationLink(
+            destination: PokemonDetailScreen(
+              viewModel: PokemonDetailViewModel(pokemonId: selectedPokemonID ?? 1)
+            ),
+            isActive: $navigateToDetail
+          ) {
             Spacer()
-              .frame(height: 0)
-            ForEach(viewModel.list) { info in
-              NavigationLink(
-                destination: PokemonDetailScreen(
-                  viewModel: PokemonDetailViewModel(
-                    pokemonId: info.id
-                  )
-                )
-              ) {
-                SwipeableView (
-                  content : {
-                    PokemonCard(
-                      info: info,
-                      showFavButton: false
+              .frame(width: 0, height: 0)
+          }
+          ScrollView {
+            LazyVStack(spacing : 12) {
+              Spacer()
+                .frame(height: 0)
+              ForEach(list) { info in
+                NavigationLink(
+                  destination: PokemonDetailScreen(
+                    viewModel: PokemonDetailViewModel(
+                      pokemonId: info.id
                     )
-                  },
-                  onDelete: {
-                    withAnimation {
-                      viewModel.remove(id: info.id)
+                  )
+                ) {
+                  SwipeableView (
+                    content : {
+                      PokemonCard(
+                        info: info,
+                        showFavButton: false
+                      )
+                    },
+                    onDelete: {
+                      withAnimation {
+                        viewModel.remove(id: info.id)
+                      }
+                    },
+                    onTapAction: {
+                      // Set the selected Pokemon ID and trigger navigation
+                      selectedPokemonID = info.id
+                      navigateToDetail = true
                     }
-                  },
-                  onTapAction: {
-                    // Set the selected Pokemon ID and trigger navigation
-                    selectedPokemonID = info.id
-                    navigateToDetail = true
-                  }
-                )
-                .cornerRadius(15)
-                .padding(.horizontal, 16)
+                  )
+                  .cornerRadius(15)
+                  .padding(.horizontal, 16)
+                }
               }
             }
           }
         }
+      } else {
+        ProgressView()
       }
+      
+    }.onAppear {
+      viewModel.load()
     }
-    }
+  }
     
 }
 

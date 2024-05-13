@@ -49,7 +49,7 @@ struct PokemonDetailScreen: View {
                 VStack(alignment: .center) {
                   Spacer()
                   PokemonDetailImageView(
-                    imageUrl: pokemonInfo.detailImageUrl,
+                    imageUrl: pokemonInfo.animatedImageUrl,
                     maxWidth: geometry.size.width - 40,
                     maxHeight: 250
                   )
@@ -85,7 +85,7 @@ struct PokemonDetailScreen: View {
                 Spacer()
                   .frame(height: 24)
                 Text(pokemonInfo.description)
-                  .customTextStyle(font: .caption4, color: gray800.opacity(0.8))
+                  .customTextStyle(font: .desc, color: gray800.opacity(0.8))
                 Divider()
                   .padding(.vertical, 16)
                 StatusGroupView(
@@ -100,7 +100,7 @@ struct PokemonDetailScreen: View {
                 WeaknessesView(types: pokemonInfo.weaknesses)
                   .padding(.bottom, 40)
                 EvolutionsInfoView(
-                  evolutionsInfo: pokemonInfo.evolutionsData
+                  evolutionChain: pokemonInfo.evolutionChain
                 )
               }
               .padding(.horizontal, 16)
@@ -113,22 +113,12 @@ struct PokemonDetailScreen: View {
       }
     }
     .navigationBarHidden(true)
+    .onAppear {
+      viewModel.load()
+    }
   }
   
   
-}
-
-
-struct PokemonStausInfosView: View {
-  let pokemon: PokemonData
-  
-  init(pokemon: PokemonData) {
-    self.pokemon = pokemon
-  }
-  
-  var body: some View {
-    Text("Hello, World!")
-  }
 }
 
 #Preview {

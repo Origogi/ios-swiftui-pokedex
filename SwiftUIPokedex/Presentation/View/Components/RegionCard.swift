@@ -9,11 +9,11 @@ import SwiftUI
 
 struct RegionCard: View {
   
-  let regionInfo : RegionInfo
+  let region : RegionType
   
   var body: some View {
     ZStack {
-      Image(regionInfo.bgImagePath)
+      Image(region.bgImagePath)
         .resizable()
         .scaledToFill()
         .frame(maxWidth: .infinity, maxHeight: 115)
@@ -29,14 +29,14 @@ struct RegionCard: View {
         .frame(maxWidth: .infinity, maxHeight: 115)
       HStack {
         VStack(alignment: .leading) {
-          Text(regionInfo.regionName)
+          Text(region.title)
             .customTextStyle(font: .title2, color: .white)
-          Text("\(regionInfo.generationNumer)º Generation")
+          Text("\(region.generation)º Generation")
             .customTextStyle(font: .caption4, color: gray200)
         }
         Spacer()
         HStack(spacing: 0) {
-          ForEach(regionInfo.startingPokemonImagePath, id: \.self) { pokemon in
+          ForEach(region.startingPokemonImagPaths, id: \.self) { pokemon in
             Image(pokemon)
               .resizable()
               .scaledToFit()
@@ -54,12 +54,6 @@ struct RegionCard: View {
 
 #Preview {
   RegionCard(
-    regionInfo: RegionInfo(
-      type: .kanto,
-      bgImagePath: "kanto",
-      regionName: "Kanto",
-      generationNumer: 1,
-      startingPokemonImagePath: ["1_small", "4_small", "7_small"]
-    )
+    region: RegionType.kanto
   )
 }

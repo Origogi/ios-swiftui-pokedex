@@ -8,40 +8,38 @@
 import SwiftUI
 
 struct RegionDetailScreen: View {
-  @ObservedObject var viewModel: RegionDetailViewModel
+  @ObservedObject var viewModel: PokemonCardListViewModel
   
-    var body: some View {
-      VStack {
-        HStack(spacing: 16) {
-          BackButton(type: .v2)
-          Text(viewModel.regionInfo.regionName)
-            .customTextStyle(font: .title2)
-          Spacer()
-        }
-        .padding(.horizontal, 16)
-        FilteringSortingButtons(
-          selectedType: viewModel.selectedType,
-          selectedSorting: viewModel.selectedSorting,
-          onSelectType: { type in
-            withAnimation {
-              viewModel.filter(type: type)
-            }
-          },
-          onSelectSorting: { sort in
-            withAnimation {
-              viewModel.sort(sorting: sort)
-            }
-          }
-        )
-        PokemonCardListView(list: viewModel.list)
-      }.navigationBarHidden(true)
-
-    }
+  let regionName: String
+  
+  var body: some View {
+    VStack {
+      HStack(spacing: 16) {
+        BackButton(type: .v2)
+        Text(regionName)
+          .customTextStyle(font: .title2)
+        Spacer()
+      }
+      .padding(.horizontal, 16)
+      PokemonCardListView(
+        list: viewModel.list,
+        needLoadMore: viewModel.needLoadMore
+      ) {
+        viewModel.loadMore()
+      }
+    }.navigationBarHidden(true)
+      .onAppear {
+        viewModel.loadMore()
+      }
+    
+  }
 }
 
 #Preview {
-    RegionDetailScreen(
-      viewModel: RegionDetailViewModel(
-        regionInfo: RegionInfoRepository().list().first!)
-    )
+  RegionDetailScreen(
+    viewModel: PokemonCardListViewModel(
+      startPokedexId: RegionType.kanto.firstPokemonId,
+      lastPokedexId: RegionType.kanto.lastPokemonId),
+    regionName: RegionType.kanto.title
+  )
 }

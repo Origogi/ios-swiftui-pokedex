@@ -8,18 +8,14 @@
 import Foundation
 
 
-struct EvolutionsInfo{
-  let chains : [EvolutionChain]
-}
-
-struct EvolutionChain : Identifiable {
+class EvolutionChain : Identifiable {
+  
   let id: UUID = UUID()
+  let cardInfo : PokemonCardInfo
+  let next : EvolutionChain?
   
-  let condition : String?
-  let next : PokemonCardInfo
-  
-  init(condition: String? = nil, next: PokemonCardInfo) {
-    self.condition = condition
+  init(cardInfo: PokemonCardInfo, next: EvolutionChain? = nil) {
+    self.cardInfo = cardInfo
     self.next = next
   }
 }

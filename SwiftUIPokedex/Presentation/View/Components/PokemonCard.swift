@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import SDWebImage
+import SDWebImageSwiftUI
 
 struct PokemonCard: View {
   let info : PokemonCardInfo
@@ -40,7 +42,7 @@ struct PokemonCard: View {
             .frame(width: 126, height: 100)
             .background(info.mainType.primaryColor)
             .cornerRadius(15)
-          Image(info.imagePath)
+          WebImage(url: URL(string: info.imagePath))
             .resizable()
             .scaledToFit()
             .padding(4)
@@ -78,7 +80,7 @@ struct PokemonSamllCard : View {
           .frame(width: 94, height: 74)
           .background(info.mainType.primaryColor)
           .cornerRadius(71)
-        Image(info.imagePath)
+        WebImage(url: URL(string: info.imagePath))
           .resizable()
           .scaledToFit()
           .frame(width: 65, height: 65)
@@ -113,7 +115,7 @@ struct PokemonSamllCard : View {
     PokemonCard(info: PokemonCardInfo(
       id: 1,
       name: "Name",
-      imagePath: "1_medium",
+      imagePath: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
       types: [
         .bug,
         .dark,
@@ -121,7 +123,7 @@ struct PokemonSamllCard : View {
     PokemonCard(info: PokemonCardInfo(
       id: 1,
       name: "Name",
-      imagePath: "1_medium",
+      imagePath: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png",
       types: [
         .bug,
         .dark,
@@ -131,7 +133,7 @@ struct PokemonSamllCard : View {
     PokemonSamllCard(info: PokemonCardInfo(
       id: 1,
       name: "Name",
-      imagePath: "1_small",
+      imagePath: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/1.png",
       types: [
         .bug,
         .dark,
@@ -139,7 +141,7 @@ struct PokemonSamllCard : View {
     PokemonSamllCard(info: PokemonCardInfo(
       id: 1,
       name: "Name",
-      imagePath: "2_small",
+      imagePath: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/2.png",
       types: [
         .bug,
         .dark,
@@ -147,7 +149,7 @@ struct PokemonSamllCard : View {
     PokemonSamllCard(info: PokemonCardInfo(
       id: 1,
       name: "Name",
-      imagePath: "3_small",
+      imagePath: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/3.png",
       types: [
         .bug,
         .dark,
