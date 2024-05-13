@@ -56,6 +56,11 @@ struct EvolutionsInfoView: View {
     var array = [EvolutionChain]()
     var currentNode = node
     while let current = currentNode {
+      
+      if current.cardInfo.name == "" {
+        break
+      }
+      
       array.append(current)
       currentNode = current.next
     }

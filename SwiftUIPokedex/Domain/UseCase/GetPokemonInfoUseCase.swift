@@ -31,11 +31,13 @@ class GetPokemonInfoUseCase {
         )
       )
     
+    print(evolutionChain)
+    
     return PokemonDetailInfo(
       id: detailData.id,
       name: detailData.name.capitalized,
-      weight: detailData.weight,
-      height: detailData.height,
+      weight: detailData.weight / 10.0,
+      height: detailData.height / 10.0,
       category: extractPokemonPrefix(from: speciesData.englishGenus),
       abilities: detailData.abilities.map { $0.ability.name.capitalized },
       description: speciesData.englishFlavorText.replacingOccurrences(of: "\n", with: " "),
@@ -64,6 +66,7 @@ class GetPokemonInfoUseCase {
           types: pokemonDetailData?.types.map { PokemonTypeInfo(rawValue: $0.type.name.capitalized) ?? .normal } ?? []
         )
         let nextChain = await extractEvolutions(from: chain.evolvesTo.first)
+        
         evolutionChain = EvolutionChain(cardInfo: pokemonCardInfo, next: nextChain)
       }
     }
