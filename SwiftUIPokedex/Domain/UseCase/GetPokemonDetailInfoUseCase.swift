@@ -38,7 +38,7 @@ class GetPokemonDetailInfoUseCase {
       EvolutionChain(
         cardInfo: PokemonCardInfo(
           id: id, name: detailData.name.capitalized,
-          imagePath: detailData.sprites.versions.generationVIII.icons.frontDefault,
+          imagePath: detailData.sprites.versions.generationVII.icons.frontDefault,
           types: detailData.types.map {
             PokemonTypeInfo(rawValue: $0.type.name.capitalized) ?? .normal }
         )
@@ -74,7 +74,7 @@ class GetPokemonDetailInfoUseCase {
         let pokemonCardInfo = PokemonCardInfo(
           id: id,
           name: pokemonDetailData?.name.capitalized ?? "",
-          imagePath: pokemonDetailData?.sprites.versions.generationVIII.icons.frontDefault ?? "",
+          imagePath: pokemonDetailData?.sprites.versions.generationVII.icons.frontDefault ?? "",
           types: pokemonDetailData?.types.map { PokemonTypeInfo(rawValue: $0.type.name.capitalized) ?? .normal } ?? []
         )
         let nextChain = await extractEvolutions(from: chain.evolvesTo.first)

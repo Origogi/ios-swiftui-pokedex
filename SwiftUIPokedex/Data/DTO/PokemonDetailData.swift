@@ -44,10 +44,10 @@ struct ImageUrlSetData : Decodable {
 }
 
 struct VersionsData : Decodable {
-  let generationVIII : GenerationVIIData
+  let generationVII : GenerationVIIData
   
   enum CodingKeys: String, CodingKey {
-    case generationVIII = "generation-vii"
+    case generationVII = "generation-vii"
   }
 }
 
