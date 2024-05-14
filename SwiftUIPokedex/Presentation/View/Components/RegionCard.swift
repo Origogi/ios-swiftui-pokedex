@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct RegionCard: View {
   
@@ -37,10 +38,10 @@ struct RegionCard: View {
         Spacer()
         HStack(spacing: 0) {
           ForEach(region.startingPokemonImagPaths, id: \.self) { pokemon in
-            Image(pokemon)
+            WebImage(url : URL(string: pokemon))
               .resizable()
               .scaledToFit()
-              .frame(width: 55, height: 55)
+              .frame(width: 65, height: 65)
           }
         }
       }

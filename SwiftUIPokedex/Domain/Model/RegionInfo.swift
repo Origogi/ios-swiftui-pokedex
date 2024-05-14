@@ -27,9 +27,9 @@ enum RegionType : CaseIterable , Identifiable {
     case .hoenn:
       return 252...386
     case .sinnoh:
-      return 387...493
+      return 387...494
     case .unova:
-      return 494...649
+      return 495...649
     case .kalos:
       return 650...721
     case .alola:
@@ -114,19 +114,46 @@ enum RegionType : CaseIterable , Identifiable {
   var startingPokemonImagPaths:  [String]  {
     switch self {
     case .kanto:
-      return ["1_small", "4_small", "7_small"]
+      return [
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/1.png",
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/4.png",
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/7.png"
+      ]
     case .johto:
-      return ["152_small", "155_small", "158_small"]
+      return [
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/152.png",
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/155.png",
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/158.png"
+      ]
     case .hoenn:
-      return ["252_small", "255_small", "258_small"]
+      return [
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/252.png",
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/255.png",
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/258.png"
+      ]
     case .sinnoh:
-      return ["387_small", "390_small", "393_small"]
+      return [
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/387.png",
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/390.png",
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/393.png"
+      ]
     case .unova:
-      return ["495_small", "498_small", "501_small"]
+      return [
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/495.png",
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/498.png",
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/501.png"
+      ]
     case .kalos:
-      return ["650_small", "653_small", "656_small"]
+      return [
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/650.png",
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/653.png",
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/656.png"
+      ]
     case .alola:
-      return ["722_small", "725_small", "728_small"]
-    }
+      return [
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/722.png",
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/725.png",
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-vii/icons/728.png"
+      ]    }
   }
 }
