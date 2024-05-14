@@ -50,23 +50,11 @@ This Pokedex app was built using SwiftUI, allowing users to explore and search f
 
 Filter Pokémon by type, sort Pokémon by name, number was disabled because of the Poke API limitation. but added the feature to see almost all Pokémon.
 
-## APIs
-
-### Pokemon data
+## API
 
 ![](https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png)
 
-[PokeAPI](https://pokeapi.co/)
-
-### Animated Image
-
-![image](https://projectpokemon.org/images/normal-sprite/bulbasaur.gif)
-
-above animated image(gif) use `projectpokemon.org` api
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
-```
-https://projectpokemon.org/images/normal-sprite/{POKEMON NAME}.gif
-```
+[PokeAPI](https://pokeapi.co/) is a RESTful Pokémon API that provides a lot of Pokémon data, including Pokémon, moves, abilities, types, and more.
 
 ## Architecture
 
