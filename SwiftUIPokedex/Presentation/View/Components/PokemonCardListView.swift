@@ -21,9 +21,7 @@ struct PokemonCardListView: View {
         ForEach(list) { info in
           NavigationLink(
             destination: PokemonDetailScreen(
-              viewModel: PokemonDetailViewModel(
-                pokemonId: info.id
-              )
+              pokemonId: info.id
             )
           ) {
             PokemonCard(info: info)

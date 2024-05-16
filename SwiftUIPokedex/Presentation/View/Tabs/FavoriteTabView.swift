@@ -27,7 +27,7 @@ struct FavoriteTabView: View {
         } else {
           NavigationLink(
             destination: PokemonDetailScreen(
-              viewModel: PokemonDetailViewModel(pokemonId: selectedPokemonID ?? 1)
+              pokemonId: selectedPokemonID ?? 0
             ),
             isActive: $navigateToDetail
           ) {
@@ -41,9 +41,7 @@ struct FavoriteTabView: View {
               ForEach(list) { info in
                 NavigationLink(
                   destination: PokemonDetailScreen(
-                    viewModel: PokemonDetailViewModel(
-                      pokemonId: info.id
-                    )
+                   pokemonId: info.id
                   )
                 ) {
                   SwipeableView (

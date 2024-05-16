@@ -9,12 +9,8 @@ import SwiftUI
 
 struct PokemonDetailScreen: View {
   
-  @ObservedObject var viewModel: PokemonDetailViewModel
-  
-  
-  init(viewModel: PokemonDetailViewModel) {
-    self.viewModel = viewModel
-  }
+  let pokemonId: Int
+  @StateObject private var viewModel : PokemonDetailViewModel = PokemonDetailViewModel()
   
   var body: some View {
     ZStack {
@@ -114,7 +110,7 @@ struct PokemonDetailScreen: View {
     .animation(.easeInOut, value: viewModel.pokemonDetailInfo == nil)
     .navigationBarHidden(true)
     .onAppear {
-      viewModel.load()
+      viewModel.load(pokemonId: pokemonId)
     }
   }
   
@@ -192,8 +188,6 @@ private struct PlaceHolderView : View {
 #Preview {
   
   PokemonDetailScreen(
-    viewModel: PokemonDetailViewModel(
-      pokemonId: 6
-    )
+    pokemonId: 1
   )
 }

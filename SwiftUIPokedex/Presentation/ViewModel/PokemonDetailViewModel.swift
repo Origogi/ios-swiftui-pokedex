@@ -12,14 +12,8 @@ class PokemonDetailViewModel : ObservableObject {
   @Published var pokemonDetailInfo : PokemonDetailInfo?
   
   private let getPokemonInfoUseCase : GetPokemonDetailInfoUseCase = GetPokemonDetailInfoUseCase()
-  private let pokemonId : Int
-  
-  init(pokemonId: Int) {
-    self.pokemonId = pokemonId
-  }
-  
-  
-  func load() {
+
+  func load(pokemonId: Int) {
     Task {
       let result = await getPokemonInfoUseCase.execute(id: pokemonId)
       
