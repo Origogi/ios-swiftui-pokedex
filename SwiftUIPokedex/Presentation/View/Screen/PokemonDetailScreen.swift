@@ -17,7 +17,7 @@ struct PokemonDetailScreen: View {
   }
   
   var body: some View {
-    VStack {
+    ZStack {
       if let pokemonInfo = viewModel.pokemonDetailInfo {
         GeometryReader { geometry in
           ScrollView {
@@ -108,17 +108,84 @@ struct PokemonDetailScreen: View {
               Spacer()
             }
           }
-          
         }
+        .transition(.opacity)
+      } else {
+        PlaceHolderView()
+        .transition(.opacity)
       }
     }
+    .animation(.easeInOut, value: viewModel.pokemonDetailInfo == nil)
     .navigationBarHidden(true)
     .onAppear {
-      viewModel.load()
+        viewModel.load()
     }
   }
   
   
+}
+
+private struct PlaceHolderView : View {
+  
+  var body: some View {
+    ScrollView {
+      GeometryReader { geometry in
+        VStack(alignment: .leading) {
+          ZStack {
+            Circle()
+              .frame(width: 500, height: 500) // 원의 크기를 설정합니다.
+              .offset(y: -260) // 원을 상단으로 이동시켜 반원 효과를 생성합니다.
+              .padding(.bottom, -230)
+            Rectangle()
+              .offset(y: -300)
+            
+            // 탑 버튼
+            VStack {
+              HStack {
+                BackButton(type : .v1)
+                Spacer()
+              }
+              .padding(.top, 8)
+              .padding(.horizontal, 16)
+              .frame(width: geometry.size.width)
+              Spacer()
+            }
+            
+          }
+          .frame(width: geometry.size.width, height: 280)
+          .foregroundColor(.gray)
+          VStack(alignment: .leading) {
+            ShimmerView()
+              .frame(width: 120, height: 48)
+              .cornerRadius(8)
+
+            ShimmerView()
+              .frame(width: 70, height: 22)
+              .cornerRadius(8)
+              .padding(.bottom, 24)
+            ShimmerView()
+              .frame(width: 130, height: 36)
+              .cornerRadius(67)
+              .padding(.bottom, 24)
+
+            ShimmerView()
+              .frame(height: 60)
+              .cornerRadius(8)
+            Spacer()
+
+
+          }.padding(.horizontal, 16)
+        }
+        Spacer()
+
+      }
+    }
+
+  }
+}
+
+#Preview {
+  PlaceHolderView()
 }
 
 #Preview {

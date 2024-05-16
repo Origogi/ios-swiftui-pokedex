@@ -20,15 +20,13 @@ class PokemonDetailViewModel : ObservableObject {
   
   
   func load() {
-    Task {      
+    Task {
       let result = await getPokemonInfoUseCase.execute(id: pokemonId)
       
-      // Update the UI on the main thread
+      // Ensure updating the UI on the main thread with animation
       await MainActor.run {
         self.pokemonDetailInfo = result
       }
     }
-  
   }
-  
 }
