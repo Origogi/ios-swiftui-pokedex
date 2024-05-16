@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct ShimmerView: View {
   @State private var shimmerPosition: CGFloat = -1
   
