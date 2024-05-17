@@ -9,14 +9,14 @@ import SwiftUI
 
 struct SplashScreen: View {
     var body: some View {
-      VStack {
-        Image("Logo")
-          .resizable()
-          .frame(
-            width: 120,
-            height: 120
-        )
-      }
+        VStack {
+            Image("Logo")
+                .resizable()
+                .frame(
+                    width: 120,
+                    height: 120
+                )
+        }
     }
 }
 

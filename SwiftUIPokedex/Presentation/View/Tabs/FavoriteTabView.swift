@@ -1,5 +1,5 @@
 //
-//  FavoritePageView.swift
+//  FavoriteTabView.swift
 //  SwiftUIPokedex
 //
 //  Created by 김정태 on 2/23/24.
@@ -8,11 +8,10 @@
 import SwiftUI
 
 struct FavoriteTabView: View {
-    
     @ObservedObject var viewModel: FavoriteTabViewModel
     @State private var navigateToDetail = false
     @State private var selectedPokemonID: Int?
-    
+
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 0) {
@@ -21,18 +20,18 @@ struct FavoriteTabView: View {
                     .padding(.horizontal, 16)
                     .padding(.vertical, 20)
                 Divider()
-                
+
                 if let list = viewModel.list {
                     if list.isEmpty {
                         EmptyView()
                     } else {
                         ScrollView {
-                            VStack(spacing : 12) {
+                            VStack(spacing: 12) {
                                 Spacer()
                                     .frame(height: 0)
                                 ForEach(list) { info in
-                                    SwipeableView (
-                                        content : {
+                                    SwipeableView(
+                                        content: {
                                             PokemonCard(
                                                 info: info,
                                                 showFavButton: false
@@ -63,7 +62,6 @@ struct FavoriteTabView: View {
                             alignment: .center
                         )
                 }
-                
             }
             .onAppear {
                 viewModel.load()
@@ -73,11 +71,11 @@ struct FavoriteTabView: View {
                     PokemonDetailScreen(pokemonId: pokemonID)
                 }
             }
-        }  
+        }
     }
 }
 
-private struct EmptyView : View {
+private struct EmptyView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Spacer()
@@ -98,7 +96,6 @@ private struct EmptyView : View {
                     .customTextStyle(font: .desc)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 16)
-                
             }
             .frame(
                 maxWidth: .infinity

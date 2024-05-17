@@ -8,38 +8,36 @@
 import SwiftUI
 
 struct WeaknessesView: View {
-  let types : [PokemonTypeInfo]
-  
-  var body: some View {
-    // 2 columns
-    let columns: [GridItem] = [
-      GridItem(.flexible(), spacing: 16),
-      GridItem(.flexible(), spacing: 16)
-    ]
-    VStack(alignment: .leading, spacing: 12) {
-      Text("Weaknesses")
-        .customTextStyle(font: .caption2, color: .black)
-      LazyVGrid(columns: columns, spacing: 12) {
-        ForEach(types, id: \.self) { type in
-          PokemonTypeMediumChip(type: type, fontSize: 14, iconSize: 28, innerVPadding: 4)
-          
+    let types: [PokemonTypeInfo]
+
+    var body: some View {
+        // 2 columns
+        let columns: [GridItem] = [
+            GridItem(.flexible(), spacing: 16),
+            GridItem(.flexible(), spacing: 16),
+        ]
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Weaknesses")
+                .customTextStyle(font: .caption2, color: .black)
+            LazyVGrid(columns: columns, spacing: 12) {
+                ForEach(types, id: \.self) { type in
+                    PokemonTypeMediumChip(type: type, fontSize: 14, iconSize: 28, innerVPadding: 4)
+                }
+            }
         }
-      }
     }
-    
-  }
 }
 
 #Preview {
-  WeaknessesView(
-    types: [
-      .ice,
-      .fire,
-      .water,
-      .electric,
-      .grass,
-      .ice,
-      .psychic,
-    ]
-  )
+    WeaknessesView(
+        types: [
+            .ice,
+            .fire,
+            .water,
+            .electric,
+            .grass,
+            .ice,
+            .psychic,
+        ]
+    )
 }

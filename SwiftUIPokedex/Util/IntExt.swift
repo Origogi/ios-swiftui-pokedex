@@ -8,7 +8,7 @@
 import Foundation
 
 extension Int {
-  func pokemonNum() -> String {
-    return String(format: "Nº%03d", self)
-  }
+    func pokemonNum() -> String {
+        return String(format: "Nº%03d", self)
+    }
 }

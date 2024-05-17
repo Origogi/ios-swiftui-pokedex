@@ -9,24 +9,24 @@ import SwiftUI
 
 @main
 struct SwiftUIPokedexApp: App {
-  @State private var showMainView = false
-  
-  var body: some Scene {
-    WindowGroup {
-      ZStack {
-        if showMainView {
-          HomeScreen()
-        } else {
-          SplashScreen()
-            .onAppear {
-              DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                withAnimation {
-                  showMainView = true
+    @State private var showMainView = false
+
+    var body: some Scene {
+        WindowGroup {
+            ZStack {
+                if showMainView {
+                    HomeScreen()
+                } else {
+                    SplashScreen()
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                withAnimation {
+                                    showMainView = true
+                                }
+                            }
+                        }
                 }
-              }
-            }
+            }.animation(.default, value: showMainView)
         }
-      }.animation(.default, value: showMainView)
     }
-  }
 }

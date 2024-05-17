@@ -7,7 +7,4 @@
 
 import Foundation
 
-class PokeAPIRepository {
-  
-  
-}
+class PokeAPIRepository {}

@@ -7,20 +7,19 @@
 
 import Foundation
 
-class PokemonDetailViewModel : ObservableObject {
-  
-  @Published var pokemonDetailInfo : PokemonDetailInfo?
-  
-  private let getPokemonInfoUseCase : GetPokemonDetailInfoUseCase = GetPokemonDetailInfoUseCase()
+class PokemonDetailViewModel: ObservableObject {
+    @Published var pokemonDetailInfo: PokemonDetailInfo?
 
-  func load(pokemonId: Int) {
-    Task {
-      let result = await getPokemonInfoUseCase.execute(id: pokemonId)
-      
-      // Ensure updating the UI on the main thread with animation
-      await MainActor.run {
-        self.pokemonDetailInfo = result
-      }
+    private let getPokemonInfoUseCase: GetPokemonDetailInfoUseCase = .init()
+
+    func load(pokemonId: Int) {
+        Task {
+            let result = await getPokemonInfoUseCase.execute(id: pokemonId)
+
+            // Ensure updating the UI on the main thread with animation
+            await MainActor.run {
+                self.pokemonDetailInfo = result
+            }
+        }
     }
-  }
 }

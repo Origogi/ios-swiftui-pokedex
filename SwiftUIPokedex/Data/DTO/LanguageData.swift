@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LanguageData : Decodable {
-  let name : String
-  let url : String
+struct LanguageData: Decodable {
+    let name: String
+    let url: String
 }

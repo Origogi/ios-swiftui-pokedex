@@ -9,19 +9,18 @@ import Foundation
 
 // cache for weakness types
 class PokemonWeaknessTypesRepository {
-  
-  static let shared = PokemonWeaknessTypesRepository()
-  
-  // Dictionary cache
-  private var cache = [PokemonTypeInfo : [PokemonTypeInfo]]()
-  
-  private init() {}
-  
-  func get(from type: PokemonTypeInfo) -> [PokemonTypeInfo]? {
-    return cache[type]
-  }
-  
-  func set(weaknesses: [PokemonTypeInfo], for type: PokemonTypeInfo) {
-    cache[type] = weaknesses
-  }
+    static let shared = PokemonWeaknessTypesRepository()
+
+    // Dictionary cache
+    private var cache = [PokemonTypeInfo: [PokemonTypeInfo]]()
+
+    private init() {}
+
+    func get(from type: PokemonTypeInfo) -> [PokemonTypeInfo]? {
+        return cache[type]
+    }
+
+    func set(weaknesses: [PokemonTypeInfo], for type: PokemonTypeInfo) {
+        cache[type] = weaknesses
+    }
 }

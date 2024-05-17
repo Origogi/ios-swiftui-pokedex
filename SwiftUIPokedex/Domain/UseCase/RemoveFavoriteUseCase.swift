@@ -8,11 +8,9 @@
 import Foundation
 
 class RemoveFavoriteUseCase {
-  
-  private let repository = PokemonFavoriteDataRepository()
-  
-  func execute(id : Int) {
-    repository.remove(id: id)
-  }
-  
+    private let repository = PokemonFavoriteDataRepository()
+
+    func execute(id: Int) {
+        repository.remove(id: id)
+    }
 }

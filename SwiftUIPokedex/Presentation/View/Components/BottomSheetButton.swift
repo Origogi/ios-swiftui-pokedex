@@ -8,41 +8,38 @@
 import SwiftUI
 
 struct BottomSheetButton: View {
-  let title: String
-  let titleColor : Color
-  let bgColor : Color
-  let onTap: () -> Void
+    let title: String
+    let titleColor: Color
+    let bgColor: Color
+    let onTap: () -> Void
 
-  
-  var body: some View {
-    HStack(spacing: 8) {
-      Text(title)
-        .customTextStyle(font: .caption3, color: titleColor)
-      Image("ShevronDown")
-        .resizable()
-        .frame(width: 8, height: 4)
-        .foregroundColor(titleColor)
+    var body: some View {
+        HStack(spacing: 8) {
+            Text(title)
+                .customTextStyle(font: .caption3, color: titleColor)
+            Image("ShevronDown")
+                .resizable()
+                .frame(width: 8, height: 4)
+                .foregroundColor(titleColor)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 9)
+        .background(bgColor)
+        .cornerRadius(49)
+        .onTapGesture {
+            onTap()
+        }
+        .animation(.default, value: title)
+        .animation(.default, value: titleColor)
+        .animation(.default, value: bgColor)
     }
-    .frame(maxWidth: .infinity)
-    .padding(.vertical, 9)
-    .background(bgColor)
-    .cornerRadius(49)
-    .onTapGesture {
-      onTap()
-    }
-    .animation(.default, value: title)
-    .animation(.default, value: titleColor)
-    .animation(.default, value: bgColor)
-
-
-  }
 }
 
 #Preview {
-  BottomSheetButton(
-    title: "All types",
-    titleColor: gray800,
-    bgColor: .red,
-    onTap: {}
-  )
+    BottomSheetButton(
+        title: "All types",
+        titleColor: gray800,
+        bgColor: .red,
+        onTap: {}
+    )
 }

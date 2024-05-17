@@ -7,19 +7,19 @@
 
 import Foundation
 
-struct PokemonEvolutionChainData : Decodable {
-  let chain : ChainData
-  let id : Int
+struct PokemonEvolutionChainData: Decodable {
+    let chain: ChainData
+    let id: Int
 }
 
-struct ChainData : Decodable {
-//  let evolutionDetails : [EvolutionDetail]
-  let evolvesTo : [ChainData]
-  let species : NameUrlData
-  
-  enum CodingKeys: String, CodingKey {
+struct ChainData: Decodable {
+    //  let evolutionDetails : [EvolutionDetail]
+    let evolvesTo: [ChainData]
+    let species: NameUrlData
+
+    enum CodingKeys: String, CodingKey {
 //    case evolutionDetails = "evolution_details"
-    case evolvesTo = "evolves_to"
-    case species
-  }
+        case evolvesTo = "evolves_to"
+        case species
+    }
 }

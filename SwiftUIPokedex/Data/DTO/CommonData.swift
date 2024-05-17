@@ -7,11 +7,11 @@
 
 import Foundation
 
-struct UrlData : Decodable {
-  let url : String
+struct UrlData: Decodable {
+    let url: String
 }
 
-struct NameUrlData : Decodable {
-  let name : String
-  let url : String
+struct NameUrlData: Decodable {
+    let name: String
+    let url: String
 }
