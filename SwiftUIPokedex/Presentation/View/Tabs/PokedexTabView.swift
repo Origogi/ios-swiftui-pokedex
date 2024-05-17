@@ -11,7 +11,13 @@ struct PokedexTabView: View {
     @ObservedObject var viewModel: PokemonCardListViewModel
 
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 0) {
+            Text("Pokedex")
+                .customTextStyle(font: .title2)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 20)
+            Divider()
+
             if viewModel.list.isEmpty {
                 ProgressView()
                     .frame(

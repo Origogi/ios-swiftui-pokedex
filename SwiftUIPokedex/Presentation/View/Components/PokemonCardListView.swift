@@ -15,6 +15,8 @@ struct PokemonCardListView: View {
 
     var body: some View {
         ScrollView {
+            Spacer()
+                .frame(height: 12)
             LazyVStack(spacing: 12) {
                 ForEach(list) { info in
                     NavigationLink(
