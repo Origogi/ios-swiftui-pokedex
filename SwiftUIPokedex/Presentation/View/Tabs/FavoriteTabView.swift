@@ -9,70 +9,65 @@ import SwiftUI
 
 struct FavoriteTabView: View {
     @ObservedObject var viewModel: FavoriteTabViewModel
-    @State private var navigateToDetail = false
-    @State private var selectedPokemonID: Int?
-
+    @Binding var navigateToDetail : Bool
+    @Binding var selectedPokemonID: Int?
+    
     var body: some View {
-        NavigationStack {
-            VStack(alignment: .leading, spacing: 0) {
-                Text("Favorites")
-                    .customTextStyle(font: .title2)
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 20)
-                Divider()
-
-                if let list = viewModel.list {
-                    if list.isEmpty {
-                        EmptyView()
-                    } else {
-                        ScrollView {
-                            VStack(spacing: 12) {
-                                Spacer()
-                                    .frame(height: 0)
-                                ForEach(list) { info in
-                                    SwipeableView(
-                                        content: {
-                                            PokemonCard(
-                                                info: info,
-                                                showFavButton: false
-                                            )
-                                        },
-                                        onDelete: {
-                                            withAnimation {
-                                                viewModel.remove(id: info.id)
-                                            }
-                                        },
-                                        onTapAction: {
-                                            // Set the selected Pokemon ID and trigger navigation
-                                            selectedPokemonID = info.id
-                                            navigateToDetail = true
+        VStack(alignment: .leading, spacing: 0) {
+            Text("Favorites")
+                .customTextStyle(font: .title2)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 20)
+            Divider()
+            
+            if let list = viewModel.list {
+                if list.isEmpty {
+                    EmptyView()
+                } else {
+                    ScrollView {
+                        VStack(spacing: 12) {
+                            Spacer()
+                                .frame(height: 0)
+                            ForEach(list) { info in
+                                SwipeableView(
+                                    content: {
+                                        PokemonCard(
+                                            info: info,
+                                            showFavButton: false
+                                        )
+                                    },
+                                    onDelete: {
+                                        withAnimation {
+                                            viewModel.remove(id: info.id)
                                         }
-                                    )
-                                    .cornerRadius(15)
-                                    .padding(.horizontal, 16)
-                                }
+                                    },
+                                    onTapAction: {
+                                        // Set the selected Pokemon ID and trigger navigation
+                                        selectedPokemonID = info.id
+                                        navigateToDetail = true
+                                    }
+                                )
+                                .cornerRadius(15)
+                                .padding(.horizontal, 16)
                             }
                         }
                     }
-                } else {
-                    ProgressView()
-                        .frame(
-                            maxWidth: .infinity,
-                            maxHeight: .infinity,
-                            alignment: .center
-                        )
                 }
-            }
-            .onAppear {
-                viewModel.load()
-            }
-            .navigationDestination(isPresented: $navigateToDetail) {
-                if let pokemonID = selectedPokemonID {
-                    PokemonDetailScreen(pokemonId: pokemonID)
-                }
+            } else {
+                ProgressView()
+                    .frame(
+                        maxWidth: .infinity,
+                        maxHeight: .infinity,
+                        alignment: .center
+                    )
             }
         }
+        .onAppear {
+            viewModel.load()
+        }
+        
     }
+
 }
 
 private struct EmptyView: View {
@@ -107,6 +102,8 @@ private struct EmptyView: View {
 
 #Preview {
     FavoriteTabView(
-        viewModel: FavoriteTabViewModel()
+        viewModel: FavoriteTabViewModel(),
+        navigateToDetail: .constant(false),
+        selectedPokemonID: .constant(nil)
     )
 }

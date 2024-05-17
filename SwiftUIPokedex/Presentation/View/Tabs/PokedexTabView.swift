@@ -9,6 +9,8 @@ import SwiftUI
 
 struct PokedexTabView: View {
     @ObservedObject var viewModel: PokemonCardListViewModel
+    
+    
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {

@@ -11,7 +11,7 @@ enum Tab: CaseIterable {
     case region
     case favorite
     case profile
-
+    
     var title: String {
         switch self {
         case .pokedex: return "Pokedex"
@@ -20,7 +20,7 @@ enum Tab: CaseIterable {
         case .profile: return "Profile"
         }
     }
-
+    
     var onImagePath: String {
         switch self {
         case .pokedex: return "PokedexOn"
@@ -29,7 +29,7 @@ enum Tab: CaseIterable {
         case .profile: return "ProfileOn"
         }
     }
-
+    
     var offImagePath: String {
         switch self {
         case .pokedex: return "PokedexOff"
@@ -42,9 +42,11 @@ enum Tab: CaseIterable {
 
 struct HomeScreen: View {
     @State private var selectedTab: Tab = .pokedex
-
+    @State private var navigateToDetail = false
+    @State private var selectedPokemonID: Int?
+    
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack(spacing: 0) {
                 switch selectedTab {
                 case .pokedex:
@@ -56,17 +58,19 @@ struct HomeScreen: View {
                     RegionTabView()
                 case .favorite:
                     FavoriteTabView(
-                        viewModel: FavoriteTabViewModel()
+                        viewModel: FavoriteTabViewModel(),
+                        navigateToDetail: $navigateToDetail,
+                        selectedPokemonID: $selectedPokemonID
                     )
                 case .profile:
                     ProfileTabView()
                 }
-
+                
                 Divider()
                 HStack {
                     Spacer()
                     ForEach(Tab.allCases, id: \.self) { tab in
-
+                        
                         TabViewBottomButton(
                             foregroundColor: Color.white,
                             onImagePath: tab.onImagePath,
@@ -80,10 +84,15 @@ struct HomeScreen: View {
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: 60)
+            }        .navigationDestination(isPresented: $navigateToDetail) {
+                if let pokemonID = selectedPokemonID {
+                    PokemonDetailScreen(pokemonId: pokemonID)
+                }
             }
         }
+        
     }
-
+    
     private func bindingForTab(_ tab: Tab) -> Binding<Bool> {
         Binding<Bool>(
             get: { self.selectedTab == tab },
