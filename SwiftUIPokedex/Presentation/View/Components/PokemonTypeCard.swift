@@ -7,7 +7,7 @@
 
 import SwiftUI
 
- struct PokemonTypeCard: View {
+struct PokemonTypeCard: View {
   let type : PokemonTypeInfo
   
   init(type: PokemonTypeInfo) {

@@ -85,11 +85,7 @@ struct HomeScreen: View {
         }
         .frame(maxWidth: .infinity, maxHeight: 60)
       }
-      .safeAreaInset(edge: .top, alignment: .center, spacing: 0) {
-        Color.clear
-          .frame(height: 10)
-          .background(Material.bar)
-      }
+
     }
   }
   
