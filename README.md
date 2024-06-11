@@ -66,13 +66,3 @@ Filter Pokémon by type, sort Pokémon by name, number was disabled because of t
 </a>
 </div>
 
-## Next Steps
-
-- [x] Poke API Integration
-
-### Long-term goals
-
-- [ ] Make by Andoid Compose
-- [ ] Make by Flutter
-
-
