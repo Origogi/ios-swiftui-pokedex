@@ -40,16 +40,6 @@ This Pokedex app was built using SwiftUI, allowing users to explore and search f
 </a>
 </div>
 
-## Features
-
-- ~~Filter Pokémon by type~~
-- ~~Sort Pokémon by name, number~~
-- Filter Pokémon by generation
-- Favorite Pokémon
-- Unlimited scrolling
-
-Filter Pokémon by type, sort Pokémon by name, number was disabled because of the Poke API limitation. but added the feature to see almost all Pokémon.
-
 ## API
 
 ![](https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png)
