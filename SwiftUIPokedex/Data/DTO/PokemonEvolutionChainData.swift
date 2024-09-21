@@ -13,7 +13,6 @@ struct PokemonEvolutionChainData: Decodable {
 }
 
 struct ChainData: Decodable {
-    //  let evolutionDetails : [EvolutionDetail]
     let evolvesTo: [ChainData]
     let species: NameUrlData
 

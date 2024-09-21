@@ -7,12 +7,12 @@
 
 import Foundation
 
-class EvolutionChain: Identifiable {
+class EvolutionChainInfo: Identifiable {
     let id: UUID = .init()
     let cardInfo: PokemonCardInfo
-    let next: EvolutionChain?
+    let next: EvolutionChainInfo?
 
-    init(cardInfo: PokemonCardInfo, next: EvolutionChain? = nil) {
+    init(cardInfo: PokemonCardInfo, next: EvolutionChainInfo? = nil) {
         self.cardInfo = cardInfo
         self.next = next
     }

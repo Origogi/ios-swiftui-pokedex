@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EvolutionsInfoView: View {
-    let evolutionChain: EvolutionChain?
+    let evolutionChain: EvolutionChainInfo?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
@@ -47,8 +47,8 @@ struct EvolutionsInfoView: View {
     }
 
     // 연결 리스트를 배열로 변환하는 도우미 함수
-    private func chainToArray(_ node: EvolutionChain?) -> [EvolutionChain] {
-        var array = [EvolutionChain]()
+    private func chainToArray(_ node: EvolutionChainInfo?) -> [EvolutionChainInfo] {
+        var array = [EvolutionChainInfo]()
         var currentNode = node
         while let current = currentNode {
             if current.cardInfo.name == "" {
@@ -76,19 +76,19 @@ struct EvolutionConditionView: View {
 
 #Preview {
     EvolutionsInfoView(
-        evolutionChain: EvolutionChain(
+        evolutionChain: EvolutionChainInfo(
             cardInfo: PokemonCardInfo(
                 id: 1,
                 name: "Bulbasaur",
                 imagePath: "Bulbasaur", types: [.poison]
             ),
-            next: EvolutionChain(
+            next: EvolutionChainInfo(
                 cardInfo: PokemonCardInfo(
                     id: 2,
                     name: "Ivysaur",
                     imagePath: "Ivysaur", types: [.poison]
                 ),
-                next: EvolutionChain(
+                next: EvolutionChainInfo(
                     cardInfo: PokemonCardInfo(
                         id: 3,
                         name: "Venusaur",

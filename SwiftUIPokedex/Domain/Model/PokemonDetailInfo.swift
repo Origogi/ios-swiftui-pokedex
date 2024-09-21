@@ -18,7 +18,7 @@ struct PokemonDetailInfo {
     let types: [PokemonTypeInfo]
     let genderRatio: Double?
     let weaknesses: [PokemonTypeInfo]
-    let evolutionChain: EvolutionChain
+    let evolutionChain: EvolutionChainInfo
     let animatedImageUrl: String
 
     var mainType: PokemonTypeInfo {

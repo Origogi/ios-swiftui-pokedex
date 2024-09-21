@@ -33,7 +33,7 @@ class GetPokemonDetailInfoUseCase {
 
         let evolutionChain =
             (await extractEvolutions(from: evolutionChainData.chain)) ??
-            EvolutionChain(
+            EvolutionChainInfo(
                 cardInfo: PokemonCardInfo(
                     id: id, name: detailData.name.capitalized,
                     imagePath: detailData.sprites.versions.generationVII.icons.frontDefault,
@@ -61,8 +61,8 @@ class GetPokemonDetailInfoUseCase {
         )
     }
 
-    private func extractEvolutions(from chain: ChainData?) async -> EvolutionChain? {
-        var evolutionChain: EvolutionChain?
+    private func extractEvolutions(from chain: ChainData?) async -> EvolutionChainInfo? {
+        var evolutionChain: EvolutionChainInfo?
 
         if let chain = chain {
             if let id = extractId(from: chain.species.url) {
@@ -76,7 +76,7 @@ class GetPokemonDetailInfoUseCase {
                 )
                 let nextChain = await extractEvolutions(from: chain.evolvesTo.first)
 
-                evolutionChain = EvolutionChain(cardInfo: pokemonCardInfo, next: nextChain)
+                evolutionChain = EvolutionChainInfo(cardInfo: pokemonCardInfo, next: nextChain)
             }
         }
 
